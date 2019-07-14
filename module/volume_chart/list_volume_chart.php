@@ -1,0 +1,2 @@
+<?php
+echo "<h1 align='center'>สถิติจำนวนรถฝาก";
