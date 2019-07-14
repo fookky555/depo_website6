@@ -91,8 +91,7 @@
        require("module/$dataMA[0]/$dataMA[1].php");
 
        //เช็คว่าได้จ่ายเงินไหม
-
-        if($_GET['module']!="register" && $_GET['module'] != "login" && !empty($_GET['module'])){
+        if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module'])){
             check_pay();
             check_day();//เช็คว่าเหลืออีกกี่วันจะหมดอายุใช้งาน
         $con=connect_db();

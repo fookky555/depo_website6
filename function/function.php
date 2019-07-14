@@ -145,6 +145,7 @@ function check_day(){//เช็ควันที่เหลือของร
         if ($diff->days >= 23 && $diff->days < 30) {
 
             echo "<label  id='result' data-id='5'></label>";
+            echo "<label  id='day' data-id='$diff->days'></label>";
             $_SESSION['alert_day'] = 1;
         }
     }
