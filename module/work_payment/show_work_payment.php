@@ -41,7 +41,14 @@
                                     <td><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
                                     <td><?php echo $payment_detail_id;?></td>
-                                    <td><img src="img/thumb_<?php echo $work_payment_pic; ?>"></td>
+                                    <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">
+                                    <td><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
+                                    <div id="myModal" class="modal">
+                                        <span class="close">&time;</span>
+                                        <img class="modal-content" id="">
+                                        <div id="img/work_payment/<?php echo $work_payment_pic; ?>"></div>
+                                    </div>
+
                                     <td class="text-right">
                                     <?php if($work_payment_confirm==0){
                                         echo "<font color='black'>รอดำเนินการ</font>";
