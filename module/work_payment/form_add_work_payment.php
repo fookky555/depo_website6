@@ -6,7 +6,7 @@
 
             <div class="card-body">
                 <p class="lead">ยืนยันการชำระเงิน (500 บาท ต่อเดือน)</p><br>
-                <form class="form-horizontal" method="post" action=<?php MALink('work_payment','add_work_payment') ?>>
+                <form enctype="multipart/form-data" class="form-horizontal" method="post" action=<?php MALink('work_payment','add_work_payment') ?> e>
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> จำนวนที่โอน</b></label>
@@ -45,7 +45,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> หลักฐานการโอน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="work_payment_pic" type="file"></div>
+                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="url_of_your_file" name="work_payment_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif"  /></div>
                         </div>
 
                     </fieldset>

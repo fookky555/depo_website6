@@ -150,6 +150,27 @@ function check_day(){//เช็ควันที่เหลือของร
         }
     }
 }
+function resize_img($pic_name,$ext,$width,$height){
+    $images="img/work_payment/$pic_name";
+    $new_images="img/thumb_$pic_name";
+
+    if($ext=="jpg"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="JPG"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="JPEG"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="jpeg"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="png"){$images_orig=ImageCreateFromPNG($images);}
+    elseif ($ext=="PNG"){$images_orig=ImageCreateFromPNG($images);}
+    elseif ($ext=="gif"){$images_orig=ImageCreateFromGIF($images);}
+    elseif ($ext=="GIF"){$images_orig=ImageCreateFromGIF($images);}
+
+    $photoX=ImagesX($images_orig);
+    $photoY=ImagesY($images_orig);
+    $images_fin=ImageCreateTrueColor($width,$height);
+    ImageCopyResampled($images_fin,$images_orig,0,0,0,0,$width+1,$height+1,$photoX,$photoY);
+    ImageJPEG($images_fin,$new_images);
+    ImageDestroy($images_orig);
+    ImageDestroy($images_fin);
+}
 
 function do_Logout(){
     if(isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){

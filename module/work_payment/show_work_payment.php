@@ -41,7 +41,7 @@
                                     <td><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
                                     <td><?php echo $payment_detail_id;?></td>
-                                    <td>"รูป"</td>
+                                    <td><img src="img/thumb_<?php echo $work_payment_pic; ?>"></td>
                                     <td class="text-right">
                                     <?php if($work_payment_confirm==0){
                                         echo "<font color='black'>รอดำเนินการ</font>";

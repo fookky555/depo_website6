@@ -10,7 +10,7 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=work_payment&action=show_work_payment';
         });
-    }else {
+    }else if(result==0) {
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',

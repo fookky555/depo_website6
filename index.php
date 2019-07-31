@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.css">
    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="vendor/dropify-master/dist/css/dropify.css">
    <link rel="stylesheet" href="css/bootstrap.css" id="bscss"><!-- =============== APP STYLES ===============-->
    <link rel="stylesheet" href="css/app.css" id="maincss">
 </head>
@@ -139,6 +140,7 @@
 <script src="vendor/datatables.net-keytable/js/dataTables.keyTable.js"></script>
 <script src="vendor/datatables.net-responsive/js/dataTables.responsive.js"></script>
 <script src="vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="vendor/dropify-master/dist/js/dropify.min.js"></script>
    <!-- SWEET ALERT-->
    <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
     <script src="vendor/parsleyjs/dist/parsley.js"></script><
@@ -148,7 +150,7 @@
    <script src="js/app.js"> </script>
     <script>
         $(document).ready(function(){
-
+            var day =$("#day").data("id");
             $('#logout').on('click', function(e) {
                 e.preventDefault();
                 swal({
@@ -225,7 +227,7 @@
 
                 swal({
                     title: 'อายุการใช้งานกำลังจะหมด',
-                    text: 'เหลือระยะเวลาการใช้งานเพียง 99 วัน กรุณาชำระเงิน',
+                    text: 'เหลือระยะเวลาการใช้งานเพียง '+(30-day)+' วัน กรุณาชำระเงิน',
                     icon: 'warning',
                     buttons: {
                         confirm: {

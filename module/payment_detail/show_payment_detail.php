@@ -3,6 +3,7 @@
     <div class="content-wrapper">
         <div class="card card-default">
             <div class="card-header">
+                <br><h3 align="center"><em class="fa fa-money-bill"></em> ค่าบริการเดือนละ 500 บาท</h3>
                 <?php
                 $con=connect_db();
                 $sql="SELECT * FROM tbl_payment_detail";
