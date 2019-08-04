@@ -29,14 +29,12 @@ echo "<p align='center'><img src='img\loading.png'></p>";
 
         $con = connect_db();
         $sql="INSERT INTO
-tbl_deposit (car_type_id,deposit_plate_id,deposit_type,deposit_pic,deposit_wash,deposit_helmet,deposit_fuel,deposit_pickup_date,deposit_pickup_name,deposit_number,deposit_detail,user_id,work_id)
-VALUES ('$_POST[car_type_id]','$_POST[deposit_plate_id]','$_POST[deposit_type]','$image_name','$_POST[deposit_wash]','$_POST[deposit_helmet]','$_POST[deposit_fuel]','$_POST[deposit_pickup_date]','$_POST[deposit_pickup_name]','$_POST[deposit_number]','$_POST[deposit_detail]',$_SESSION[user_id],$_SESSION[work_id])";
+tbl_deposit (car_type_id,deposit_plate_id,deposit_type,deposit_wash,deposit_helmet,deposit_fuel,deposit_pickup_date,deposit_pickup_name,deposit_number,deposit_detail,user_id,work_id,deposit_pic)
+VALUES ('$_POST[car_type_id]','$_POST[deposit_plate_id]','$_POST[deposit_type]','$_POST[deposit_wash]','$_POST[deposit_helmet]','$_POST[deposit_fuel]','$_POST[deposit_pickup_date]','$_POST[deposit_pickup_name]','$_POST[deposit_number]','$_POST[deposit_detail]',$_SESSION[user_id],$_SESSION[work_id]),'$image_name'";
 
-        mysqli_query($con, $sql)or die("ไปดูให้ดีๆดิผิดตรงไหน : 1 ".mysqli_error($con));
-       // echo "<label  id='result' data-id='1'></label>";
+        mysqli_query($con, $sql)or die("SQL ERROR: ".mysqli_error($con));
+       echo "<label  id='result' data-id='1'></label>";
     }else{
-
-
-
+        echo "<label  id='result' data-id='0'></label>";
     }
 ?>
