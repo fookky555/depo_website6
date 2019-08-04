@@ -1,7 +1,6 @@
 
 <?php
 echo "<p align='center'><img src='img\loading.png'></p>";
-echo $_FILES['work_payment_pic']['name'];
 
 if(!empty($_POST['work_payment_date']&&$_POST['work_payment_time']&&$_POST['payment_detail_id']&&$_FILES['work_payment_pic']['name'])) {
     $work_payment_date = $_POST['work_payment_date'];

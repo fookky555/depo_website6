@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="vendor/dropify-master/dist/css/dropify.css">
    <link rel="stylesheet" href="css/bootstrap.css" id="bscss"><!-- =============== APP STYLES ===============-->
    <link rel="stylesheet" href="css/app.css" id="maincss">
+    <link rel="stylesheet" href="vendor/bootstrap-slider/dist/css/bootstrap-slider.css"><!-- CHOSEN-->
 </head>
 
 <body>
@@ -70,7 +71,10 @@
 
                 </a></div><!-- END navbar header-->
             <!-- START Left navbar-->
-
+            <ul class="navbar-nav mr-auto flex-row">
+                <li class="nav-item">
+                    <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops--><a class="nav-link d-none d-md-block d-lg-block d-xl-block" href="#" data-trigger-resize="" data-toggle-state="aside-collapsed"><em class="fas fa-bars"></em></a><!-- Button to show/hide the sidebar on mobile. Visible on mobile only.--><a class="nav-link sidebar-toggle d-md-none" href="#" data-toggle-state="aside-toggled" data-no-persist="true"><em class="fas fa-bars"></em></a></li><!-- START User avatar toggle-->
+                         </ul>
         </nav><!-- END Top Navbar-->
     </header><!-- sidebar-->
     <aside class="aside-container">
@@ -115,9 +119,6 @@
         }
        ?>
 
-
-       <!-- Page footer-->
-      <footer class="footer-container"><span>&copy; 2019 - Angle</span></footer>
    </div><!-- =============== VENDOR SCRIPTS ===============-->
 
    <!-- MODERNIZR-->
@@ -141,15 +142,17 @@
 <script src="vendor/datatables.net-responsive/js/dataTables.responsive.js"></script>
 <script src="vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 <script src="vendor/dropify-master/dist/js/dropify.min.js"></script>
+<script src="vendor/bootstrap-slider/dist/bootstrap-slider.js"></script>
    <!-- SWEET ALERT-->
    <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="vendor/parsleyjs/dist/parsley.js"></script><
+    <script src="vendor/parsleyjs/dist/parsley.js"></script>
    <!-- =============== APP SCRIPTS ===============-->
    <script src="js/<?php echo $dataMA[0];?>/<?php echo $dataMA[1];?>.js?p=<?php echo rand(10,100); ?>"></script>
    <!-- =============== APP SCRIPTS ===============-->
    <script src="js/app.js"> </script>
     <script>
         $(document).ready(function(){
+            $('[data-ui-slider]').slider();
             var day =$("#day").data("id");
             $('#logout').on('click', function(e) {
                 e.preventDefault();

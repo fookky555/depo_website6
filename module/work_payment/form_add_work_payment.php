@@ -6,7 +6,7 @@
 
             <div class="card-body">
                 <p class="lead">ยืนยันการชำระเงิน (500 บาท ต่อเดือน)</p><br>
-                <form enctype="multipart/form-data" class="form-horizontal" method="post" action=<?php MALink('work_payment','add_work_payment') ?> e>
+                <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('work_payment','add_work_payment') ?>">
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> จำนวนที่โอน</b></label>
@@ -33,19 +33,19 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-calendar"></em>&nbsp<b> วันที่โอน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="work_payment_date" type="date"></div>
+                            <div class="col-md-10"><input class="form-control" name="work_payment_date" type="date" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-clock"></em>&nbsp<b> เวลาโอน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="work_payment_time" type="time"></div>
+                            <div class="col-md-10"><input class="form-control" name="work_payment_time" type="time" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> หลักฐานการโอน</b></label>
-                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="url_of_your_file" name="work_payment_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif"  /></div>
+                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="url_of_your_file" name="work_payment_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG" required /></div>
                         </div>
 
                     </fieldset>
