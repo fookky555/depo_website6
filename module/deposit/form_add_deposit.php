@@ -50,11 +50,14 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
-                            <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash"><span class="fa fa-check"></span></label></div></div>
+                            <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()"><span class="fa fa-check"></span></label> </div></div>
                         </div>
-
+                   <div id="pickup_date" style="display: none"><br>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
+                            <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date"></div>
+                        </div>
+                   </div>
                     </fieldset>
-
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-book"></em>&nbsp<b> รายละเอียดการฝาก</b></label>
                             <div class="col-md-10">
@@ -89,11 +92,6 @@
         </div>
     </fieldset>
     <fieldset>
-        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
-            <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date"></div>
-        </div>
-    </fieldset>
-    <fieldset>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
             <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail" placeholder="ระบุรายละเอียดเพิ่มเติม.."></textarea></div>
         </div>
@@ -101,7 +99,6 @@
 
 </div>
 
-                    <input type="hidden" name="work_id" value="<?php echo $_SESSION['work_id']; ?>">
                     <div>
 
                     </div>
@@ -122,3 +119,14 @@
         </div><!-- END card-->
     </div>
 </section><!-- Page footer-->
+<script>
+    function show_pickup_date() {
+        var checkBox = document.getElementById("wash");
+        var text = document.getElementById("pickup_date");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>

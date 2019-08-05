@@ -10,7 +10,7 @@
                     <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('user','form_Add_user')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มผู้ใช้งาน</button></div>
                 <?php }?>
                 </div>
-                <p class="lead">จัดการข้อมูลผู้ใช้งานของร้าน</p>
+                <p class="lead"> [ จัดการข้อมูลผู้ใช้งานของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

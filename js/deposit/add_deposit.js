@@ -8,7 +8,7 @@ $(document).ready(function () {
             text: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
             icon: 'success'
         }).then(function() {
-            window.location.href='index.php?module=deposit&action=form_add_deposit';
+            window.location.href='index.php?module=deposit&action=list_deposit';
         });
     }else if(result==0) {
         swal({

@@ -5,14 +5,12 @@
         <div class="row">
             <!-- Article Content-->
             <div class="col-xl-12">
-                <div class="clearfix">
-                        <div class="float-right"><button class="btn btn-info" type="button" onclick=window.location.href="<?php MALink('deposit','search_qrcode')?>"><em class="fas fa-qrcode"></em> ค้นหา QR code</button></div>
-                </div>
-                <p class="lead"> [ ค้นหาข้อมูลฝากรถของร้าน ] </p>
+
+                <p class="lead"> [ เลือกข้อมูลการฝากรถ ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
-                        <table class="table table-hover" id="data-table-search_deposit">
+                        <table class="table table-hover" id="data-table-search_from_deposit">
                             <thead>
                             <tr>
                                 <th><strong>รหัสฝากรถ</strong></th>
@@ -21,9 +19,6 @@
                                 <th><strong>จำนวนวันที่ฝาก</strong></th>
                                 <th><strong>ประเภทของรถ</strong></th>
                                 <th><strong>ผู้บันทึก</strong></th>
-                                <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
-                                <?php } ?>
                             </tr>
                             </thead>
                             <tbody>
@@ -43,22 +38,21 @@
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
+                                if($_GET['from']=="mulct"){
+                                    echo"<tr onclick=\"href1()\">";
+                                    echo "<label id='id' data-id='$deposit_id'></label>";
+                                }else{
+                                    echo"<tr onclick=\"href2()\">";
+                                    echo "<label id='id' data-id='$deposit_id'></label>";
+                                }
                                 ?>
-                                <tr>
+
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $deposit_date;?></td>
                                     <td><?php echo "99 วัน";?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $username; ?></td>
-                                    <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
-                                                    class="fas fa-pencil-alt"></em></button>
-                                            <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=&id=delete_deposit<?php echo $deposit_id; ?>"><em
-                                                    class="fas fa-trash-alt"></em></button>
-                                        </td>
-                                    <?php } ?>
                                 </tr>
 
                                 <?php
@@ -71,7 +65,16 @@
             </div><!-- Article sidebar-->
 
         </div>
-        <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
+        <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
 
     </div>
 </section><!-- Page footer-->
+<script>
+    var id =$("#id").data("id");
+    function href1() {
+        window.location.href='index.php?module=deposit&action=form_add_mulct&id='+id;
+    }
+    function href2() {
+        window.location.href='index.php?module=deposit&action=form_add_news&id='+id;
+    }
+</script>
