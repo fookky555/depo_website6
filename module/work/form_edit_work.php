@@ -11,7 +11,7 @@
 
     ?>
     <div class="content-wrapper">
-        <p class="lead">แก้ไขข้อมูลของร้าน</p>
+        <p class="lead"> [ แก้ไขข้อมูลของร้าน ] </p>
         <div class="card card-default">
             <div class="card-header"></div>
             <div class="card-body">

@@ -11,7 +11,7 @@
 
     ?>
     <div class="content-wrapper">
-        <p class="lead">ข้อมูลผู้ใช้งานของตนเอง</p>
+        <p class="lead"> [ ข้อมูลผู้ใช้งานของตนเอง ] </p>
         <div class="card card-default">
 
             <div class="card-body">

@@ -1,8 +1,8 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
+        <div class="lead"><b> [ เพิ่มข้อมูลประเภทรถ ] </b></div><br>
         <div class="card card-default">
-            <div class="card-header"><b>เพิ่มข้อมูลประเภทรถ</b></div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" action="<?php MALink('car_type','add_car_type') ?>">
 

@@ -7,7 +7,7 @@
             <div class="col-xl-12">
                 <div class="clearfix">
                 </div>
-                <p class="lead">ตรวจสอบการชำระเงิน</p>
+                <p class="lead"> [ ตรวจสอบการชำระเงิน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

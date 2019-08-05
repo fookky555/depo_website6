@@ -1,7 +1,7 @@
 <section class="section-container">
     <div class="content-wrapper">
         <div class="card card-default">
-            <div class="card-header"><p class="lead">แก้ไขข้อมูลบัญชีธนาคาร</p>
+            <div class="card-header"><p class="lead"> [ แก้ไขข้อมูลบัญชีธนาคาร ] </p>
                 <form class="form-horizontal" method="post" action=<?php MALink('payment_detail','edit_payment_detail') ?>>
                 <?php
                 $con=connect_db();

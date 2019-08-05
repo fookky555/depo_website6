@@ -8,7 +8,7 @@
                 <div class="clearfix">
                         <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('payment_detail','form_add_payment_detail')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มบัญชีธนาคาร</button></div>
                 </div>
-                <p class="lead">จัดการข้อมูลบัญชีธนาคาร</p>
+                <p class="lead"> [ จัดการข้อมูลบัญชีธนาคาร ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

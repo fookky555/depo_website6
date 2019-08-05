@@ -10,7 +10,7 @@
                     <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('car_type','form_Add_car_type')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มประเภทรถ</button></div>
                     <?php } ?>
                 </div>
-                <p class="lead">อัตราค่าบริการตามประเภทของรถ</p>
+                <p class="lead"> [ อัตราค่าบริการตามประเภทของรถ ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
@@ -49,8 +49,8 @@
                                     <td><?php echo $car_type_1year_deposit_price?></td>
                                     <td><?php echo $car_type_wash_price?></td>
                                     <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <td class="text-right">
-                                        <button class="btn btn-sm btn-secondary" type="button" onclick=window.location.href="index.php?module=car_type&action=form_edit_car_type&id=<?php echo $car_type_id; ?>"><em
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=car_type&action=form_edit_car_type&id=<?php echo $car_type_id; ?>"><em
                                                 class="fas fa-pencil-alt"></em></button>
                                         <button class="btn btn-sm btn-danger delete_car_type"  type="button" data-link="index.php?module=car_type&action=delete_car_type&id=<?php echo $car_type_id; ?>"><em
                                                 class="fas fa-trash-alt"></em></button>

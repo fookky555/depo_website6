@@ -11,8 +11,8 @@
 
     ?>
     <div class="content-wrapper">
+        <p class="lead"> [ ข้อมูลผู้ใช้งานของตนเอง ] </p>
         <div class="card card-default">
-            <div class="card-header"><b>แก้ไขข้อมูลผู้ใช้งานร้าน</b></div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" action=<?php MALink('user','edit_user') ?>>
                     <fieldset>

@@ -45,8 +45,8 @@
                                     <td><?php echo $user_role;?></td>
                                     <td><?php echo $user_name;?></td>
                                     <td><?php echo $user_phone?></td>
-                                    <td class="text-right">
-                                        <button class="btn btn-sm btn-secondary" type="button" onclick=window.location.href="index.php?module=user&action=edit_user_form&id=<?php echo $user_id; ?>"><em
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=user&action=edit_user_form&id=<?php echo $user_id; ?>"><em
                                                         class="fas fa-pencil-alt"></em></button>
                                         <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
                                         <button class="btn btn-sm btn-danger delete_user" type="button" data-link="index.php?module=user&action=delete_user&id=<?php echo $user_id; ?>"><em
