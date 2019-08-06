@@ -1,7 +1,7 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
-        <p class="lead"> [ เพิ่มข้อมูลฝากรถ ] </p>
+        <p class="lead"><em class="fa fa-plus-circle"> </em> [ เพิ่มข้อมูลฝากรถ ] </p>
         <div class="card card-default">
 
             <div class="card-body">

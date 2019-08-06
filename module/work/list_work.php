@@ -11,7 +11,7 @@
 
     ?>
     <div class="content-wrapper">
-        <p class="lead"> [ ข้อมูลของร้าน ] </p>
+        <p class="lead"><em class="fa fa-store-alt"></em> [ ข้อมูลของร้าน ] </p>
         <div class="card card-default">
             <div class="card-header"></div>
             <div class="card-body">

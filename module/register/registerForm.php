@@ -89,9 +89,9 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-block btn-primary mt-3" type="submit">ลงทะเบียน</button>
+                    <button class="btn btn-block btn-warning mt-3" type="submit">ลงทะเบียน</button>
                 </form>
-                <p class="pt-3 text-center">ลงทะเบียนแล้ว?</p><a class="btn btn-block btn-secondary"
+                <p class="pt-3 text-center">ลงทะเบียนแล้ว?</p><a class="btn btn-block btn-primary"
                                                                  href="index.php?module=login&action=login">เข้าสู่ระบบ</a>
             </div>
         </div><!-- END card-->

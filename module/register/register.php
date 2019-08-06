@@ -1,5 +1,5 @@
 <?php
-//include("function/function.php");
+include("function/Bcrypt.php");
 echo "<br><p align='center'><img src='img\loading.png'></p>";
 $con = connect_db();
 

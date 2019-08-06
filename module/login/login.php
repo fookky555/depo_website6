@@ -52,9 +52,10 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
                     <div class="clearfix">
 
                         <label class="error" align="center" style="color:red;"><?php echo $result; ?></label>
-                    </div><button class="btn btn-block btn-primary mt-3" type="submit">เข้าสู่ระบบ</button>
+                    </div><button class="btn btn-block btn-primary mt-3" type="submit"> <em class="fa fa-sign-in-alt"> </em> <b> เข้าสู่ระบบ</b></button>
+                    <a class="btn btn-block btn-secondary" href="index.php?module=no_password&action=no_password">ลืมรหัสผ่าน <em class="fa fa-question"></em> </a>
                 </form>
-                <p class="pt-3 text-center">ต้องการลงทะเบียนร้านรับฝากรถ?</p><a class="btn btn-block btn-secondary" href="index.php?module=register&action=registerForm">ลงทะเบียน</a>
+                <p class="pt-3 text-center">ต้องการลงทะเบียนร้านรับฝากรถ?</p><a class="btn btn-block btn-warning" href="index.php?module=register&action=registerForm"> <em class="fa fa-store-alt"> </em> ลงทะเบียน</a>
             </div>
         </div><!-- END card-->
     </div>

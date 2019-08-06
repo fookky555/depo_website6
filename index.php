@@ -30,21 +30,28 @@
 </head>
 
 <body>
-<?php if(empty($_GET['module']) || $_GET['module'] == "register" || $_GET['module'] == "login" || $_GET['module'] == "no_login_deposit" || $_GET['module'] == "no_login_work" || $_GET['module'] == "no_login_news"){//แถบด้านบนตอนไม่ได้ล็อคอิน ?>
+<?php if(empty($_GET['module']) || $_GET['module'] == "register" || $_GET['module'] == "login" || $_GET['module'] == "no_login_deposit" || $_GET['module'] == "no_login_work" || $_GET['module'] == "no_login_news" || $_GET['module'] == "no_password"){//แถบด้านบนตอนไม่ได้ล็อคอิน ?>
 <header class="topnavbar-wrapper">
     <!-- START Top Navbar-->
     <nav class="navbar topnavbar navbar-expand-lg navbar-light">
         <!-- START navbar header-->
         <div class="navbar-header"><a class="navbar-brand">
-                <div class="brand-logo"><img class="img-fluid" src="img/logo.png" alt="App Logo"></div>
-                <div class="brand-logo-collapsed"><img class="img-fluid" src="img/logo-single.png" alt="App Logo"></div>
-            </a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavbar"><span class="navbar-toggler-icon"></span></button></div><!-- END navbar header-->
+
+            </a>
+        </div>
+        <ul class="navbar-nav mr-auto flex-row">
+            <li class="nav-item">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavbar"><span class="navbar-toggler-icon"></span></button></div><!-- END navbar header-->
         <!-- START Nav wrapper-->
+            </li>
+        </ul>
         <div class="navbar-collapse collapse" id="topnavbar">
             <!-- START Left navbar-->
             <?php top_menu_active(); ?>
         </div><!-- END Nav wrapper-->
+
     </nav><!-- END Top Navbar-->
+
 </header><!-- offsidebar-->
 <?php } ?>
 
@@ -52,7 +59,7 @@
     <!-- top navbar-->
     <header class="topnavbar-wrapper">
         <!-- START Top Navbar-->
-        <?php if(!empty($_GET['module']) && $_GET['module'] != "register" && $_GET['module'] != "login" && $_GET['module'] != "no_login_deposit" && $_GET['module'] != "no_login_work" && $_GET['module'] != "no_login_news"){ ?>
+        <?php if(!empty($_GET['module']) && $_GET['module'] != "register" && $_GET['module'] != "login" && $_GET['module'] != "no_login_deposit" && $_GET['module'] != "no_login_work" && $_GET['module'] != "no_login_news" && $_GET['module'] != "no_password"){ ?>
         <nav class="navbar topnavbar">
             <!-- START navbar header-->
             <div class="navbar-header"><a class="navbar-brand" href="#/">
@@ -64,7 +71,7 @@
             <!-- START Left navbar-->
             <ul class="navbar-nav mr-auto flex-row">
                 <li class="nav-item">
-                    <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops--><a class="nav-link d-none d-md-block d-lg-block d-xl-block" href="#" data-trigger-resize="" data-toggle-state="aside-collapsed"><em class="fas fa-bars"></em></a><!-- Button to show/hide the sidebar on mobile. Visible on mobile only.--><a class="nav-link sidebar-toggle d-md-none" href="#" data-toggle-state="aside-toggled" data-no-persist="true"><em class="fas fa-bars"></em></a></li><!-- START User avatar toggle-->
+                    <a class="nav-link d-none d-md-block d-lg-block d-xl-block" href="#" data-trigger-resize="" data-toggle-state="aside-collapsed"><em class="fas fa-bars"></em></a><!-- Button to show/hide the sidebar on mobile. Visible on mobile only.--><a class="nav-link sidebar-toggle d-md-none" href="#" data-toggle-state="aside-toggled" data-no-persist="true"><em class="fas fa-bars"></em></a></li><!-- START User avatar toggle-->
                          </ul>
         </nav><!-- END Top Navbar-->
     </header><!-- sidebar-->
@@ -87,7 +94,7 @@
        require("module/$dataMA[0]/$dataMA[1].php");
 
        //เช็คว่าได้จ่ายเงินไหม
-        if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module']) && $dataMA[0]!="no_login_deposit" && $dataMA[0]!="no_login_work" && $dataMA[0]!="no_login_news"){
+        if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module']) && $dataMA[0]!="no_login_deposit" && $dataMA[0]!="no_login_work" && $dataMA[0]!="no_login_news" && $dataMA[0]!="no_password"){
             check_pay();
             check_day();//เช็คว่าเหลืออีกกี่วันจะหมดอายุใช้งาน
         $con=connect_db();

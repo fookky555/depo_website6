@@ -17,7 +17,67 @@
     <link rel="stylesheet" href="css/app.css" id="maincss">
 </head>
 <body>
+<section class="section-container">
+    <!-- Page content-->
 
+    <div class="content-wrapper">
+        <div class="row">
+            <!-- Article Content-->
+            <div class="col-xl-11">
+                <p class="lead"><em class="fa fa-comment"> </em> [ ข้อมูลข่าวประชาสัมพันธ์ ] </p>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="data-table-no_login_search_news">
+                            <thead>
+                            <tr>
+                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">________</font></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">________</font></strong></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="white">________</font></strong></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font></strong></strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $con=connect_db();
+
+                            $sql1="SELECT * FROM tbl_news";//ต้องเปลี่ยน WHERE
+
+                            $result1=mysqli_query($con,$sql1);
+
+                            while ($row = mysqli_fetch_assoc($result1)) {
+
+                                extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+
+                                $sql2="SELECT deposit_plate_id,deposit_date,car_type_id FROM tbl_deposit WHERE deposit_id='$deposit_id'";//ต้องเปลี่ยน WHERE
+                                $result2=mysqli_query($con,$sql2);
+                                list($deposit_plate_id,$deposit_date,$car_type_id)=mysqli_fetch_row($result2);
+
+                                $sql2="SELECT work_name FROM tbl_work WHERE work_id='$work_id'";//ต้องเปลี่ยน WHERE
+                                $result2=mysqli_query($con,$sql2);
+                                list($work_name)=mysqli_fetch_row($result2);
+
+                                $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
+                                $result2=mysqli_query($con,$sql2);
+                                list($car_type_name)=mysqli_fetch_row($result2);
+                                ?>
+                                <tr>
+                                    <td><?php echo $news_head;?></td>
+                                    <td><?php echo $deposit_plate_id;?></td>
+                                    <td><?php echo $car_type_name;?></td>
+                                    <td><?php echo $work_name;?></td>
+                                    <td><?php echo $deposit_date;?></td>
+                                </tr>
+
+                                <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- Article sidebar-->
+</section><!-- Page footer-->
 
 
 

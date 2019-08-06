@@ -7,20 +7,20 @@
             <div class="col-xl-12">
                 <div class="clearfix">
                 </div>
-                <p class="lead"> [ ตรวจสอบการชำระเงิน ] </p>
+                <p class="lead"><em class="fa fa-money-check-alt"> </em> [ ตรวจสอบการชำระเงิน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-work-payment">
                             <thead>
                             <tr>
-                                <th><strong>รหัสการชำระเงิน</strong></th>
-                                <th><strong>รหัสร้านฝาก</strong></th>
-                                <th><strong>วันที่ชำระเงิน</strong></th>
-                                <th><strong>เวลาที่ชำระเงิน</strong></th>
-                                <th><strong>บัญชีธนาคาร</strong></th>
-                                <th><strong>หลักฐานชำระเงิน</strong></th>
-                                <th class="text-right" style="width:140px"><strong>ยืนยันการชำระเงิน</strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-store-alt"> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><FONT COLOR="WHITE">_______</FONT> </em></strong></th>
+                                <th><strong><em class="fa fa-clock"> </em></strong></th>
+                                <th><strong><em class="fa fa-university"> </em></strong></th>
+                                <th><strong><em class="fa fa-image"> </em></strong></th>
+                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><FONT COLOR="WHITE">______</FONT> </em></strong></th>
                             </tr>
                             </thead>
                             <tbody>

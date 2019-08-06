@@ -54,8 +54,4 @@ $(document).ready(function(){
     $('#data-table-list-work-status').DataTable({
     });
 
-    function EditWorkStatus() {
-        console.log("aaaaa"
-        );
-    }
 });

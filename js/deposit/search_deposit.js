@@ -24,4 +24,8 @@ $(document).ready(function(){
         });
 
     });
+    function EditWorkStatus() {
+        console.log("aaaaa"
+        );
+    }
 });

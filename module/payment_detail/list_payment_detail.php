@@ -8,18 +8,18 @@
                 <div class="clearfix">
                         <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('payment_detail','form_add_payment_detail')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มบัญชีธนาคาร</button></div>
                 </div>
-                <p class="lead"> [ จัดการข้อมูลบัญชีธนาคาร ] </p>
+                <br><p class="lead"><em class="fa fa-university"> </em> [ จัดการข้อมูลบัญชีธนาคาร ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-payment-detail">
                             <thead>
                             <tr>
-                                <th><strong>ลำดับบัญชี</strong></th>
-                                <th><strong>ชื่อเจ้าของบัญชี</strong></th>
-                                <th><strong>เลขบัญชี</strong></th>
-                                <th><strong>ธนาคาร</strong></th>
-                                <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-address-card"><font color="white">_________________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-money-check"><font color="white">__________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-university"><font color="white">_____________</font> </em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>

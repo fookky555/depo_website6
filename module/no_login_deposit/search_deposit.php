@@ -24,22 +24,24 @@
         <div class="row">
             <!-- Article Content-->
             <div class="col-xl-11">
-                <p class="lead"> [ ค้นหาข้อมูลฝากรถทั้งหมด ] </p>
+                <p class="lead"> <em class="fa fa-motorcycle"> </em> [ ค้นหาข้อมูลฝากรถ ] </p>
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>ป้ายทะเบียนรถ</strong></th>
-                                <th><strong>วันที่ฝาก</strong></th>
-                                <th><strong>จำนวนวันที่ฝาก</strong></th>
-                                <th><strong>ประเภทของรถ</strong></th>
-                                <th><strong>บริการล้างรถ</strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-car"></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
+
+                                <th><strong><em class="fa fa-calendar-check"><font color="white">_</font> </em> </strong> </th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_____________</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $con=connect_db();
+                            <?php
+                            $con=connect_db();
 
                             $sql1="SELECT * FROM tbl_deposit";//ต้องเปลี่ยน WHERE
 
@@ -48,25 +50,25 @@
                             while ($row = mysqli_fetch_assoc($result1)) {
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
-                                $sql="SELECT deposit_id FROM tbl_wash WHERE deposit_id='$deposit_id'";//ต้องเปลี่ยน WHERE
-                                $result=mysqli_query($con,$sql);
-                                list($wash_check)=mysqli_fetch_row($result);
-
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
+
+                                $sql2="SELECT work_name FROM tbl_work WHERE work_id='$work_id'";//ต้องเปลี่ยน WHERE
+                                $result2=mysqli_query($con,$sql2);
+                                list($work_name)=mysqli_fetch_row($result2);
+
                                 ?>
                                 <tr>
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
-                                    <td><?php echo $deposit_date;?></td>
+                                    <td><?php echo $work_name;?></td>
+
+
                                     <td><?php echo "99 วัน";?></td>
                                     <td><?php echo $car_type_name;?></td>
-                                    <td><?php if(empty($wash_check)){
-                                        echo "ไม่ใช้บริการ";
-                                        }else{
-                                        echo "ใช้บริการ";
-                                        } ?></td>
+                                    <td><?php echo $deposit_date;?></td>
+
                                 </tr>
 
                                 <?php
@@ -76,6 +78,12 @@
                         </table>
                     </div>
                 </div>
+                <p> <em class="fa fa-hashtag"> </em> = รหัสข้อมูลฝากรถ</p>
+                <p> <em class="fa fa-car"> </em> = ป้ายทะเบียนรถ</p>
+                <p> <em class="fa fa-sign"> </em> = ชื่อร้านที่ฝาก</p>
+                <p> <em class="fa fa-calendar-check"> </em> = จำนวนวันที่ฝาก</p>
+                <p> <em class="fa fa-motorcycle"> </em> = ประเภทของรถ</p>
+                <p> <em class="fa fa-calendar"> </em> = วันที่ฝาก</p>
             </div><!-- Article sidebar-->
 </section><!-- Page footer-->
 

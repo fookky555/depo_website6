@@ -9,21 +9,21 @@
                         <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('deposit','search_qrcode')?>"><em class="fas fa-qrcode"></em> ค้นหา QR code</button></div>
                 </div>
                 <BR>
-                <p class="lead"> [ ค้นหาข้อมูลฝากรถของร้าน ] </p>
+                <p class="lead"><em class="fa fa-search"> </em> [ ค้นหาข้อมูลฝากรถของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_deposit">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>ป้ายทะเบียนรถ</strong></th>
-                                <th><strong>วันที่ฝาก</strong></th>
-                                <th><strong>จำนวนวันที่ฝาก</strong></th>
-                                <th><strong>ประเภทของรถ</strong></th>
-                                <th><strong>ผู้บันทึก</strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font> </em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -56,7 +56,7 @@
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
-                                            <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=&id=delete_deposit<?php echo $deposit_id; ?>"><em
+                                            <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=delete_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-trash-alt"></em></button>
                                         </td>
                                     <?php } ?>

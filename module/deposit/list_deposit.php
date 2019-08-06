@@ -4,7 +4,7 @@
     <!-- Page content-->
 
     <div class="content-wrapper">
-        <p class="lead"> [ ระบบรับฝากรถของร้าน ] </p>
+        <p class="lead"><em class="fa fa-dot-circle"> </em> [ ระบบรับฝากรถของร้าน ] </p>
         <div class="card card-default">
 
             <div class="card-body">

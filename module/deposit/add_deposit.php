@@ -28,6 +28,7 @@ echo "<p align='center'><img src='img\loading.png'></p>";
             }
         }
         */
+
         $con = connect_db();
         $sql="INSERT INTO
 tbl_deposit (car_type_id,deposit_plate_id,deposit_type,deposit_helmet,deposit_fuel,deposit_pickup_date,deposit_pickup_name,deposit_number,deposit_detail,user_id,work_id)

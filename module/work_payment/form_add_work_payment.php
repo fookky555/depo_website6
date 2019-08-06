@@ -1,7 +1,7 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
-        <p class="lead"> [ ยืนยันการชำระเงิน (500 บาท ต่อเดือน) ] </p>
+        <p class="lead"><em class="fa fa-money-check-alt"></em> [ ยืนยันการชำระเงิน ] </p>
         <div class="card card-default">
             <div class="card-body">
                 <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('work_payment','add_work_payment') ?>">

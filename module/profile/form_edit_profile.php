@@ -11,7 +11,7 @@
 
     ?>
     <div class="content-wrapper">
-        <div class="lead"><p> [ แก้ไขข้อมูลผู้ใช้งานของตนเอง ] </p></div>
+        <div class="lead"><p><em class="fa fa-user-edit"> </em> [ แก้ไขข้อมูลผู้ใช้งานของตนเอง ] </p></div>
         <div class="card card-default">
 
             <div class="card-body">

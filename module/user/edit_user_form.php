@@ -11,7 +11,7 @@
 
     ?>
     <div class="content-wrapper">
-        <p class="lead"> [ ข้อมูลผู้ใช้งานของตนเอง ] </p>
+        <p class="lead"><em class="fa fa-pen"> </em> [ แก้ไขข้อมูลผู้ใช้งาน ] </p>
         <div class="card card-default">
             <div class="card-body">
                 <form class="form-horizontal" method="post" action=<?php MALink('user','edit_user') ?>>
