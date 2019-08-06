@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<?php if(empty($_GET['module']) || $_GET['module'] == "register" || $_GET['module'] == "login"){//แถบด้านบนตอนไม่ได้ล็อคอิน ?>
+<?php if(empty($_GET['module']) || $_GET['module'] == "register" || $_GET['module'] == "login" || $_GET['module'] == "no_login_deposit" || $_GET['module'] == "no_login_work" || $_GET['module'] == "no_login_news"){//แถบด้านบนตอนไม่ได้ล็อคอิน ?>
 <header class="topnavbar-wrapper">
     <!-- START Top Navbar-->
     <nav class="navbar topnavbar navbar-expand-lg navbar-light">
@@ -42,16 +42,7 @@
         <!-- START Nav wrapper-->
         <div class="navbar-collapse collapse" id="topnavbar">
             <!-- START Left navbar-->
-            <ul class="nav navbar-nav mr-auto flex-column flex-lg-row">
-                <li class="nav-item"><a class="nav-link" href="#" title="ข้อมูลรับฝากรถ"><em class="icon-magnifier"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" title="ข้อมูลร้านฝากรถ"><em class="icon-phone"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" title="ข่าวประชาสัมพันธ์"><em class="icon-speech"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-            </ul><!-- END Left navbar-->
-            <!-- START Right Navbar-->
-            <ul class="navbar-nav flex-row">
-                <!-- START lock screen-->
-                <li class="nav-item"><a class="nav-link" href="index.php?module=login&action=login" title="Login"><em class="icon-login"></em> &nbsp เข้าสู่ระบบ</a></li>
-            </ul><!-- END Right Navbar-->
+            <?php top_menu_active(); ?>
         </div><!-- END Nav wrapper-->
     </nav><!-- END Top Navbar-->
 </header><!-- offsidebar-->
@@ -61,7 +52,7 @@
     <!-- top navbar-->
     <header class="topnavbar-wrapper">
         <!-- START Top Navbar-->
-        <?php if(!empty($_GET['module']) && $_GET['module'] != "register" && $_GET['module'] != "login"){ ?>
+        <?php if(!empty($_GET['module']) && $_GET['module'] != "register" && $_GET['module'] != "login" && $_GET['module'] != "no_login_deposit" && $_GET['module'] != "no_login_work" && $_GET['module'] != "no_login_news"){ ?>
         <nav class="navbar topnavbar">
             <!-- START navbar header-->
             <div class="navbar-header"><a class="navbar-brand" href="#/">
@@ -96,7 +87,7 @@
        require("module/$dataMA[0]/$dataMA[1].php");
 
        //เช็คว่าได้จ่ายเงินไหม
-        if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module'])){
+        if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module']) && $dataMA[0]!="no_login_deposit" && $dataMA[0]!="no_login_work" && $dataMA[0]!="no_login_news"){
             check_pay();
             check_day();//เช็คว่าเหลืออีกกี่วันจะหมดอายุใช้งาน
         $con=connect_db();

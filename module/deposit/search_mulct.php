@@ -6,8 +6,9 @@
             <!-- Article Content-->
             <div class="col-xl-12">
                 <div class="clearfix">
-                    <div class="float-right"><button class="btn btn-info" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=mulct"><em class="fas fa-plus"></em>  เพิ่มค่าปรับ</button></div>
+                    <div class="float-right"><button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=mulct"><em class="fas fa-plus"></em>  เพิ่มค่าปรับ</button></div>
                 </div>
+                <BR>
                 <p class="lead"> [ ข้อมูลค่าปรับของร้าน ] </p>
                 <div class="card">
 
@@ -53,10 +54,11 @@
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_mulct&id=<?php echo $mulct_id; ?>"><em
                                                 class="fas fa-pen"></em></button>
 
-
-
+                                        <?php if($_SESSION['user_role']=="ผู้ดูแล"){
+                                            ?>
                                         <button class="btn btn-sm btn-danger delete_mulct"  type="button" data-link="index.php?module=deposit&action=delete_mulct&id=<?php echo $mulct_id; ?>"><em
                                                 class="fas fa-trash-alt"></em></button>
+                                        <?php } ?>
                                     </td>
                                 </tr>
 

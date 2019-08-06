@@ -7,9 +7,10 @@
             <div class="col-xl-12">
                 <div class="clearfix">
                     <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                    <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('car_type','form_Add_car_type')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มประเภทรถ</button></div>
+                    <div class="float-right"><button class="btn btn-primary" type="button" onclick=window.location.href="<?php MALink('car_type','form_Add_car_type')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มประเภทรถ</button></div>
                     <?php } ?>
                 </div>
+                <BR>
                 <p class="lead"> [ อัตราค่าบริการตามประเภทของรถ ] </p>
                 <div class="card">
 

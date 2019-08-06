@@ -8,6 +8,7 @@
                 <div class="clearfix">
                     <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('work_payment','form_add_work_payment')?>"><em class="fas fa-plus fa-fw"></em> ยืนยันการชำระเงิน</button></div>
                 </div>
+                <BR>
                 <p class="lead"> [ ประวัติการชำระเงินของร้านฝากรถ ] </p>
                 <div class="card">
 

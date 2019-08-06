@@ -7,9 +7,10 @@
             <div class="col-xl-12">
                 <div class="clearfix">
 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                    <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('user','form_Add_user')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มผู้ใช้งาน</button></div>
+                    <div class="float-right"><button class="btn btn-primary" type="button" onclick=window.location.href="<?php MALink('user','form_Add_user')?>"><em class="fas fa-plus fa-fw"></em>เพิ่มผู้ใช้งาน</button></div>
                 <?php }?>
                 </div>
+                <BR>
                 <p class="lead"> [ จัดการข้อมูลผู้ใช้งานของร้าน ] </p>
                 <div class="card">
 

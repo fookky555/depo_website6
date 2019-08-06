@@ -6,8 +6,9 @@
             <!-- Article Content-->
             <div class="col-xl-12">
                 <div class="clearfix">
-                    <div class="float-right"><button class="btn btn-info" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=news"><em class="fas fa-plus"></em>  เพิ่มค่าปรับ</button></div>
+                    <div class="float-right"><button class="btn btn-purple" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=news"><em class="fas fa-plus"></em>  เพิ่มข่าวประชาสัมพันธ์</button></div>
                 </div>
+                <BR>
                 <p class="lead"> [ ข้อมูลข่าวประชาสัมพันธ์ของร้าน ] </p>
                 <div class="card">
 
@@ -48,9 +49,11 @@
                                                 class="fas fa-pen"></em></button>
 
 
-
+                                        <?php if($_SESSION['user_role']=="ผู้ดูแล"){
+                                        ?>
                                         <button class="btn btn-sm btn-danger delete_news"  type="button" data-link="index.php?module=deposit&action=delete_news&id=<?php echo $news_id; ?>"><em
                                                 class="fas fa-trash-alt"></em></button>
+                                        <?php } ?>
                                     </td>
                                 </tr>
 
