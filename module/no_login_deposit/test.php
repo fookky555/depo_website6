@@ -30,7 +30,7 @@
             list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id)=mysqli_fetch_row($result1);
             ?>
             <div class="card-body">
-                <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('deposit','edit_deposit') ?>">
+                <form>
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
@@ -52,10 +52,10 @@
                                             echo "<option value=$car_id>$car_type_name</option>";
                                         }
                                     }
-//                                    $date = new DateTime($deposit_date);
-//                                    $now = new DateTime();
-//
-//                                    echo $date->diff($now)->format("%d days");
+                                    //                                    $date = new DateTime($deposit_date);
+                                    //                                    $now = new DateTime();
+                                    //
+                                    //                                    echo $date->diff($now)->format("%d days");
                                     ?>
                                 </select>
                             </div>
@@ -82,7 +82,6 @@
                             </div>
                         </div>
                     </fieldset>
-                    <input type="hidden" name="old_pic" value="<?php echo $deposit_pic; ?>">
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
                             <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="img/deposit/<?php echo $deposit_pic; ?>" name="deposit_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG"></div>
@@ -119,9 +118,9 @@
                         </fieldset>
                         <div id="detail_form" style="display: none">
                             <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>" disabled></div>
-                            </div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>" disabled></div>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค</b></label>
@@ -160,13 +159,8 @@
                         </div>
                         <div class="clearfix">
                             <div class="float-left">
-                                <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_deposit')?>">
+                                <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=search_choose&id=<?php echo $work_id; ?>">
                                     <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
-                            </div>
-                            <div class="float-right">
-                                <button class="btn btn-primary" type="submit">
-                                    <em class="fa fa-check fa-fw"></em>บันทึก</button>
-
                             </div>
 
                         </div>
@@ -175,17 +169,6 @@
         </div><!-- END card-->
     </div>
 </section><!-- Page footer-->
-
-
-<script src="vendor/modernizr/modernizr.custom.js"></script><!-- STORAGE API-->
-<script src="vendor/js-storage/js.storage.js"></script><!-- i18next-->
-<script src="vendor/i18next/i18next.js"></script>
-<script src="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></script><!-- JQUERY-->
-<script src="vendor/jquery/dist/jquery.js"></script><!-- BOOTSTRAP-->
-<script src="vendor/popper.js/dist/umd/popper.js"></script>
-<script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
-<script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
-<script src="js/app.js"></script>
 <script>
     function show_pickup_date() {
         var checkBox = document.getElementById("wash");
@@ -197,5 +180,16 @@
         }
     }
 </script>
+
+
+<script src="vendor/modernizr/modernizr.custom.js"></script><!-- STORAGE API-->
+<script src="vendor/js-storage/js.storage.js"></script><!-- i18next-->
+<script src="vendor/i18next/i18next.js"></script>
+<script src="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></script><!-- JQUERY-->
+<script src="vendor/jquery/dist/jquery.js"></script><!-- BOOTSTRAP-->
+<script src="vendor/popper.js/dist/umd/popper.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
+<script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
+<script src="js/app.js"></script>
 </body>
 </html>

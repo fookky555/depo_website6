@@ -60,8 +60,9 @@
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
+                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                echo "<label class='link' ></label>";
                                 ?>
-                                <tr>
                                     <td><?php echo $news_head;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $car_type_name;?></td>
@@ -95,5 +96,18 @@
 <script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
 <script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
 <script src="js/app.js"></script>
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+id;
+    }
+
+</script>
 </body>
 </html>

@@ -42,7 +42,12 @@
                             <tbody>
                             <?php
                             $con=connect_db();
-                            $sql1="SELECT * FROM tbl_deposit WHERE work_id='$_POST[work_id]'";//ต้องเปลี่ยน WHERE
+                            if(empty($_POST['work_id'])){
+                                $id=$_GET['id'];
+                            }else{
+                                $id=$_POST['work_id'];
+                            }
+                            $sql1="SELECT * FROM tbl_deposit WHERE work_id='$id'";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
 
@@ -53,15 +58,15 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
 
-                                $sql2="SELECT work_name FROM tbl_work WHERE work_id='$_POST[work_id]'";//ต้องเปลี่ยน WHERE
+                                $sql2="SELECT work_name FROM tbl_work WHERE work_id='$id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($work_name)=mysqli_fetch_row($result2);
 
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
-
+                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                echo "<label class='link' ></label>";
                                 ?>
-                                <tr>
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $work_name;?></td>
@@ -95,7 +100,6 @@
 </section><!-- Page footer-->
 
 
-
 <script src="vendor/modernizr/modernizr.custom.js"></script><!-- STORAGE API-->
 <script src="vendor/js-storage/js.storage.js"></script><!-- i18next-->
 <script src="vendor/i18next/i18next.js"></script>
@@ -105,5 +109,18 @@
 <script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
 <script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
 <script src="js/app.js"></script>
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+id;
+    }
+
+</script>
 </body>
 </html>

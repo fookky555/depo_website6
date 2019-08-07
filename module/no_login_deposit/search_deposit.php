@@ -60,9 +60,9 @@
 
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
-
+                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                echo "<label class='link' ></label>";
                                 ?>
-                                <tr>
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $work_name;?></td>
@@ -106,5 +106,18 @@
 <script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
 <script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
 <script src="js/app.js"></script>
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=no_login_deposit&action=show_deposit&id='+id;
+    }
+
+</script>
 </body>
 </html>

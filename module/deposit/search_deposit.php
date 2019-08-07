@@ -48,22 +48,29 @@
                                 //เช็ควันว่าฝากมากี่วันแล้ว
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
-                                ?>
-                                <tr>
-                                    <td><?php echo $deposit_id;?></td>
-                                    <td><?php echo $deposit_plate_id;?></td>
-                                    <td><?php echo $deposit_date;?></td>
-                                    <td><?php  echo $date->diff($now)->format("%d วัน"); ?></td>
-                                    <td><?php echo $car_type_name;?></td>
-                                    <td><?php echo $username; ?></td>
-                                    <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
+                                $days = $date->diff($now)->format('%d วัน');
+
+                                echo"<tr>";
+
+
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_plate_id</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_date</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$days</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$car_type_name</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
+
+
+                                    if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
                                             <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=delete_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-trash-alt"></em></button>
                                         </td>
-                                    <?php } ?>
+                                    <?php }
+                                echo "<label class='link' ></label>";
+                                    ?>
                                 </tr>
 
                                 <?php
@@ -91,3 +98,16 @@
 
     </div>
 </section><!-- Page footer-->
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=deposit&action=show_deposit&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=deposit&action=show_deposit&id='+id;
+    }
+
+</script>

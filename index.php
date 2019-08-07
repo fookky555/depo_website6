@@ -47,6 +47,7 @@
         </ul>
         <div class="navbar-collapse collapse" id="topnavbar">
             <!-- START Left navbar-->
+
             <?php top_menu_active(); ?>
         </div><!-- END Nav wrapper-->
 

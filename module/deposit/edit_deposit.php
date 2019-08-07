@@ -78,7 +78,7 @@ VALUES ('$_POST[id]',0,$_SESSION[work_id])";
     }else{
         mysqli_query($con, "DELETE FROM tbl_wash WHERE deposit_id='$_POST[id]'");
     }
-    //echo "<label  id='result' data-id='1'></label>";
+    echo "<label  id='result' data-id='1'></label>";
 
 
 
