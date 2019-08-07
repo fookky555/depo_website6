@@ -3,12 +3,12 @@
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-pen"> </em> [ แก้ไขข้อมูลฝากรถ ] </p>
         <div class="card card-default">
-<?php
-$con=connect_db();
-$sql1="SELECT * FROM tbl_deposit WHERE deposit_id='$_GET[id]'";
-$result1=mysqli_query($con,$sql1);
-list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id)=mysqli_fetch_row($result1);
-?>
+            <?php
+            $con=connect_db();
+            $sql1="SELECT * FROM tbl_deposit WHERE deposit_id='$_GET[id]'";
+            $result1=mysqli_query($con,$sql1);
+            list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id)=mysqli_fetch_row($result1);
+            ?>
             <div class="card-body">
                 <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('deposit','edit_deposit') ?>">
 
@@ -32,6 +32,10 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                                             echo "<option value=$car_id>$car_type_name</option>";
                                         }
                                     }
+                                    $date = new DateTime($deposit_date);
+                                    $now = new DateTime();
+
+                                    echo $date->diff($now)->format("%d days");
                                     ?>
                                 </select>
                             </div>
@@ -42,11 +46,11 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
                             <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type">
                                     <?php
-                                        for($i=1;$i<=5;$i++){
-                                            if($i==$deposit_type){
-                                                $check[$i]="selected";
-                                            }
+                                    for($i=1;$i<=5;$i++){
+                                        if($i==$deposit_type){
+                                            $check[$i]="selected";
                                         }
+                                    }
                                     ?>
                                     <option value="">เลือกประเภทของการฝาก..</option>
                                     <option value="1" <?php if(isset($check[1])) echo $check[1]; ?>>ฝากรายวัน</option>
@@ -81,69 +85,69 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                             <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
                                 <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()"><span class="fa fa-check"></span></label> </div></div>
                             </div>
-                        <?php } ?>
-                        <div id="pickup_date" style="display: none"><br>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>"></div>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-book"></em>&nbsp<b> รายละเอียดการฝาก</b></label>
-                            <div class="col-md-10">
-                                <button class="btn btn-warning" id="btnS" type="button" onclick="togglefunc()">
-                                    <em class="fa fa-caret-left fa-pen" ></em> บันทึกรายละเอียด</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div id="detail_form" style="display: none">
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_helmet" type="number" value="<?php echo $deposit_helmet; ?>"></div>
-                            </div>
-
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ (%)</b></label>
-                                <div class="col-md-10">
-                                    <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="<?php echo $deposit_fuel; ?>" data-slider-orientation="horizontal" name="deposit_fuel">
+                            <?php } ?>
+                            <div id="pickup_date" style="display: none"><br>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>"></div>
                                 </div>
                             </div>
-
                         </fieldset>
                         <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_number" type="number" value="<?php echo $deposit_number; ?>"></div>
+                            <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-book"></em>&nbsp<b> รายละเอียดการฝาก</b></label>
+                                <div class="col-md-10">
+                                    <button class="btn btn-warning" id="btnS" type="button" onclick="togglefunc()">
+                                        <em class="fa fa-caret-left fa-pen" ></em> บันทึกรายละเอียด</button>
+                                </div>
                             </div>
                         </fieldset>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_pickup_name" type="text" value="<?php echo $deposit_pickup_name; ?>"></div>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
-                                <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail"><?php echo $deposit_detail; ?>"</textarea></div>
-                            </div>
-                        </fieldset>
+                        <div id="detail_form" style="display: none">
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_helmet" type="number" value="<?php echo $deposit_helmet; ?>"></div>
+                                </div>
 
-                    </div>
-<input type="hidden" value="<?php echo $deposit_id; ?>" name="id">
-                    <div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ (%)</b></label>
+                                    <div class="col-md-10">
+                                        <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="<?php echo $deposit_fuel; ?>" data-slider-orientation="horizontal" name="deposit_fuel">
+                                    </div>
+                                </div>
 
-                    </div>
-                    <div class="clearfix">
-                        <div class="float-left">
-                            <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>">
-                                <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_number" type="number" value="<?php echo $deposit_number; ?>"></div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_pickup_name" type="text" value="<?php echo $deposit_pickup_name; ?>"></div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
+                                    <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail"><?php echo $deposit_detail; ?>"</textarea></div>
+                                </div>
+                            </fieldset>
+
                         </div>
-                        <div class="float-right">
-                            <button class="btn btn-primary" type="submit">
-                                <em class="fa fa-check fa-fw"></em>บันทึก</button>
+                        <input type="hidden" value="<?php echo $deposit_id; ?>" name="id">
+                        <div>
 
                         </div>
+                        <div class="clearfix">
+                            <div class="float-left">
+                                <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>">
+                                    <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                            </div>
+                            <div class="float-right">
+                                <button class="btn btn-primary" type="submit">
+                                    <em class="fa fa-check fa-fw"></em>บันทึก</button>
 
-                    </div>
+                            </div>
+
+                        </div>
                 </form>
             </div>
         </div><!-- END card-->

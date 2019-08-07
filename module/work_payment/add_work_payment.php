@@ -17,11 +17,11 @@ if(!empty($_POST['work_payment_date']&&$_POST['work_payment_time']&&$_POST['paym
     $image_exp=explode(".",$image_filename);
     $ext=end($image_exp);
     if($ext=='jpg' or $ext=='gif' or $ext=='png' or $ext=='jpeg' or $ext=='JPEG' or $ext=='PNG' or $ext=='JPG' or $ext=='GIF'){
-        if($image_filesize<=1000000){
+        if($image_filesize<=3000000){
             if($image_filename!="payment_default.jpg"){
                 $image_name="payment_".$shuffle_name.".$ext";
                 copy($image_tmp,"img/work_payment/$image_name");
-                resize_img($image_name,$ext,36,75);
+                resize_img($image_name,$ext,36,75,1);
             }else{
                 $image_name="payment_default.jpg";
             }

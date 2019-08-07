@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    $('#data-table-search_deposit').DataTable({
-    });
+
     $('.delete_deposit').on('click', function(e) {
         e.preventDefault();
         swal({
@@ -23,6 +22,8 @@ $(document).ready(function(){
             }
         });
 
+    });
+    $('#data-table-search_deposit').DataTable({
     });
     function EditWorkStatus() {
         console.log("aaaaa"

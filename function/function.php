@@ -170,18 +170,24 @@ function check_day(){//เช็ควันที่เหลือของร
         }
     }
 }
-function resize_img($pic_name,$ext,$width,$height){
-    $images="img/work_payment/$pic_name";
+function resize_img($pic_name,$ext,$width,$height,$check){
+    if($check==0){
+        $images="img/deposit/$pic_name";
+    }else{
+        $images="img/work_payment/$pic_name";
+    }
     $new_images="img/thumb_$pic_name";
+    echo $images;
 
     if($ext=="jpg"){$images_orig=ImageCreateFromJPEG($images);}
     elseif ($ext=="JPG"){$images_orig=ImageCreateFromJPEG($images);}
     elseif ($ext=="JPEG"){$images_orig=ImageCreateFromJPEG($images);}
     elseif ($ext=="jpeg"){$images_orig=ImageCreateFromJPEG($images);}
-    elseif ($ext=="png"){$images_orig=ImageCreateFromPNG($images);}
-    elseif ($ext=="PNG"){$images_orig=ImageCreateFromPNG($images);}
     elseif ($ext=="gif"){$images_orig=ImageCreateFromGIF($images);}
     elseif ($ext=="GIF"){$images_orig=ImageCreateFromGIF($images);}
+    else{
+        $images_orig=imageCreateFromPng($images);
+    }
 
     $photoX=ImagesX($images_orig);
     $photoY=ImagesY($images_orig);

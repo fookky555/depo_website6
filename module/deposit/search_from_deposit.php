@@ -39,11 +39,11 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
                                 if($_GET['from']=="mulct"){
-                                    echo"<tr onclick=\"href1()\">";
-                                    echo "<label id='id' data-id='$deposit_id'></label>";
+                                    echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                    echo "<label class='link' ></label>";
                                 }else{
                                     echo"<tr onclick=\"href2()\">";
-                                    echo "<label id='id' data-id='$deposit_id'></label>";
+                                    echo "<label class='link' data-id='$deposit_id'></label>";
                                 }
                                 ?>
 
@@ -78,11 +78,15 @@
     </div>
 </section><!-- Page footer-->
 <script>
-    var id =$("#id").data("id");
-    function href1() {
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=deposit&action=form_add_mulct&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
         window.location.href='index.php?module=deposit&action=form_add_mulct&id='+id;
     }
-    function href2() {
-        window.location.href='index.php?module=deposit&action=form_add_news&id='+id;
-    }
+
 </script>
