@@ -28,12 +28,6 @@
 
                     </fieldset>
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-lock"></em>&nbsp<b> ยืนยันรหัสผ่าน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_password" type="text" placeholder="ยืนยันรหัสผ่าน..."></div>
-                        </div>
-
-                    </fieldset>
-                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-address-card"></em>&nbsp<b> ชื่อและนามสกุล</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_name" type="text" value="<?php echo $user_name ?>"></div>
                         </div>

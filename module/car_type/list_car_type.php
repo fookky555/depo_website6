@@ -11,22 +11,22 @@
                     <?php } ?>
                 </div>
                 <BR>
-                <p class="lead"> [ อัตราค่าบริการตามประเภทของรถ ] </p>
+                <p class="lead"><em class="fa fa-calculator"></em> [ อัตราค่าบริการตามประเภทของรถ ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-car-type">
                             <thead>
                             <tr>
-                                <th><strong>ประเภทรถ</strong></th>
-                                <th><strong>ฝากรายวัน</strong></th>
-                                <th><strong>ฝาก1เดือน</strong></th>
-                                <th><strong>ฝาก3เดือน</strong></th>
-                                <th><strong>ฝาก6เดือน</strong></th>
-                                <th><strong>ฝาก1ปี</strong></th>
-                                <th><strong>บริการล้างรถ</strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">________</font></em></strong></th>
+                                <th><strong>Day</strong></th>
+                                <th><strong>1Month</strong></th>
+                                <th><strong>3Months</strong></th>
+                                <th><strong>6Months</strong></th>
+                                <th><strong>1Year</strong></th>
+                                <th><strong><em class="fa fa-tint"></em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>

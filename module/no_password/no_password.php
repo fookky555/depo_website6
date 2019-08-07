@@ -30,7 +30,7 @@
     list($user_id,$user_username,$user_password,$user_role,$user_name,$user_phone,$work_id)=mysqli_fetch_row($result);
 
     ?>
-    <div class="content-wrapper">
+    <div class="col-xl-11"><br>
         <p class="lead"><em class="icon-earphones-alt"> </em> [ ติดต่อแอดมินเพื่อแก้ไขรหัสผ่าน ] </p>
         <div class="card card-default">
 

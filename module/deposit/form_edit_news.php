@@ -1,7 +1,7 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
-        <p class="lead"> [ แก้ไขข้อมูลข่าวประชาสัมพันธ์ ] </p>
+        <p class="lead"><em class="fa fa-pen"></em> [ แก้ไขข้อมูลข่าวประชาสัมพันธ์ ] </p>
         <div class="card card-default">
             <div class="card-body">
                 <form class="form-horizontal" method="post" action="<?php MALink("deposit","edit_news") ?>">

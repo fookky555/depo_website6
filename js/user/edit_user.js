@@ -10,10 +10,18 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';
         });
-    }else {
+    }else if(result==0){
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=user&action=list_user';
+        });
+    }else{
+        swal({
+            title: 'ผิดพลาด!',
+            text: 'รหัสไม่ตรงกัน!',
             icon: 'error'
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';

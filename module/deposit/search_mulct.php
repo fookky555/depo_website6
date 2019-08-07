@@ -9,20 +9,20 @@
                     <div class="float-right"><button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=mulct"><em class="fas fa-plus"></em>  เพิ่มค่าปรับ</button></div>
                 </div>
                 <BR>
-                <p class="lead"> [ ข้อมูลค่าปรับของร้าน ] </p>
+                <p class="lead"><em class="fa fa-money-bill"></em> [ ข้อมูลค่าปรับของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_mulct">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>สาเหตุ</strong></th>
-                                <th><strong>จำนวนเงิน</strong></th>
-                                <th><strong>วันบันทึกข้อมูล</strong></th>
-                                <th><strong>ผู้บันทึกข้อมูล</strong></th>
-                                <th><strong>รายละเอียดเพิ่มเติม</strong></th>
-                                <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-money-bill"></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-user-check"></em></strong></th>
+                                <th><strong><em class="fa fa-book"><font color="white">________________</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>

@@ -11,19 +11,19 @@
                 <?php }?>
                 </div>
                 <BR>
-                <p class="lead"> [ จัดการข้อมูลผู้ใช้งานของร้าน ] </p>
+                <p class="lead"><em class="fa fa-user-cog"></em> [ จัดการข้อมูลผู้ใช้งานของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-user">
                             <thead>
                             <tr>
-                                <th><strong>รหัสพนักงาน</strong></th>
-                                <th><strong>ชื่อผู้ใช้</strong></th>
-                                <th><strong>ตำแหน่ง</strong></th>
-                                <th><strong>ชื่อ-นามสกุล</strong></th>
-                                <th><strong>เบอร์โทร</strong></th>
-                           <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-user"></em></strong></th>
+                                <th><strong><em class="fa fa-id-card-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-address-card"><font color="white">_________________</font></em></strong></th>
+                                <th><strong><em class="fa fa-phone"></em></strong></th>
+                           <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>

@@ -6,19 +6,19 @@
             <!-- Article Content-->
             <div class="col-xl-12">
 
-                <p class="lead"> [ ข้อมูลการล้างรถของร้าน ] </p>
+                <p class="lead"><em class="fa fa-tint"></em> [ ข้อมูลการล้างรถของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_wash">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>วันที่รับรถ</strong></th>
-                                <th><strong>ประเภทของรถ</strong></th>
-                                <th><strong>ผู้ล้างรถ</strong></th>
-                                <th><strong>สถานะการล้างรถ</strong></th>
-                                    <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
+                                <th><strong><em class="fa fa-user-check"></em></strong></th>
+                                <th><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
+                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,7 +51,7 @@
 
                                     <?php
                                         if($wash_status==0){
-                                            echo "<td>ยังไม่ได้ล้าง</td>";
+                                            echo "<td>ไม่ได้ล้าง</td>";
                                             ?>
                                     <td class="text-center">
 
@@ -59,7 +59,7 @@
                                                 class="fas fa-tint"></em></button>
                                     <?php
                                         }else{
-                                            echo "<td>ล้างรถแล้ว</td>";
+                                            echo "<td>ล้างแล้ว</td>";
                                             ?>
                                     <td class="text-center">
 

@@ -9,17 +9,17 @@
                     <div class="float-right"><button class="btn btn-purple" type="button" onclick=window.location.href="index.php?module=deposit&action=search_from_deposit&from=news"><em class="fas fa-plus"></em>  เพิ่มข่าวประชาสัมพันธ์</button></div>
                 </div>
                 <BR>
-                <p class="lead"> [ ข้อมูลข่าวประชาสัมพันธ์ของร้าน ] </p>
+                <p class="lead"><em class="fa fa-comment"></em> [ ข้อมูลข่าวประชาสัมพันธ์ของร้าน ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_news">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>หัวข้อ</strong></th>
-                                <th><strong>ผู้บันทึกข้อมูล</strong></th>
-                                <th class="text-right" style="width:130px"><strong>จัดการข้อมูล</strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-user-check"></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
