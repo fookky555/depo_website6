@@ -1,7 +1,8 @@
 <section class="section-container">
     <div class="content-wrapper">
+        <p class="lead"><em class="fa fa-university"> </em> [ เพิ่มข้อมูลบัญชีธนาคาร ] </p>
         <div class="card card-default">
-            <div class="card-header"><p class="lead"><em class="fa fa-university"> </em> [ เพิ่มข้อมูลบัญชีธนาคาร ] </p>
+            <div class="card-header">
                 <form class="form-horizontal" method="post" action=<?php MALink('payment_detail','add_payment_detail') ?>>
                     <?php
                     $con=connect_db();

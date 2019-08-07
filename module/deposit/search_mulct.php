@@ -72,6 +72,15 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <div class="float-right">
+            <p align="right">รหัสค่าปรับ = <em class="fa fa-hashtag"> </em></p>
+            <p align="right">วันที่บันทึกข้อมูล = <em class="fa fa-calendar"> </em></p>
+            <p align="right">หมายเหตุค่าปรับ = <em class="fa fa-exclamation-circle"> </em></p>
+            <p align="right">จำนวนค่าปรับ = <em class="fa fa-money-bill"> </em></p>
+            <p align="right">ผู้บันทึกข้อมูล = <em class="fa fa-user-check"> </em></p></th>
+            <p align="right">รายละเอียดเพิ่มเติม = <em class="fa fa-book"> </em></p></th>
+            <p align="right">จัดการข้อมูล = <em class="fa fa-wrench"> </em></p>
+        </div>
         <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
 
     </div>

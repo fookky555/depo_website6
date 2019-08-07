@@ -55,5 +55,11 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <p><em class="fa fa-hashtag"> </em> = รหัสบัญชี</p>
+        <p><em class="fa fa-address-card"> </em> = ชื่อเจ้าของบัญชี</p>
+        <p><em class="fa fa-money-check"> </em> = เลขที่บัญชี</p>
+        <p><em class="fa fa-university"> </em> = ชื่อธนาคาร</p>
+        <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
+
     </div>
 </section><!-- Page footer-->

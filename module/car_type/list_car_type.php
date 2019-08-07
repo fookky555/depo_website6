@@ -69,5 +69,14 @@
             </div><!-- Article sidebar-->
 
         </div>
+       <p><em class="fa fa-car"></em>  = ชื่อประเภทรถ</p>
+       <p>Day = ราคาฝากรายวัน</p>
+      <p>1Month = ราคาฝาก 1 เดือน</p>
+        <p>3Months = ราคาฝาก 3 เดือน</p>
+        <p>6Months = ราคาฝาก 6 เดือน</p>
+       <p>1Year = ราคาฝาก 1 ปี</p>
+        <p><em class="fa fa-tint"></em> = ราคาบริการล้างรถ</p>
+        <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
+
     </div>
 </section><!-- Page footer-->

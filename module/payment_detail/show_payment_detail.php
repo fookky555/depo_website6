@@ -11,7 +11,7 @@
                 $i=0;
                 while (list($payment_detail_id,$payment_detail_name,$payment_detail_num,$payment_detail_bank)=mysqli_fetch_row($result)) {
                     $i+=1;
-                    echo "<p class='lead'>ช่องทางการชำระเงินที่ ",$i,"</p>";
+                    echo "<p class='lead'> < ช่องทางการชำระเงินที่ ",$i," > </p>";
                     ?>
 
                     <fieldset>

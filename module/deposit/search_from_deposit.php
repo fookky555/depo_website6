@@ -6,19 +6,19 @@
             <!-- Article Content-->
             <div class="col-xl-12">
 
-                <p class="lead"> [ เลือกข้อมูลการฝากรถ ] </p>
+                <p class="lead"><em class="fa fa-database"></em> [ เลือกข้อมูลการฝากรถ ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_from_deposit">
                             <thead>
                             <tr>
-                                <th><strong>รหัสฝากรถ</strong></th>
-                                <th><strong>ป้ายทะเบียนรถ</strong></th>
-                                <th><strong>วันที่ฝาก</strong></th>
-                                <th><strong>จำนวนวันที่ฝาก</strong></th>
-                                <th><strong>ประเภทของรถ</strong></th>
-                                <th><strong>ผู้บันทึก</strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -64,6 +64,14 @@
                 </div>
             </div><!-- Article sidebar-->
 
+        </div>
+        <div class="float-right">
+            <p align="right">รหัสฝากรถ = <em class="fa fa-hashtag"> </em></p>
+            <p align="right">ป้ายทะเบียนรถ = <em class="fa fa-car"> </em></p>
+            <p align="right">วันที่ฝาก = <em class="fa fa-calendar"> </em></p>
+            <p align="right">จำนวนวันที่ฝาก = <em class="fa fa-calendar-check"> </em></p>
+            <p align="right">ประเภทของรถ = <em class="fa fa-motorcycle"> </em></p>
+            <p align="right">ผู้บันทึกข้อมูล = <em class="fa fa-user-edit"> </em></p></th>
         </div>
         <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
 

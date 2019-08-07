@@ -67,6 +67,12 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <div class="float-right">
+            <p align="right">รหัสข่าวประชาสัมพันธ์ = <em class="fa fa-hashtag"> </em></p>
+            <p align="right">หัวข้อข่าวประชาสัมพันธ์ = <em class="fa fa-comment-alt"> </em></p>
+            <p align="right">ผู้บันทึกข้อมูล = <em class="fa fa-user-check"> </em></p>
+            <p align="right">จัดการข้อมูล = <em class="fa fa-wrench"> </em></p>
+        </div>
         <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
 
     </div>

@@ -77,5 +77,12 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <p><em class="fa fa-store-alt"> </em> = รหัสร้าน</p>
+        <p><em class="fa fa-sign"> </em> = ชื่อร้าน</p>
+        <p><em class="fa fa-user"></em> = ชื่อผู้ติดต่อ</p>
+        <p><em class="fa fa-phone"> </em> = เบอร์ติดต่อ</p>
+        <p><em class="fa fa-check-square"></em> = สถานะการชำระเงิน</p>
+        <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
+
     </div>
 </section><!-- Page footer-->

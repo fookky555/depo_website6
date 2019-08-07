@@ -88,6 +88,14 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <div class="float-right">
+            <p align="right">รหัสฝากรถ = <em class="fa fa-hashtag"> </em></p>
+            <p align="right">วันที่จะมารับรถ = <em class="fa fa-calendar"> </em></p>
+            <p align="right">สถานะการล้างรถ = <em class="fa fa-check-square"> </em></p>
+            <p align="right">ประเภทของรถ = <em class="fa fa-motorcycle"> </em></p>
+            <p align="right">ผู้ทำการล้างรถ = <em class="fa fa-user-check"> </em></p></th>
+            <p align="right">จัดการข้อมูล = <em class="fa fa-wrench"> </em></p>
+        </div>
         <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
 
     </div>
