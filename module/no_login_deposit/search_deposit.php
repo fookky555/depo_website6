@@ -58,6 +58,9 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($work_name)=mysqli_fetch_row($result2);
 
+                                $date = new DateTime($deposit_date);
+                                $now = new DateTime();
+
                                 ?>
                                 <tr>
                                     <td><?php echo $deposit_id;?></td>
@@ -65,7 +68,7 @@
                                     <td><?php echo $work_name;?></td>
 
 
-                                    <td><?php echo "99 วัน";?></td>
+                                    <td><?php  echo $date->diff($now)->format("%d วัน"); ?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $deposit_date;?></td>
 

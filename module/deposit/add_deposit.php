@@ -51,7 +51,7 @@ VALUES ('$deposit_id',0)";
 
             mysqli_query($con, $sql)or die("SQL ERROR: ".mysqli_error($con));
         }
-       //echo "<label  id='result' data-id='1'></label>";
+       echo "<label  id='result' data-id='1'></label>";
     }else{
         echo "<label  id='result' data-id='0'></label>";
     }

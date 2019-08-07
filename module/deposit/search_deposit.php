@@ -44,12 +44,16 @@
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
+
+                                //เช็ควันว่าฝากมากี่วันแล้ว
+                                $date = new DateTime($deposit_date);
+                                $now = new DateTime();
                                 ?>
                                 <tr>
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $deposit_date;?></td>
-                                    <td><?php echo "99 วัน";?></td>
+                                    <td><?php  echo $date->diff($now)->format("%d วัน"); ?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $username; ?></td>
                                     <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>

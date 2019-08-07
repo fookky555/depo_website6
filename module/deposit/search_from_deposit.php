@@ -42,15 +42,18 @@
                                     echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
                                     echo "<label class='link' ></label>";
                                 }else{
-                                    echo"<tr onclick=\"href2()\">";
-                                    echo "<label class='link' data-id='$deposit_id'></label>";
+                                    echo"<tr onclick=\"href2(this.id)\" class='tclick' id='$deposit_id'>";
+                                    echo "<label class='link' ></label>";
                                 }
+
+                                $date = new DateTime($deposit_date);
+                                $now = new DateTime();
                                 ?>
 
                                     <td><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
                                     <td><?php echo $deposit_date;?></td>
-                                    <td><?php echo "99 วัน";?></td>
+                                <td><?php  echo $date->diff($now)->format("%d วัน"); ?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $username; ?></td>
                                 </tr>
@@ -87,6 +90,9 @@
     // console.log(id);
     function href1(id) {
         window.location.href='index.php?module=deposit&action=form_add_mulct&id='+id;
+    }
+    function href2(id) {
+        window.location.href='index.php?module=deposit&action=form_add_news&id='+id;
     }
 
 </script>

@@ -8,15 +8,15 @@ $(document).ready(function () {
             text: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
             icon: 'success'
         }).then(function() {
-            window.location.href='index.php?module=news&action=form_add_news';//ต้องเปลี่ยน
+            window.location.href='index.php?module=deposit&action=search_news';
         });
-    }else {
+    }else if(result==0) {
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
             icon: 'error'
         }).then(function() {
-            window.location.href='index.php?module=news&action=form_add_news';
+            window.location.href='index.php?module=deposit&action=search_news';
         });
     }
 });
