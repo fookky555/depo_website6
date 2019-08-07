@@ -34,6 +34,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+                                if($payment_detail_id==0 && empty($work_payment_pic)){
+                                    continue;
+                                }
                                 ?>
                                 <tr>
                                     <td><?php echo $work_payment_id;?></td>

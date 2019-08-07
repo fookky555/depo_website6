@@ -130,9 +130,29 @@ function check_pay(){
         return true;
     }
 }
+function check_delete(){
+    $con=connect_db();
+    $sql1="SELECT work_payment_date FROM tbl_work_payment WHERE work_payment_confirm='1' AND work_id='$_SESSION[work_id]' ORDER BY work_payment_date DESC LIMIT 1";
+    $result1=mysqli_query($con,$sql1);
+    list($work_payment_date)=mysqli_fetch_row($result1);
+    $today_date=date("Y-m-d");
+
+    $date=new DateTime($work_payment_date);
+    $now = new DateTime();
+    $diff=$now->diff($date);
+    if($diff->days >= 300){
+        mysqli_query($con,"DELETE FROM tbl_work WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_user WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_work_payment WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_deposit WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_mulct WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_news WHERE work_id='$_SESSION[work_id]'");
+        mysqli_query($con,"DELETE FROM tbl_car_type WHERE work_id='$_SESSION[work_id]'");
+    }
+}
 
 function check_day(){//เช็ควันที่เหลือของร้านในการใช้เว็ป
-    if($_SESSION['alert_day']==0) {
+    if(isset($_SESSION['alert_day']) && $_SESSION['alert_day']==0) {
         $con = connect_db();
         $sql1 = "SELECT work_payment_date FROM tbl_work_payment WHERE work_payment_confirm='1' AND work_id='$_SESSION[work_id]' ORDER BY work_payment_date DESC LIMIT 1";
         $result1 = mysqli_query($con, $sql1);
@@ -172,14 +192,23 @@ function resize_img($pic_name,$ext,$width,$height){
     ImageDestroy($images_fin);
 }
 
+function check_login(){
+    if(!isset($_SESSION['user_role'])){
+        echo "<label  id='result' data-id='6'></label>";
+    }
+}
+
 function do_Logout(){
-    if(isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
+    if(isset($_SESSION['user_id'])&&isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
         unset($_SESSION['user_role']);
         unset($_SESSION['user_name']);
         unset($_SESSION['work_id']);
         unset($_SESSION['user_username']);
         unset($_SESSION['alert_day']);
         unset($_SESSION['work_name']);
+        unset($_SESSION['user_id']);
+        unset($_SESSION['work_name']);
+        unset($_SESSION['alert_day']);
     }
     header('Location:index.php?module=login&action=login');
     exit;
@@ -189,9 +218,10 @@ function menu_active($module, $mActive){
 }
 
 function top_menu_active(){
+    if(isset($_GET['module'])){
     if($_GET['module']=="no_login_deposit"){
 echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=search_deposit\" title=\"ข้อมูลรับฝากรถ\"><b><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</b></a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><b><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
@@ -205,8 +235,8 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else if($_GET['module']=="no_login_work"){
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=search_deposit\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em><b> &nbsp ติดต่อร้านฝากรถ</b></a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em><b> &nbsp ติดต่อร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
                             <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
 
@@ -218,9 +248,9 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else if($_GET['module']=="no_login_news"){
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=search_deposit\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em><b> &nbsp ข่าวประชาสัมพันธ์</b></a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em><b> &nbsp ข่าวประชาสัมพันธ์ <em class=\"icon-arrow-left\"></em></b></a></li>
                           <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
 
             </ul><!-- END Left navbar-->
@@ -231,16 +261,31 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else{
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=search_deposit\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em><b> &nbsp เข้าสู่ระบบ</b></a></li>
+                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em><b> &nbsp เข้าสู่ระบบ <em class=\"icon-arrow-left\"></em></b></a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
                 <!-- START lock screen-->
                         <li class=\"nav-item\"><a class=\"nav-link\"><div class=\"brand-logo\"><img class=\"img-fluid\" src=\"img/logo.png\" alt=\"App Logo\"></div> </a></li>
+            </ul><!-- END Right Navbar-->";
+    }
+    }else{
+        echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
+
+            </ul><!-- END Left navbar-->
+            <!-- START Right Navbar-->
+            <ul class=\"navbar-nav flex-row\">
+                <!-- START lock screen-->
+                        <li class=\"nav-item\"><a class=\"nav-link\"><div class=\"brand-logo\"><img class=\"img-fluid\" src=\"img/logo.png\" alt=\"App Logo\"></div> </a></li>
+
             </ul><!-- END Right Navbar-->";
     }
 }

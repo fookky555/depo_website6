@@ -25,8 +25,6 @@ if(empty($username_check)) {
             $sql = "INSERT INTO 
 tbl_work (work_name,work_status,work_contact_phone,work_contact_name)
 VALUES ('$work_name','0','$user_phone','$user_name') ";
-
-
             mysqli_query($con, $sql);
 
 //SELECT fields FROM table ORDER BY id DESC LIMIT 1;
@@ -44,7 +42,14 @@ tbl_user (user_username,user_password,user_name,user_phone,work_id)
 VALUES ('$user_username','$hash','$user_name','$user_phone','$work_id') ";
 
             mysqli_query($con, $sql2);
+$date_now=date("Y-m-d");
+        $sql2 = "INSERT INTO
+tbl_work_payment (work_id,work_payment_date,work_payment_confirm)
+VALUES ('$work_id','$date_now','1') ";
+
+        mysqli_query($con, $sql2);
             session_start();
+
             $_SESSION['user_username'] = $user_username;
             $_SESSION['work_id'] = $work_id;
             $_SESSION['work_name'] = $work_name;

@@ -84,7 +84,12 @@
                 <p> <em class="fa fa-calendar-check"> </em> = จำนวนวันที่ฝาก</p>
                 <p> <em class="fa fa-motorcycle"> </em> = ประเภทของรถ</p>
                 <p> <em class="fa fa-calendar"> </em> = วันที่ฝาก</p>
+                <div class="float-left">
+                    <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('no_login_deposit','choose_search')?>">
+                        <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                </div>
             </div><!-- Article sidebar-->
+
 </section><!-- Page footer-->
 
 

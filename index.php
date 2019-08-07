@@ -95,8 +95,10 @@
 
        //เช็คว่าได้จ่ายเงินไหม
         if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module']) && $dataMA[0]!="no_login_deposit" && $dataMA[0]!="no_login_work" && $dataMA[0]!="no_login_news" && $dataMA[0]!="no_password"){
+            check_login();
             check_pay();
             check_day();//เช็คว่าเหลืออีกกี่วันจะหมดอายุใช้งาน
+            check_delete();
         $con=connect_db();
         $sql="SELECT `work_status` FROM `tbl_work` WHERE `work_id`='$_SESSION[work_id]'";
         $result=mysqli_query($con,$sql)or die("ผิด=====");
@@ -241,8 +243,29 @@
                     }
                 });
             }
+            if(result == 6){
 
-
+                swal({
+                    title: 'ไม่มีสิทธิ์ใช้งานระบบนี้',
+                    text: 'กรุณา Login เพื่อเข้าใช้งาน',
+                    icon: 'warning',
+                    buttons: {
+                        confirm: {
+                            text: 'รับทราบ',
+                            value: true,
+                            visible: true,
+                            className: "bg-danger",
+                            closeModal: true
+                        }
+                    }
+                }).then(function(isConfirm) {
+                    if (isConfirm) {
+                        window.location.href='index.php?module=logout&action=logout';
+                    }else{
+                        window.location.href='index.php?module=logout&action=logout';
+                    }
+                });
+            }
         });</script>
 
 </body>

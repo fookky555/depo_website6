@@ -63,6 +63,10 @@
                         </table>
                     </div>
                 </div>
+                <p> <em class="fa fa-hashtag"> </em> = รหัสร้าน</p>
+                <p> <em class="fa fa-sign"> </em> = ชื่อร้าน</p>
+                <p> <em class="fa fa-phone"> </em> = เบอร์โทรติดต่อ</p>
+                <p> <em class="fa fa-user"> </em> = ชื่อผู้ติดต่อ</p>
             </div><!-- Article sidebar-->
 </section><!-- Page footer-->
 
