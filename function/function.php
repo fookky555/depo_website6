@@ -204,21 +204,6 @@ function check_login(){
     }
 }
 
-function do_Logout(){
-    if(isset($_SESSION['user_id'])&&isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
-        unset($_SESSION['user_role']);
-        unset($_SESSION['user_name']);
-        unset($_SESSION['work_id']);
-        unset($_SESSION['user_username']);
-        unset($_SESSION['alert_day']);
-        unset($_SESSION['work_name']);
-        unset($_SESSION['user_id']);
-        unset($_SESSION['work_name']);
-        unset($_SESSION['alert_day']);
-    }
-    header('Location:index.php?module=login&action=login');
-    exit;
-}
 function menu_active($module, $mActive){
     return ($module==$mActive) ? "class='active'":"";
 }
@@ -294,4 +279,104 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
 
             </ul><!-- END Right Navbar-->";
     }
+}
+function cal_price($deposit_type,$car_type_id,$days){
+    if($deposit_type==1){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price) = mysqli_fetch_row($result1);
+        $total_price=$deposit_price*$days;
+    }elseif($deposit_type==2){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_1month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+        if($days>30){
+            $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+            $result1 = mysqli_query($con, $sql1);
+            list($deposit_price) = mysqli_fetch_row($result1);
+            $total_price=$deposit_price_buffet+($deposit_price*$days);
+        }else{
+            $total_price=$deposit_price_buffet;
+        }
+    }elseif($deposit_type==3){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_3month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+        if($days>90){
+            $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+            $result1 = mysqli_query($con, $sql1);
+            list($deposit_price) = mysqli_fetch_row($result1);
+            $total_price=$deposit_price_buffet+($deposit_price*$days);
+        }else{
+            $total_price=$deposit_price_buffet;
+        }
+    }elseif($deposit_type==4){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_6month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+        if($days>180){
+            $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+            $result1 = mysqli_query($con, $sql1);
+            list($deposit_price) = mysqli_fetch_row($result1);
+            $total_price=$deposit_price_buffet+($deposit_price*$days);
+        }else{
+            $total_price=$deposit_price_buffet;
+        }
+    }else{
+        $con = connect_db();
+        $sql1 = "SELECT car_type_1year_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+        if($days>365){
+            $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+            $result1 = mysqli_query($con, $sql1);
+            list($deposit_price) = mysqli_fetch_row($result1);
+            $total_price=$deposit_price_buffet+($deposit_price*$days);
+        }else{
+            $total_price=$deposit_price_buffet;
+        }
+    }
+    echo $total_price;
+}
+function cal_wash($deposit_id,$car_type_id){
+    $total_price=0;
+    $con = connect_db();
+    $sql1 = "SELECT deposit_id FROM tbl_wash WHERE deposit_id='$deposit_id'";
+    $result1 = mysqli_query($con, $sql1);
+    if(list($wash) = mysqli_fetch_row($result1)){
+        $sql1 = "SELECT car_type_wash_price FROM tbl_car_type WHERE car_type_id='$car_type_id' AND work_id='$_SESSION[work_id]'";
+        $result2 = mysqli_query($con, $sql1);
+        list($wash_price) = mysqli_fetch_row($result2);
+        $total_price=$wash_price;
+    }
+    echo $total_price;
+}
+function cal_mulct($deposit_id){
+    $con = connect_db();
+    $sql1 = "SELECT mulct_price FROM tbl_mulct WHERE deposit_id='$deposit_id'";
+    $result1 = mysqli_query($con, $sql1);
+    $total_price=0;
+    while(list($mulct_price) = mysqli_fetch_row($result1)){
+        $total_price+=$mulct_price;
+    }
+    echo $total_price;
+}
+function do_Logout(){
+    if(isset($_SESSION['user_id'])&&isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
+        unset($_SESSION['user_role']);
+        unset($_SESSION['user_name']);
+        unset($_SESSION['work_id']);
+        unset($_SESSION['user_username']);
+        unset($_SESSION['alert_day']);
+        unset($_SESSION['work_name']);
+        unset($_SESSION['user_id']);
+        unset($_SESSION['work_name']);
+        unset($_SESSION['alert_day']);
+    }
+    header('Location:index.php?module=login&action=login');
+    exit;
 }

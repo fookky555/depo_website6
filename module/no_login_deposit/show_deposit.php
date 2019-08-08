@@ -20,8 +20,8 @@
 
 <section class="section-container">
     <!-- Page content-->
-    <div class="content-wrapper">
-        <p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ ] </p>
+    <div class="col-xl-11">
+        <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ ] </p>
         <div class="card card-default">
             <?php
             $con=connect_db();
@@ -32,35 +32,6 @@
             <div class="card-body">
                 <form>
 
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" value="<?php echo $deposit_plate_id; ?>" disabled></div>
-                        </div>
-
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" disabled>
-                                    <option value="">เลือกประเภทของรถ..</option>
-                                    <?php
-                                    $sql1="SELECT car_type_id,car_type_name FROM tbl_car_type WHERE work_id='$work_id'";
-                                    $result1=mysqli_query($con,$sql1);
-                                    while(list($car_id,$car_type_name)=mysqli_fetch_row($result1)){
-                                        if($car_id==$car_type_id){
-                                            echo "<option value=$car_id selected>$car_type_name</option>";
-                                        }else{
-                                            echo "<option value=$car_id>$car_type_name</option>";
-                                        }
-                                    }
-                                    //                                    $date = new DateTime($deposit_date);
-                                    //                                    $now = new DateTime();
-                                    //
-                                    //                                    echo $date->diff($now)->format("%d days");
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
@@ -92,27 +63,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <?php
-                    $sql1="SELECT * FROM tbl_wash WHERE deposit_id='$_GET[id]'";
-                    $result1=mysqli_query($con,$sql1);
-                    list($check_wash)=mysqli_fetch_row($result1);
-                    if(!empty($check_wash)){
 
-                    ?>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
-                            <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" checked disabled><span class="fa fa-check"></span></label> </div></div>
-                        </div>
-                        <?php }else{
-                        ?>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
-                                <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" disabled><span class="fa fa-check"></span></label> </div></div>
-                            </div>
-                            <?php } ?>
-
-
-                        </fieldset>
                         <fieldset>
                             <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-book"></em>&nbsp<b> รายละเอียดการฝาก</b></label>
                                 <div class="col-md-10">
@@ -122,6 +73,56 @@
                             </div>
                         </fieldset>
                         <div id="detail_form" style="display: none">
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
+                                    <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" value="<?php echo $deposit_plate_id; ?>" disabled></div>
+                                </div>
+
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
+                                    <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" disabled>
+                                            <option value="">เลือกประเภทของรถ..</option>
+                                            <?php
+                                            $sql1="SELECT car_type_id,car_type_name FROM tbl_car_type WHERE work_id='$work_id'";
+                                            $result1=mysqli_query($con,$sql1);
+                                            while(list($car_id,$car_type_name)=mysqli_fetch_row($result1)){
+                                                if($car_id==$car_type_id){
+                                                    echo "<option value=$car_id selected>$car_type_name</option>";
+                                                }else{
+                                                    echo "<option value=$car_id>$car_type_name</option>";
+                                                }
+                                            }
+                                            //                                    $date = new DateTime($deposit_date);
+                                            //                                    $now = new DateTime();
+                                            //
+                                            //                                    echo $date->diff($now)->format("%d days");
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <?php
+                            $sql1="SELECT * FROM tbl_wash WHERE deposit_id='$_GET[id]'";
+                            $result1=mysqli_query($con,$sql1);
+                            list($check_wash)=mysqli_fetch_row($result1);
+                            if(!empty($check_wash)){
+
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
+                                    <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" checked disabled><span class="fa fa-check"></span></label> </div></div>
+                                </div>
+                                <?php }else{
+                                ?>
+                                <fieldset>
+                                    <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
+                                        <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" disabled><span class="fa fa-check"></span></label> </div></div>
+                                    </div>
+                                    <?php } ?>
+
+
+                                </fieldset>
                             <fieldset>
                                 <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
                                     <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>" disabled></div>

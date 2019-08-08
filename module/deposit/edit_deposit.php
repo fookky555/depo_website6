@@ -74,7 +74,7 @@ tbl_wash (deposit_id,wash_status,work_id)
 VALUES ('$_POST[id]',0,$_SESSION[work_id])";
 
 
-        mysqli_query($con, $sql)or die("SQL ERROR: ".mysqli_error($con));
+        mysqli_query($con, $sql);
     }else{
         mysqli_query($con, "DELETE FROM tbl_wash WHERE deposit_id='$_POST[id]'");
     }
