@@ -11,6 +11,9 @@
             $date = new DateTime($deposit_date);
             $now = new DateTime();
             $days=$date->diff($now)->format("%d");
+            $p1=(float)cal_price($deposit_type,$car_type_id,$days);
+            $p2=(float)cal_mulct($deposit_id);
+            $p3=(float)cal_wash($deposit_id,$car_type_id);
             ?>
             <div class="card-body">
                 <form>
@@ -54,7 +57,7 @@
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
                             <div class="col-md-10"><button class="btn btn-block btn-success mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_price">
-                                    <font size="3"><b><?php cal_price($deposit_type,$car_type_id,$days)+cal_mulct($deposit_id)+cal_wash($deposit_id,$car_type_id); ?> </b>฿</font></button></div>
+                                    <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>
 
