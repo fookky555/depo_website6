@@ -123,7 +123,7 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                         </fieldset>
                         <fieldset>
                             <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
-                                <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail"><?php echo $deposit_detail; ?>"</textarea></div>
+                                <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail"><?php echo $deposit_detail; ?></textarea></div>
                             </div>
                         </fieldset>
 

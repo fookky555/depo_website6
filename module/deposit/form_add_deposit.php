@@ -76,7 +76,7 @@
     <fieldset>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ (%)</b></label>
             <div class="col-md-10">
-                <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="10" data-slider-orientation="horizontal" name="deposit_fuel">
+                <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="0" data-slider-orientation="horizontal" name="deposit_fuel">
             </div>
         </div>
 

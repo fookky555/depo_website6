@@ -39,31 +39,29 @@
                 <form>
 
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar-check"></em>&nbsp<b> จำนวนวันที่ฝาก</b></label>
-                            <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" value="<?php echo $days; ?>" disabled></div>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar-check"></em>&nbsp<b> จำนวนวันที่ฝาก: </b> <div class="float-right"><?php echo $days; ?> วัน</div></label>
                         </div>
+                    </fieldset>
+                    <?php
 
-                    </fieldset>
+                    if($deposit_type==1){
+                        $type_name="ฝากรายวัน";
+                    }elseif ($deposit_type==2){
+                        $type_name="ฝาก 1 เดือน";
+                    }elseif ($deposit_type==3){
+                        $type_name="ฝาก 3 เดือน";
+                    }elseif ($deposit_type==4){
+                        $type_name="ฝาก 6 เดือน";
+                    }else{
+                        $type_name="ฝาก 1 ปี";
+                    }
+
+                    ?>
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type" disabled>
-                                    <?php
-                                    for($i=1;$i<=5;$i++){
-                                        if($i==$deposit_type){
-                                            $check[$i]="selected";
-                                        }
-                                    }
-                                    ?>
-                                    <option value="">เลือกประเภทของการฝาก..</option>
-                                    <option value="1" <?php if(isset($check[1])) echo $check[1]; ?>>ฝากรายวัน</option>
-                                    <option value="2" <?php if(isset($check[2])) echo $check[2]; ?>>ฝาก 1 เดือน</option>
-                                    <option value="3" <?php if(isset($check[3])) echo $check[3]; ?>>ฝาก 3 เดือน</option>
-                                    <option value="4" <?php if(isset($check[4])) echo $check[4]; ?>>ฝาก 6 เดือน</option>
-                                    <option value="5" <?php if(isset($check[5])) echo $check[5]; ?>>ฝาก 1 ปี</option>
-                                </select>
-                            </div>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก: </b> <div class="float-right"><?php echo $type_name; ?></div></label>
                         </div>
                     </fieldset>
+
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
                             <div class="col-md-10">
@@ -76,7 +74,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
-                            <div class="col-md-10"><button class="btn btn-block btn-success mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_price">
+                            <div class="col-md-10"><button class="btn btn-block btn-success mt-0" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
                                     <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>
@@ -91,98 +89,128 @@
                     </fieldset>
                     <div id="detail_form" style="display: none">
                         <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
-                                <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" value="<?php echo $deposit_plate_id; ?>" disabled></div>
+                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ: </b> <div class="float-right"><?php echo $deposit_plate_id; ?></div></label>
                             </div>
+                        </fieldset>
 
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
-                                <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" disabled>
-                                        <option value="">เลือกประเภทของรถ..</option>
-                                        <?php
-                                        $sql1="SELECT car_type_id,car_type_name FROM tbl_car_type WHERE work_id='$work_id'";
-                                        $result1=mysqli_query($con,$sql1);
-                                        while(list($car_id,$car_type_name)=mysqli_fetch_row($result1)){
-                                            if($car_id==$car_type_id){
-                                                echo "<option value=$car_id selected>$car_type_name</option>";
-                                            }else{
-                                                echo "<option value=$car_id>$car_type_name</option>";
-                                            }
-                                        }
-                                        //                                    $date = new DateTime($deposit_date);
-                                        //                                    $now = new DateTime();
-                                        //
-                                        //                                    echo $date->diff($now)->format("%d days");
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </fieldset>
                         <?php
+                        $sql1="SELECT car_type_id,car_type_name FROM tbl_car_type WHERE work_id='$work_id'";
+                        $result1=mysqli_query($con,$sql1);
+                        while(list($car_id,$car_type_name)=mysqli_fetch_row($result1)){
+                            if($car_id==$car_type_id){
+                                ?>
+                                <fieldset>
+                                    <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ: </b> <div class="float-right"><?php echo $car_type_name; ?></div></label>
+                                    </div>
+                                </fieldset>
+                                <?php
+                            }
+                        }
                         $sql1="SELECT * FROM tbl_wash WHERE deposit_id='$_GET[id]'";
                         $result1=mysqli_query($con,$sql1);
                         list($check_wash)=mysqli_fetch_row($result1);
                         if(!empty($check_wash)){
 
-                        ?>
-                        <fieldset>
-                            <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
-                                <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" checked disabled><span class="fa fa-check"></span></label> </div></div>
-                            </div>
-                            <?php }else{
                             ?>
                             <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
-                                    <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_wash" id="wash" onclick="show_pickup_date()" disabled><span class="fa fa-check"></span></label> </div></div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ: </b> <div class="float-right">ใช้บริการ</div></label>
                                 </div>
-                                <?php } ?>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ(กรณีล้างรถ): </b> <div class="float-right"><?php echo $deposit_pickup_date; ?></div></label>
+                                </div>
+                            </fieldset>
+                        <?php }else{
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ: </b> <div class="float-right">ไม่ใช้บริการ</div></label>
+                                </div>
+                            </fieldset>
+                        <?php }
+                        if($deposit_helmet<=0){
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค: </b> <div class="float-right"> ไม่มีหมวกกันน็อค</div></label>
+                                </div>
+                            </fieldset>
+                            <?php
+                        }else{
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค: </b> <div class="float-right"><?php echo $deposit_helmet; ?> ใบ</div></label>
+                                </div>
+                            </fieldset>
+                            <?php
+                        }
+                        if(!empty($deposit_fuel)){
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ: </b> <div class="float-right"><?php echo $deposit_fuel; ?> %</div></label>
+                                </div>
+                            </fieldset>
 
-
-                            </fieldset>
+                        <?php }else{
+                            ?>
                             <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันรับรถ (กรณีล้างรถ)</b></label>
-                                    <div class="col-md-10"><input class="form-control" name="deposit_pickup_date" type="date" value="<?php echo $deposit_pickup_date; ?>" disabled></div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ: </b> <div class="float-right">ไม่ได้ระบุ</div></label>
                                 </div>
                             </fieldset>
+                            <?php
+                        }
+                        if(!empty($deposit_number)){
+                            ?>
                             <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค</b></label>
-                                    <div class="col-md-10"><input class="form-control" name="deposit_helmet" type="number" value="<?php echo $deposit_helmet; ?>" disabled></div>
-                                </div>
-
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ (%)</b></label>
-                                    <div class="col-md-10">
-                                        <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="<?php echo $deposit_fuel; ?>" data-slider-orientation="horizontal" name="deposit_fuel" disabled>
-                                    </div>
-                                </div>
-
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
-                                    <div class="col-md-10"><input class="form-control" name="deposit_number" type="number" value="<?php echo $deposit_number; ?>" disabled></div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ: </b> <div class="float-right"><?php echo $deposit_number; ?></div></label>
                                 </div>
                             </fieldset>
+                            <?php
+                        }else{
+                            ?>
                             <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน</b></label>
-                                    <div class="col-md-10"><input class="form-control" name="deposit_pickup_name" type="text" value="<?php echo $deposit_pickup_name; ?>" disabled></div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ: </b> <div class="float-right">ไม่ได้ระบุ</div></label>
                                 </div>
                             </fieldset>
+                            <?php
+                        }
+                        if(!empty($deposit_pickup_name)){
+                            ?>
                             <fieldset>
-                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
-                                    <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail" disabled><?php echo $deposit_detail; ?>"</textarea></div>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน: </b> <div class="float-right"><?php echo $deposit_pickup_name; ?></div></label>
                                 </div>
                             </fieldset>
+                            <?php
+                        }else{
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน: </b> <div class="float-right">ไม่ได้ระบุ</div></label>
+                                </div>
+                            </fieldset>
+                            <?php
+                        }
+                        if(!empty($deposit_detail)){
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม: </b> <div class="float-right"><?php echo $deposit_detail; ?></div></label>
+                                </div>
+                            </fieldset>
+                            <?php
+                        }else{
+                            ?>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม: </b> <div class="float-right">ไม่ได้ระบุ</div></label>
+                                </div>
+                            </fieldset>
+                            <?php
+                        }
+                        ?>
 
                     </div>
-                    <input type="hidden" value="<?php echo $deposit_id; ?>" name="id">
                     <div>
 
                     </div>
                     <div class="clearfix">
                         <div class="float-left">
-                            <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=search_deposit">
+                            <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=choose_search">
                                 <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
                         </div>
 
@@ -203,7 +231,6 @@
         }
     }
 </script>
-
 
 <script src="vendor/modernizr/modernizr.custom.js"></script><!-- STORAGE API-->
 <script src="vendor/js-storage/js.storage.js"></script><!-- i18next-->
