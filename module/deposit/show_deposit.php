@@ -1,6 +1,6 @@
 <section class="section-container">
     <!-- Page content-->
-    <div class="col-xl-11">
+    <div class="content-wrapper">
         <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] </p>
         <div class="card card-default">
             <?php
@@ -54,7 +54,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
-                            <div class="col-md-10"><button class="btn btn-block btn-success mt-0" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
+                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
                                     <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>
@@ -192,6 +192,10 @@
                         <div class="float-left">
                             <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=search_deposit">
                                 <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                        </div>
+                        <div class="float-right">
+                            <button class="btn btn-success" type="button" onclick=window.location.href="index.php?module=deposit&action=success_deposit&id=<?php echo $_GET['id']; ?>">
+                                <em class="fa fa-check fa-fw" ></em> ชำระเงิน</button>
                         </div>
 
                     </div>

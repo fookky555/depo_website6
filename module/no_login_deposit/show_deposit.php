@@ -74,7 +74,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
-                            <div class="col-md-10"><button class="btn btn-block btn-success mt-0" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
+                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
                                     <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>

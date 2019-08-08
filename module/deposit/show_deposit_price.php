@@ -1,6 +1,6 @@
 <section class="section-container">
     <!-- Page content-->
-    <div class="col-xl-11">
+    <div class="content-wrapper">
         <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลค่าบริการ รหัส <?php echo $_GET['id']; ?> ] </p>
         <div class="card card-default">
             <?php
