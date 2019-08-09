@@ -21,10 +21,20 @@ $(document).ready(function () {
             }
         }).then(function(isConfirm) {
             if (isConfirm) {
-                window.location.href='index.php?module=deposit&action=success_deposit&confirm=yes';
+                window.location.href='index.php?module=deposit&action=success_deposit&confirm=yes&id='+deposit_id;
             }else{
                 window.location.href='index.php?module=deposit&action=show_deposit&id='+deposit_id;
             }
+        });
+    }
+    if(result == 1){
+
+        swal({
+            title: 'สำเร็จ!',
+            text: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
+            icon: 'success'
+        }).then(function() {
+            window.location.href='index.php?module=deposit&action=list_deposit';
         });
     }
 });
