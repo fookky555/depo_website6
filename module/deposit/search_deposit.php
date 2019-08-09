@@ -18,7 +18,7 @@
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">______</font> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
                                 <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>

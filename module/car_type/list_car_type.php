@@ -76,7 +76,8 @@
         <p>6Months = ราคาฝาก 6 เดือน</p>
        <p>1Year = ราคาฝาก 1 ปี</p>
         <p><em class="fa fa-tint"></em> = ราคาบริการล้างรถ</p>
+        <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
         <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
-
+        <?php } ?>
     </div>
 </section><!-- Page footer-->

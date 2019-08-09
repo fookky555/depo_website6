@@ -1,9 +1,11 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
+        <p class="lead"><em class="fa fa-address-card"> </em> [ ช่องทางการชำระเงินค่าบริการเว็ปไซต์ ] </p>
         <div class="card card-default">
+            <br>
+            <p class="lead" align="center">( <em class="fa fa-money-bill"></em> ค่าบริการเดือนละ 500 บาท )</p>
             <div class="card-header">
-                <br><h3 align="center"><em class="fa fa-money-bill"></em> ค่าบริการเดือนละ 500 บาท</h3>
                 <?php
                 $con=connect_db();
                 $sql="SELECT * FROM tbl_payment_detail";
@@ -11,7 +13,7 @@
                 $i=0;
                 while (list($payment_detail_id,$payment_detail_name,$payment_detail_num,$payment_detail_bank)=mysqli_fetch_row($result)) {
                     $i+=1;
-                    echo "<p class='lead'> < ช่องทางการชำระเงินที่ ",$i," > </p>";
+                    echo "<p class='lead'> <em class=\"fa fa-chevron-left\"></em> บัญชีธนาคารที่ ",$i," <em class=\"fa fa-chevron-right\"></em> </p>";
                     ?>
 
                     <fieldset>

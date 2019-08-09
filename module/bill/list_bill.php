@@ -6,7 +6,6 @@
             <!-- Article Content-->
             <div class="col-xl-12">
                 <div class="clearfix">
-                    <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('deposit','search_qrcode')?>"><em class="fas fa-qrcode"></em> ค้นหา QR code</button></div>
                 </div>
                 <BR>
                 <p class="lead"><em class="fa fa-check"> </em> [ ข้อมูลชำระเงินการฝากรถของร้าน ] </p>
@@ -17,11 +16,12 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar-check"> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"> </em></strong></th>
                                 <th><strong><em class="fa fa-tint"> </em></strong></th>
                                 <th><strong><em class="fa fa-exclamation-circle"> </em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
                                 <th><strong><em class="fa fa-user"></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font> </em></strong></th>
                             </tr>
                             </thead>
@@ -48,6 +48,7 @@
                                 echo "<td>$bill_mulct</td>";
                                 echo "<td>$bill_total</td>";
                                 echo "<td>$username</td>";
+                                echo "<td>$bill_date</td>";
                                 ?>
                                     <td class="text-center">
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=bill&action=form_edit_bill&id=<?php echo $bill_id; ?>"><em
@@ -73,6 +74,13 @@
         <div class="float-left">
 
         </div>
-
+        <p><em class="fa fa-hashtag"> </em> = รหัสใบเสร็จชำระเงิน</p>
+        <p><em class="fa fa-motorcycle"> </em> = ค่าบริการฝากรถ</p>
+        <p><em class="fa fa-tint"> </em> = ค่าบริการล้างรถ</p>
+        <p><em class="fa fa-exclamation-circle"> </em> = ค่าปรับ</p>
+        <p><em class="fa fa-money-bill"></em> = ยอดชำระเงินทั้งหมด</p>
+        <p><em class="fa fa-user"></em> = ผู้บันทึกข้อมูล</p>
+        <p><em class="fa fa-calendar"></em> = วันที่ชำระเงิน</p>
+        <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
     </div>
 </section><!-- Page footer-->

@@ -65,5 +65,13 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <p><em class="fa fa-hashtag"> </em> = รหัสข้อมูลพนักงาน</p>
+        <p><em class="fa fa-user"></em> = ชื่อผู้ใช้งาน</p>
+        <p><em class="fa fa-id-card-alt"> </em> = ประเภทบัญชีผู้ใช้</p>
+        <p><em class="fa fa-address-card"> </em> = ชื่อ-นามสกุล</p>
+        <p><em class="fa fa-phone"> </em> = เบอร์โทรติดต่อ</p>
+        <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
+        <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
+        <?php } ?>
     </div>
 </section><!-- Page footer-->

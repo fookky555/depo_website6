@@ -19,7 +19,7 @@
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
                                 <th><strong><em class="fa fa-book"><font color="white">_________________</font></em></strong></th>
                                 <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>

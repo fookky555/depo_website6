@@ -74,5 +74,11 @@
             </div><!-- Article sidebar-->
 
         </div>
+        <p><em class="fa fa-hashtag"> </em> = รหัสการชำระเงิน</p>
+        <p><em class="fa fa-calendar"> </em> = วันที่ชำระเงิน</p>
+        <p><em class="fa fa-clock"> </em> = เวลาที่ชำระเงิน</p>
+        <p><em class="fa fa-university"> </em> = บัญชีธนาคาร</p>
+        <p><em class="fa fa-image"> </em> = หลักฐานการชำระเงิน</p>
+        <p><em class="fa fa-check-square"> </em> = การดำเนินการ</p>
     </div>
 </section><!-- Page footer-->
