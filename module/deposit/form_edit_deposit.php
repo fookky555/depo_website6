@@ -20,7 +20,7 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id">
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" required>
                                     <option value="">เลือกประเภทของรถ..</option>
                                     <?php
                                     $sql1="SELECT car_type_id,car_type_name FROM tbl_car_type WHERE work_id='$_SESSION[work_id]'";
@@ -40,7 +40,7 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type">
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type" required>
                                     <?php
                                         for($i=1;$i<=5;$i++){
                                             if($i==$deposit_type){

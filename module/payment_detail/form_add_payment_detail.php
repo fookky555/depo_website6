@@ -20,17 +20,17 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-university"></em>&nbsp<b> ธนาคาร</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_bank" type="text" placeholder="ระบุธนาคาร"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_bank" type="text" placeholder="ระบุธนาคาร" required></div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-user"></em>&nbsp<b> ชื่อเจ้าของบัญชี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_name" type="text" placeholder="ระบุชื่อเจ้าของบัญชี"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_name" type="text" placeholder="ระบุชื่อเจ้าของบัญชี" required></div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-hashtag"></em>&nbsp<b> เลขบัญชี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_num" type="text" placeholder="ระบุเลขบัญชี"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_num" type="text" placeholder="ระบุเลขบัญชี" required></div>
                         </div>
                     </fieldset>
                     <input type="hidden" name="payment_detail_id" value="<?php echo $payment_detail_id+1; ?>">

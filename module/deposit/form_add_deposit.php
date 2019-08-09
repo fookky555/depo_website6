@@ -15,7 +15,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id">
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" required>
                                     <option value="">เลือกประเภทของรถ..</option>
                                     <?php
                                     $con=connect_db();
@@ -32,7 +32,7 @@
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type">
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type" required>
                                     <option value="">เลือกประเภทของการฝาก..</option>
                                     <option value="1">ฝากรายวัน</option>
                                     <option value="2">ฝาก 1 เดือน</option>

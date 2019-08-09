@@ -18,7 +18,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-comment"></em>&nbsp<b> หัวข้อข่าวประชาสัมพันธ์</b></label>
-                            <div class="col-md-10"><input class="form-control" name="news_head" type="text" value="<?php echo $news_head;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="news_head" type="text" value="<?php echo $news_head;?>" required></div>
                         </div>
 
                     </fieldset>

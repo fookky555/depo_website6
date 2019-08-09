@@ -8,32 +8,32 @@
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ชื่อผู้ใช้</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_username" type="text" placeholder="ชื่อผู้ใช้"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_username" type="text" placeholder="ชื่อผู้ใช้" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-lock"></em>&nbsp<b> รหัสผ่าน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_password" type="text" placeholder="รหัสผ่าน"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_password" type="text" placeholder="รหัสผ่าน" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-address-card"></em>&nbsp<b> ชื่อและนามสกุล</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_name" type="text" placeholder="ชื่อและนามสกุล"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_name" type="text" placeholder="ชื่อและนามสกุล" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรศัพท์</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" placeholder="เบอร์โทรศัพท์"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" placeholder="เบอร์โทรศัพท์" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset class="last-child">
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-id-card-alt"></em>&nbsp<b> ประเภทผู้ใช้</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="user_role">
-                                    <option selected="">เลือกประเภทผู้ใช้งาน..</option>
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="user_role" required>
+                                    <option value="">เลือกประเภทผู้ใช้งาน..</option>
                                     <option value="1">ผู้ดูแล</option>
                                     <option value="2">พนักงาน</option>
                                     <option value="3">ผู้ประกอบการ</option>

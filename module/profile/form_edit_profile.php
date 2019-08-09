@@ -18,12 +18,12 @@
                 <form class="form-horizontal" method="post" action=<?php MALink('profile','edit_profile') ?>>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ชื่อผู้ใช้ *</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_username" type="text" value="<?php echo $user_username ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_username" type="text" value="<?php echo $user_username ?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-lock"></em>&nbsp<b> รหัสผ่านเก่า</b></label>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-lock"></em>&nbsp<b> รหัสผ่านเก่า (เปลี่ยนรหัส)</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_password_old" type="password" placeholder="ระบุรหัสผ่านเก่า..."></div>
                         </div>
                     </fieldset>
@@ -36,13 +36,13 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"> <label class="col-md-2 col-form-label"> <em class="fa fa-address-card"></em>&nbsp<b> ชื่อ-นามสกุล *</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_name" type="text" value="<?php echo $user_name ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_name" type="text" value="<?php echo $user_name ?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ *</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $user_phone ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $user_phone ?>" required></div>
                         </div>
 
                     </fieldset>

@@ -17,17 +17,17 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-university"></em>&nbsp<b> ธนาคาร</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_bank" type="text" value="<?php echo $payment_detail_bank; ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_bank" type="text" value="<?php echo $payment_detail_bank; ?>" required></div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-user"></em>&nbsp<b> ชื่อเจ้าของบัญชี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_name" type="text" value="<?php echo $payment_detail_name; ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_name" type="text" value="<?php echo $payment_detail_name; ?>" required></div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-hashtag"></em>&nbsp<b> เลขบัญชี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="payment_detail_num" type="text" value="<?php echo $payment_detail_num; ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="payment_detail_num" type="text" value="<?php echo $payment_detail_num; ?>" required></div>
                         </div>
                     </fieldset>
                     <input type="hidden" name="payment_detail_id" value="<?php echo $payment_detail_id; ?>">

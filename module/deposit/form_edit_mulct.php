@@ -12,13 +12,13 @@
                     ?>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-info"></em>&nbsp<b> สาเหตุค่าปรับ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="mulct_list" type="text" value="<?php echo $mulct_list;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="mulct_list" type="text" value="<?php echo $mulct_list;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-money-bill"></em>&nbsp<b> จำนวนเงิน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="mulct_price" type="number" value="<?php echo $mulct_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="mulct_price" type="number" value="<?php echo $mulct_price;?>" required></div>
                         </div>
 
                     </fieldset>

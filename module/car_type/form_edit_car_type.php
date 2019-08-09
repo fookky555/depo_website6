@@ -18,43 +18,43 @@
                     ?>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ประเภทรถ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_name" type="text" value="<?php echo $car_type_name;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_name" type="text" value="<?php echo $car_type_name;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-moon"></em>&nbsp<b> ค่าฝากรายวัน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_deposit_price" type="number" value="<?php echo $car_type_deposit_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_deposit_price" type="number" value="<?php echo $car_type_deposit_price;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก1เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_1month_deposit_price" type="number" value="<?php echo $car_type_1month_deposit_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_1month_deposit_price" type="number" value="<?php echo $car_type_1month_deposit_price;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก3เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_3month_deposit_price" type="number" value="<?php echo $car_type_3month_deposit_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_3month_deposit_price" type="number" value="<?php echo $car_type_3month_deposit_price;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก6เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_6month_deposit_price" type="number" value="<?php echo $car_type_6month_deposit_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_6month_deposit_price" type="number" value="<?php echo $car_type_6month_deposit_price;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก1ปี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_1year_deposit_price" type="number" value="<?php echo $car_type_1year_deposit_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_1year_deposit_price" type="number" value="<?php echo $car_type_1year_deposit_price;?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-tint"></em>&nbsp<b> ค่าบริการล้างรถ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_wash_price" type="number" value="<?php echo $car_type_wash_price;?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_wash_price" type="number" value="<?php echo $car_type_wash_price;?>" required></div>
                         </div>
 
                     </fieldset>

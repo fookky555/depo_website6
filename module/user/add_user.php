@@ -2,7 +2,7 @@
 <?php
 echo "<p align='center'><img src='img\loading.png'></p>";
 include ("function/Bcrypt.php");
-if(!empty($_POST['user_username']&&$_POST['user_password']&&$_POST['user_name']&&$_POST['user_phone']&&$_POST['user_role'])) {
+if(!empty($_POST['user_username'] or $_POST['user_password'] or $_POST['user_name'] or $_POST['user_phone'] or $_POST['user_role'])) {
     $user_username = $_POST['user_username'];
     $user_password = $_POST['user_password'];
     $user_name = $_POST['user_name'];

@@ -18,19 +18,19 @@
                 <form class="form-horizontal" method="post" action=<?php MALink('work','edit_work') ?>>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-sign">&nbsp ชื่อร้าน</em></label>
-                            <div class="col-md-10"><input class="form-control" name="work_name" type="text" value="<?php echo $work_name ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="work_name" type="text" value="<?php echo $work_name ?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-address-card">&nbsp ชื่อผู้ติดต่อร้าน</em></label>
-                            <div class="col-md-10"><input class="form-control" name="work_contact_name" type="text" value="<?php echo $work_contact_name ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="work_contact_name" type="text" value="<?php echo $work_contact_name ?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone">&nbsp เบอร์ติดต่อร้าน</em></label>
-                            <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="text" value="<?php echo $work_contact_phone ?>"></div>
+                            <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="text" value="<?php echo $work_contact_phone ?>" required></div>
                         </div>
 
                     </fieldset>

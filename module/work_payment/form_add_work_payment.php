@@ -14,7 +14,8 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-university"></em>&nbsp<b> บัญชีธนาคาร</b></label>
-                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="payment_detail_id">
+                            <div class="col-md-10"><select class="custom-select custom-select-sm" name="payment_detail_id" required>
+                                    <option value="">โปรดเลือกบัญชีธนาคาร..</option>
                                     <?php
                                     $con=connect_db();
                                     $sql1="SELECT payment_detail_id, payment_detail_bank FROM tbl_payment_detail";
