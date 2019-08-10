@@ -1,20 +1,33 @@
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
-        <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] </p>
-        <div class="card card-default">
             <?php
             $con=connect_db();
             $sql1="SELECT * FROM tbl_deposit WHERE deposit_id='$_GET[id]'";
             $result1=mysqli_query($con,$sql1);
-            list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id)=mysqli_fetch_row($result1);
+            list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id,$deposit_active)=mysqli_fetch_row($result1);
             $date = new DateTime($deposit_date);
             $now = new DateTime();
-            $days=$date->diff($now)->format("%d");
+            $days=$date->diff($now)->format("%a");
             $p1=(float)cal_price($deposit_type,$car_type_id,$days);
             $p2=(float)cal_mulct($deposit_id);
             $p3=(float)cal_wash($deposit_id,$car_type_id);
+            if($deposit_active==0){
+                $sql1="SELECT bill_total FROM tbl_bill WHERE deposit_id='$_GET[id]'";
+                $result1=mysqli_query($con,$sql1);
+                list($total)=mysqli_fetch_row($result1);
+            }else{
+                $total=$p1+$p2+$p3;
+            }
+            if($deposit_active==1){
+
             ?>
+        <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] </p>
+        <?php }else{ ?>
+                <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] (ชำระเงินแล้ว)</p>
+        <?php }
+            $days=0;?>
+        <div class="card card-default">
             <div class="card-body">
                 <form>
 
@@ -54,8 +67,8 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
-                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
-                                    <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>
+                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>&deposit_active=<?php echo $deposit_active;?>">
+                                    <font size="3"><b><?php echo $total; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>
 
@@ -190,7 +203,11 @@
                     </div>
                     <div class="clearfix">
                         <div class="float-left">
-                            <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=search_deposit">
+                            <?php if($deposit_active==1){
+                                echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_deposit\">";
+                            }else{
+                                echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=bill&action=list_bill\">";
+                            } ?>
                                 <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
                         </div>
                         <div class="float-right">

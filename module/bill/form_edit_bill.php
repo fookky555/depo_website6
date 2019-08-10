@@ -8,7 +8,9 @@
                     <?php
                     $con=connect_db();
                     $sql="SELECT * FROM tbl_bill WHERE bill_id='$_GET[id]'";
-                    list($bill_id,$bill_date,$bill_deposit,$bill_wash,$bill_mulct,$bill_total,$user_id,$work_id)=mysqli_fetch_row(mysqli_query($con,$sql));
+                    $result1=mysqli_query($con,$sql);
+                    $row = mysqli_fetch_assoc($result1);
+                    extract($row);
                     ?>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> วันที่ฝากรถ</b></label>

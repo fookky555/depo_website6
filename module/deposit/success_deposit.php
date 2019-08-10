@@ -16,9 +16,13 @@ if(empty($_GET['confirm'])){
     $p3=(float)cal_wash($deposit_id,$car_type_id);
     $p4=$p1+$p2+$p3;
     //$date_now=date("Y-m-d");
-    $sql="INSERT INTO `tbl_bill`( `bill_deposit`, `bill_mulct`, `bill_wash`, `bill_total`, `user_id`, `work_id`, `car_type_id`, `deposit_type`, `deposit_date`) 
-            VALUES ('$p1','$p2','$p3','$p4','$_SESSION[user_id]','$_SESSION[work_id]','$car_type_id','$deposit_type','$deposit_date')";
-    $result1=mysqli_query($con,$sql);
+    $sql="INSERT INTO `tbl_bill`( `bill_deposit`, `bill_mulct`, `bill_wash`, `bill_total`, `user_id`, `work_id`, `car_type_id`, `deposit_type`, `deposit_id`) 
+            VALUES ('$p1','$p2','$p3','$p4','$_SESSION[user_id]','$_SESSION[work_id]','$car_type_id','$deposit_type','$deposit_id')";
+    mysqli_query($con,$sql);
+
+    $sql="UPDATE tbl_deposit SET 
+    deposit_active='0' WHERE deposit_id='$deposit_id'";
+    mysqli_query($con,$sql);
 
     mysqli_query($con,"DELETE FROM tbl_mulct WHERE deposit_id='$_GET[id]'");
     mysqli_query($con,"DELETE FROM tbl_wash WHERE deposit_id='$_GET[id]'");

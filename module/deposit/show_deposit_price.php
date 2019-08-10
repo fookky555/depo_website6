@@ -4,6 +4,7 @@
         <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลค่าบริการ รหัส <?php echo $_GET['id']; ?> ] </p>
         <div class="card card-default">
             <?php
+            if($_GET['deposit_active']==1){
             $p1=(float)cal_price($_GET['deposit_type'],$_GET['car_type_id'],$_GET['days']);
             $p2=(float)cal_mulct($_GET['id']);
             $p3=(float)cal_wash($_GET['id'],$_GET['car_type_id']);
@@ -38,6 +39,34 @@
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-check"></em>&nbsp<b> ยอดที่ต้องชำระทั้งหมด: </b> <div class="float-right"><b><?php echo $p1+$p2+$p3; ?> บาท</b></div></label>
                         </div>
                     </fieldset>
+                    <?php
+                        }else{
+                        $con=connect_db();
+                        $sql="SELECT * FROM tbl_bill WHERE deposit_id='$_GET[id]'";
+                        $result1=mysqli_query($con,$sql);
+                        $row = mysqli_fetch_assoc($result1);
+                        extract($row);
+                    ?>
+                    <div class="card-body">
+                        <form>
+
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar-check"></em>&nbsp<b> ค่าบริการฝากรถ: </b> <div class="float-right"><?php echo $bill_deposit; ?> บาท</div></label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-tint"></em>&nbsp<b> ค่าบริการล้างรถ: </b> <div class="float-right"><?php echo $bill_wash; ?> บาท</div></label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-exclamation-circle"></em>&nbsp<b> ค่าปรับ: </b> <div class="float-right"><?php echo $bill_mulct; ?> บาท</div></label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-check"></em>&nbsp<b> ยอดชำระทั้งหมด: </b> <div class="float-right"><b><?php echo $bill_total; ?> บาท</b></div></label>
+                                </div>
+                            </fieldset>
+                            <?php } ?>
                     <div class="float-left">
                         <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit&id=<?php echo $_GET['id']; ?>">
                             <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>

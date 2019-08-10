@@ -42,13 +42,13 @@
                                 echo"<tr>";
 
 
-                                echo "<td>$bill_id</td>";
-                                echo "<td>$bill_deposit</td>";
-                                echo "<td>$bill_wash</td>";
-                                echo "<td>$bill_mulct</td>";
-                                echo "<td>$bill_total</td>";
-                                echo "<td>$username</td>";
-                                echo "<td>$bill_date</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_id</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_deposit</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_wash</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_mulct</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_total</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$username</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_date</td>";
                                 ?>
                                     <td class="text-center">
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=bill&action=form_edit_bill&id=<?php echo $bill_id; ?>"><em
@@ -84,3 +84,16 @@
         <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>
     </div>
 </section><!-- Page footer-->
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=deposit&action=show_deposit&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=deposit&action=show_deposit&id='+id;
+    }
+
+</script>

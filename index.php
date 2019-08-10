@@ -155,6 +155,7 @@
 <!-- CHART.JS-->
 <script src="vendor/chart.js/dist/Chart.js"></script>
 <script src="js/app.js"> </script>
+
  <!-- =============== APP SCRIPTS ===============-->
 
     <script>

@@ -15,6 +15,7 @@
     }
     //echo $sql1;
     $result=mysqli_query($con,$sql1);
+    $count=0;
     $m1=0;
     $m2=0;
     $m3=0;
@@ -28,6 +29,7 @@
     $m11=0;
     $m12=0;
     while (list($date) =mysqli_fetch_row($result)){
+        $count++;
         $date = strtotime($date);
         $thaimonth=array("มค.","กพ.","มีค.","เมย.","พค.","มิย.","กค.","สค.","กย.","ตค.","พย.","ธค.");
         $M=$thaimonth[date("m",$date)-1];
@@ -135,7 +137,7 @@
                 <div class="container-fluid container-md">
                     <div class="row mb-3">
                         <div class="col-xl-12">
-                            <h3 class="mb-3 py-2">กราฟสถิติจำนวนรถที่ฝาก</h3>
+                            <p class="lead">มีข้อมูลการฝากรถ <?php echo $count;?> รายการ</p>
                             <div><canvas id="myChart"></canvas></div>
                         </div>
                     </div>
@@ -145,6 +147,4 @@
         </div>
     </div>
 </section>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"> </script>

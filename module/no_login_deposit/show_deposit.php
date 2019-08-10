@@ -27,7 +27,7 @@
             $con=connect_db();
             $sql1="SELECT * FROM tbl_deposit WHERE deposit_id='$_GET[id]'";
             $result1=mysqli_query($con,$sql1);
-            list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id)=mysqli_fetch_row($result1);
+            list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,$deposit_pickup_date,$deposit_date,$deposit_pic,$deposit_type,$user_id,$deposit_detail,$deposit_fuel,$deposit_pickup_name,$work_id,$deposit_active)=mysqli_fetch_row($result1);
             $date = new DateTime($deposit_date);
             $now = new DateTime();
             $days=$date->diff($now)->format("%d");

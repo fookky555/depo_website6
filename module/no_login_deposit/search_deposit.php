@@ -43,7 +43,7 @@
                             <?php
                             $con=connect_db();
 
-                            $sql1="SELECT * FROM tbl_deposit";//ต้องเปลี่ยน WHERE
+                            $sql1="SELECT * FROM tbl_deposit WHERE deposit_active=1";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
 
@@ -68,7 +68,7 @@
                                     <td><?php echo $work_name;?></td>
 
 
-                                    <td><?php  echo $date->diff($now)->format("%d วัน"); ?></td>
+                                    <td><?php  echo $date->diff($now)->format("%a วัน"); ?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $deposit_date;?></td>
 
