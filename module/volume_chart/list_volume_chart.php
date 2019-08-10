@@ -4,19 +4,61 @@
     $con=connect_db();
 
     if(!empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT deposit_date FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]' AND year(`deposit_date`) = YEAR(CURDATE())";
+        //SELECT * FROM tablename WHERE columname BETWEEN '2012-12-25 00:00:00' AND '2012-12-25 23:59:59'
     }elseif(!empty($_POST['car_type_id']) && empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT deposit_date FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]'";
     }elseif(empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT deposit_date FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]'";
     }else{
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT deposit_date FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND year(`deposit_date`) = YEAR(CURDATE())";
     }
-
+    //echo $sql1;
     $result=mysqli_query($con,$sql1);
-
-    list($bill_id,$bill_date,$bill_deposit,$bill_wash,$bill_mulct,$bill_total,$user_id,$work_id,$car_type_id,$deposit_type,$deposit_date)=mysqli_fetch_row($result);
-
+    $m1=0;
+    $m2=0;
+    $m3=0;
+    $m4=0;
+    $m5=0;
+    $m6=0;
+    $m7=0;
+    $m8=0;
+    $m9=0;
+    $m10=0;
+    $m11=0;
+    $m12=0;
+    while (list($date) =mysqli_fetch_row($result)){
+        $date = strtotime($date);
+        $thaimonth=array("มค.","กพ.","มีค.","เมย.","พค.","มิย.","กค.","สค.","กย.","ตค.","พย.","ธค.");
+        $M=$thaimonth[date("m",$date)-1];
+        if($M=="มค."){
+            $m1++;
+        }elseif ($M=="กพ."){
+            $m2++;
+        }elseif ($M=="มีค."){
+            $m3++;
+        }elseif ($M=="เมย."){
+            $m4++;
+        }elseif ($M=="พค."){
+            $m5++;
+        }elseif ($M=="มิย."){
+            $m6++;
+        }elseif ($M=="กค."){
+            $m7++;
+        }elseif ($M=="สค."){
+            $m8++;
+        }elseif ($M=="กย."){
+            $m9++;
+        }elseif ($M=="ตค."){
+            $m10++;
+        }elseif ($M=="พย."){
+            $m11++;
+        }else{
+            $m12++;
+        }
+    }
+        $label=array("มค.","กพ.","มีค.","เมย.","พค.","มิย.","กค.","สค.","กย.","ตค.","พย.","ธค.");
+        $score =array($m1,$m2,$m3,$m4,$m5,$m6,$m7,$m8,$m9,$m10,$m11,$m12);
     ?>
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-chart-bar"> </em> [ สรุปสถิติจำนวนรถที่ฝากของร้าน ] </p>
@@ -86,15 +128,23 @@
                     </div>
                 </fieldset>
                     <fieldset>
-
-
                         
 
                     </fieldset>
                 </form>
-
+                <div class="container-fluid container-md">
+                    <div class="row mb-3">
+                        <div class="col-xl-12">
+                            <h3 class="mb-3 py-2">กราฟสถิติจำนวนรถที่ฝาก</h3>
+                            <div><canvas id="myChart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+
+</script>

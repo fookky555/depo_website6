@@ -19,7 +19,7 @@ if(empty($_GET['confirm'])){
     $sql="INSERT INTO `tbl_bill`( `bill_deposit`, `bill_mulct`, `bill_wash`, `bill_total`, `user_id`, `work_id`, `car_type_id`, `deposit_type`, `deposit_date`) 
             VALUES ('$p1','$p2','$p3','$p4','$_SESSION[user_id]','$_SESSION[work_id]','$car_type_id','$deposit_type','$deposit_date')";
     $result1=mysqli_query($con,$sql);
-    mysqli_query($con,"DELETE FROM tbl_deposit WHERE deposit_id='$_GET[id]'");
+
     mysqli_query($con,"DELETE FROM tbl_mulct WHERE deposit_id='$_GET[id]'");
     mysqli_query($con,"DELETE FROM tbl_wash WHERE deposit_id='$_GET[id]'");
     mysqli_query($con,"DELETE FROM tbl_news WHERE deposit_id='$_GET[id]'");

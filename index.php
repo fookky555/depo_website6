@@ -27,6 +27,8 @@
    <link rel="stylesheet" href="css/bootstrap.css" id="bscss"><!-- =============== APP STYLES ===============-->
    <link rel="stylesheet" href="css/app.css" id="maincss">
     <link rel="stylesheet" href="vendor/bootstrap-slider/dist/css/bootstrap-slider.css"><!-- CHOSEN-->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+
 </head>
 
 <body>
@@ -145,12 +147,16 @@
 <script src="vendor/dropify-master/dist/js/dropify.min.js"></script>
 <script src="vendor/bootstrap-slider/dist/bootstrap-slider.js"></script>
    <!-- SWEET ALERT-->
-   <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="vendor/parsleyjs/dist/parsley.js"></script>
+<script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+<script src="vendor/parsleyjs/dist/parsley.js"></script>
    <!-- =============== APP SCRIPTS ===============-->
-   <script src="js/<?php echo $dataMA[0];?>/<?php echo $dataMA[1];?>.js?p=<?php echo rand(10,100); ?>"></script>
+<script src="js/<?php echo $dataMA[0];?>/<?php echo $dataMA[1];?>.js?p=<?php echo rand(10,100); ?>"></script>
    <!-- =============== APP SCRIPTS ===============-->
-   <script src="js/app.js"> </script>
+<!-- CHART.JS-->
+<script src="vendor/chart.js/dist/Chart.js"></script>
+<script src="js/app.js"> </script>
+ <!-- =============== APP SCRIPTS ===============-->
+
     <script>
         $(document).ready(function(){
             $('[data-ui-slider]').slider();
@@ -267,7 +273,76 @@
                     }
                 });
             }
-        });</script>
+        });
+        var labels = <?php echo json_encode($label); ?>;
+        var data =<?php echo json_encode($score);?>;
+
+        console.log(labels);
+        console.log(data);
+        var l
+        var ctx =document.getElementById("myChart");
+        var barOptions = {
+            legend: {
+                display: false
+            }
+        };
+        // var barctx = document.getElementById('chartjs-barchart').getContext('2d');
+        // var barChart = new Chart(barctx, {
+        //     data: barData,
+        //     type: 'bar',
+        //     options: barOptions
+        // });
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Votes',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
 
 </body>
 </font>
