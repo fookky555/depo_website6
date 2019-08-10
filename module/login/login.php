@@ -37,7 +37,7 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
         <div class="card card-flat">
             <div class="card-header text-center bg-dark"><a href="#"><img class="block-center rounded" src="img/logo.png" alt="Image"></a></div>
             <div class="card-body">
-                <p class="text-center py-2">เข้าสู่ระบบร้านรับฝากรถ</p>
+                <p class="text-center py-2"><b>เข้าสู่ระบบร้านรับฝากรถ</b></p>
                 <form class="mb-3" id="loginForm" method="post" novalidate>
                     <div class="form-group">
                         <div class="input-group with-focus"><input class="form-control border-right-0" name="username" type="text" placeholder="ชื่อผู้ใช้" autocomplete="off" required>

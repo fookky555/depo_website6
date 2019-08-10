@@ -50,7 +50,7 @@
         ?>
         <hr>
         <li <?php echo menu_active($_GET['module'],"volume_chart"); ?>><a href="<?php MALink('volume_chart','list_volume_chart') ?>" title="Single View"><em class="fa fa-chart-bar"></em><span data-localize="sidebar.nav.SINGLEVIEW">สถิติจำนวนรถฝาก</span></a></li>
-        <li <?php echo menu_active($_GET['module'],"income_chart"); ?>><a href="<?php MALink('income_chart','list_income_chart') ?>" title="Single View"><em classfa="fa fa-chart-bar"></em><span data-localize="sidebar.nav.SINGLEVIEW">สถิติยอดรายได้</span></a></li>
+        <li <?php echo menu_active($_GET['module'],"income_chart"); ?>><a href="<?php MALink('income_chart','list_income_chart') ?>" title="Single View"><em class="fa fa-chart-bar"></em><span data-localize="sidebar.nav.SINGLEVIEW">สถิติยอดรายได้</span></a></li>
         <li <?php echo menu_active($_GET['module'],"profile"); ?>><a href="<?php MALink('profile','list_profile') ?>" title="Single View"><em class="fa fa-user"></em><span data-localize="sidebar.nav.SINGLEVIEW">ข้อมูลผู้ใช้</span></a></li>
         <hr>
         <?php
