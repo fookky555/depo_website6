@@ -154,16 +154,18 @@ function check_delete(){
 function check_day(){//เช็ควันที่เหลือของร้านในการใช้เว็ป
     if(isset($_SESSION['alert_day']) && $_SESSION['alert_day']==0) {
         $con = connect_db();
-        $sql1 = "SELECT work_payment_date FROM tbl_work_payment WHERE work_payment_confirm='1' AND work_id='$_SESSION[work_id]' ORDER BY work_payment_date DESC LIMIT 1";
+        $sql1 = "SELECT work_payment_date FROM tbl_work_payment WHERE work_payment_confirm='1' AND work_id=$_SESSION[work_id] ORDER BY work_payment_date DESC LIMIT 1";
         $result1 = mysqli_query($con, $sql1);
         list($work_payment_date) = mysqli_fetch_row($result1);
-        $today_date = date("Y-m-d");
 
+        $today_date = date("Y-m-d");
         $date = new DateTime($work_payment_date);
         $now = new DateTime();
         $diff = $now->diff($date);
+//        echo "<pre>";
+//        print_r($date);
+//        echo "</pre>";
         if ($diff->days >= 23 && $diff->days < 30) {
-
             echo "<label  id='result' data-id='5'></label>";
             echo "<label  id='day' data-id='$diff->days'></label>";
             $_SESSION['alert_day'] = 1;

@@ -4,26 +4,72 @@
     $con=connect_db();
 
     if(!empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
+        //SELECT * FROM tablename WHERE columname BETWEEN '2012-12-25 00:00:00' AND '2012-12-25 23:59:59'
     }elseif(!empty($_POST['car_type_id']) && empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND year(`bill_date`) = YEAR(CURDATE())";
     }elseif(empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
+
     }else{
-        $sql1="SELECT * FROM tbl_bill WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
+        $sql1 = "SELECT  bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND year(`bill_date`) = YEAR(CURDATE())";
+
     }
-
+    //echo $sql1;
     $result=mysqli_query($con,$sql1);
-
-    list($bill_id,$bill_date,$bill_deposit,$bill_wash,$bill_mulct,$bill_total,$user_id,$work_id,$car_type_id,$deposit_type,$deposit_date)=mysqli_fetch_row($result);
-
+    $count=0;
+    $m1=0;
+    $m2=0;
+    $m3=0;
+    $m4=0;
+    $m5=0;
+    $m6=0;
+    $m7=0;
+    $m8=0;
+    $m9=0;
+    $m10=0;
+    $m11=0;
+    $m12=0;
+    while(list($total,$date)=mysqli_fetch_row($result)){
+        $count++;
+        $date = strtotime($date);
+        $thaimonth=array("มค.","กพ.","มีค.","เมย.","พค.","มิย.","กค.","สค.","กย.","ตค.","พย.","ธค.");
+        $M=$thaimonth[date("m",$date)-1];
+        if($M=="มค."){
+            $m1+=$total;
+        }elseif ($M=="กพ."){
+            $m2+=$total;
+        }elseif ($M=="มีค."){
+            $m3+=$total;
+        }elseif ($M=="เมย."){
+            $m4+=$total;
+        }elseif ($M=="พค."){
+            $m5+=$total;
+        }elseif ($M=="มิย."){
+            $m6+=$total;
+        }elseif ($M=="กค."){
+            $m7+=$total;
+        }elseif ($M=="สค."){
+            $m8+=$total;
+        }elseif ($M=="กย."){
+            $m9+=$total;
+        }elseif ($M=="ตค."){
+            $m10+=$total;
+        }elseif ($M=="พย."){
+            $m11+=$total;
+        }else{
+            $m12+=$total;
+        }
+    }
+    $label=array("มค.","กพ.","มีค.","เมย.","พค.","มิย.","กค.","สค.","กย.","ตค.","พย.","ธค.");
+    $score =array($m1,$m2,$m3,$m4,$m5,$m6,$m7,$m8,$m9,$m10,$m11,$m12);
     ?>
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-chart-bar"> </em> [ สรุปสถิติยอดรายได้ของร้าน ] </p>
         <div class="card card-default">
 
             <div class="card-body">
-                <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('volume_chart','list_volume_chart') ?>">
+                <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('income_chart','list_income_chart') ?>">
 
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
@@ -92,6 +138,14 @@
 
                     </fieldset>
                 </form>
+                <div class="container-fluid container-md">
+                    <div class="row mb-3">
+                        <div class="col-xl-12">
+                            <p class="lead">มีข้อมูลการชำระเงิน <?php echo $count;?> รายการ</p>
+                            <div><canvas id="myChart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
 
 
             </div>

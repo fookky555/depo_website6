@@ -96,7 +96,6 @@
 
        require("module/$dataMA[0]/$dataMA[1].php");
 
-       //เช็คว่าได้จ่ายเงินไหม
         if($dataMA[0]!="register" && $dataMA[0] != "login" && !empty($_GET['module']) && $dataMA[0]!="no_login_deposit" && $dataMA[0]!="no_login_work" && $dataMA[0]!="no_login_news" && $dataMA[0]!="no_password"){
             check_login();
             check_pay();
@@ -159,6 +158,124 @@
  <!-- =============== APP SCRIPTS ===============-->
 
     <script>
+       <?php  if($dataMA[1] =='list_income_chart'){ ?>
+            var labels = <?php echo json_encode($label);?>;
+            var data =<?php echo json_encode($score); ?>;
+
+            console.log(labels);
+            console.log(data);
+            var ctx =document.getElementById("myChart");
+            var barOptions = {
+                legend: {
+                    display: false
+                }
+            };
+            // var barctx = document.getElementById('chartjs-barchart').getContext('2d');
+            // var barChart = new Chart(barctx, {
+            //     data: barData,
+            //     type: 'bar',
+            //     options: barOptions
+            // });
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: barOptions
+            });
+        <?php } ?>
+       <?php  if($dataMA[1] =='list_volume_chart'){ ?>
+       var labels = <?php echo json_encode($label);?>;
+       var data =<?php echo json_encode($score); ?>;
+
+       console.log(labels);
+       console.log(data);
+       var ctx =document.getElementById("myChart");
+       var barOptions = {
+           legend: {
+               display: false
+           }
+       };
+       // var barctx = document.getElementById('chartjs-barchart').getContext('2d');
+       // var barChart = new Chart(barctx, {
+       //     data: barData,
+       //     type: 'bar',
+       //     options: barOptions
+       // });
+       var ctx = document.getElementById('myChart').getContext('2d');
+       var myChart = new Chart(ctx, {
+           type: 'bar',
+           data: {
+               labels: labels,
+               datasets: [{
+                   data: data,
+                   backgroundColor: [
+                       'rgba(255, 99, 132, 0.2)',
+                       'rgba(54, 162, 235, 0.2)',
+                       'rgba(255, 206, 86, 0.2)',
+                       'rgba(75, 192, 192, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(255, 99, 132, 0.2)',
+                       'rgba(54, 162, 235, 0.2)',
+                       'rgba(255, 206, 86, 0.2)',
+                       'rgba(75, 192, 192, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(255, 159, 64, 0.2)'
+                   ],
+                   borderColor: [
+                       'rgba(255, 99, 132, 0.2)',
+                       'rgba(54, 162, 235, 0.2)',
+                       'rgba(255, 206, 86, 0.2)',
+                       'rgba(75, 192, 192, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(255, 99, 132, 0.2)',
+                       'rgba(54, 162, 235, 0.2)',
+                       'rgba(255, 206, 86, 0.2)',
+                       'rgba(75, 192, 192, 0.2)',
+                       'rgba(153, 102, 255, 0.2)',
+                       'rgba(255, 159, 64, 0.2)'
+                   ],
+                   borderWidth: 1
+               }]
+           },
+           options: barOptions
+       });
+       <?php } ?>
         $(document).ready(function(){
             $('[data-ui-slider]').slider();
             var day =$("#day").data("id");
@@ -273,73 +390,6 @@
                         window.location.href='index.php?module=logout&action=logout';
                     }
                 });
-            }
-        });
-        var labels = <?php echo json_encode($label); ?>;
-        var data =<?php echo json_encode($score);?>;
-
-        console.log(labels);
-        console.log(data);
-        var l
-        var ctx =document.getElementById("myChart");
-        var barOptions = {
-            legend: {
-                display: false
-            }
-        };
-        // var barctx = document.getElementById('chartjs-barchart').getContext('2d');
-        // var barChart = new Chart(barctx, {
-        //     data: barData,
-        //     type: 'bar',
-        //     options: barOptions
-        // });
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: '# of Votes',
-                    data: data,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
             }
         });
 

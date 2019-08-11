@@ -46,8 +46,8 @@ VALUES ('$_POST[car_type_id]','$_POST[deposit_plate_id]','$_POST[deposit_type]',
             list($deposit_id)=mysqli_fetch_row($result); //ไอดีฝากรถล่าสุดที่เพิ่มเข้าไปที่จะล้างรถ
 
             $sql="INSERT INTO
-tbl_wash (deposit_id,wash_status)
-VALUES ('$deposit_id',0)";
+tbl_wash (deposit_id,wash_status,work_id)
+VALUES ('$deposit_id',0,'$_SESSION[work_id]')";
 
             mysqli_query($con, $sql);
         }
