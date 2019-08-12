@@ -39,11 +39,11 @@ tbl_deposit (car_type_id,deposit_plate_id,deposit_type,deposit_helmet,deposit_fu
 VALUES ('$_POST[car_type_id]','$_POST[deposit_plate_id]','$_POST[deposit_type]','$_POST[deposit_helmet]','$_POST[deposit_fuel]','$_POST[deposit_pickup_date]','$_POST[deposit_pickup_name]','$_POST[deposit_number]','$_POST[deposit_detail]',$_SESSION[user_id],$_SESSION[work_id],'$image_name')";
         mysqli_query($con, $sql);
 
+        $sql="SELECT deposit_id FROM tbl_deposit ORDER BY deposit_id DESC LIMIT 1";
+        $result= mysqli_query($con, $sql);
+        list($deposit_id)=mysqli_fetch_row($result); //ไอดีฝากรถล่าสุดที่เพิ่มเข้าไปที่จะล้างรถ
         if($_POST['deposit_wash']==1){
 
-            $sql="SELECT deposit_id FROM tbl_deposit ORDER BY deposit_id DESC LIMIT 1";
-            $result= mysqli_query($con, $sql);
-            list($deposit_id)=mysqli_fetch_row($result); //ไอดีฝากรถล่าสุดที่เพิ่มเข้าไปที่จะล้างรถ
 
             $sql="INSERT INTO
 tbl_wash (deposit_id,wash_status,work_id)
@@ -52,6 +52,8 @@ VALUES ('$deposit_id',0,'$_SESSION[work_id]')";
             mysqli_query($con, $sql);
         }
        echo "<label  id='result' data-id='1'></label>";
+         echo "<label id='deposit_id' data-id='$deposit_id'></label>";
+       echo "<label id='deposit_plate_id' data-id='$_POST[deposit_plate_id]'></label>";
     }else{
         echo "<label  id='result' data-id='0'></label>";
     }

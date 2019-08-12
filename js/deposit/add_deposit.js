@@ -1,11 +1,13 @@
 $(document).ready(function () {
     var result= $("#result").data("id");
+    var deposit_id= $("#deposit_id").data("id");
+    var deposit_plate_id= $("#deposit_plate_id").data("id");
     console.log(result);
     if(result == 1){
 
         swal({
-            title: 'สำเร็จ!',
-            text: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
+            title: 'รหัสฝากรถ #'+deposit_id,
+            text: 'บันทึกข้อมูลรถ ['+deposit_plate_id+'] เรียบร้อย!',
             icon: 'success'
         }).then(function() {
             window.location.href='index.php?module=deposit&action=list_deposit';
