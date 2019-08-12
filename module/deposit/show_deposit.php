@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Angle - Bootstrap Admin Template</title><!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="vendor/@fortawesome/fontawesome-free/css/brands.css">
+    <link rel="stylesheet" href="vendor/@fortawesome/fontawesome-free/css/regular.css">
+    <link rel="stylesheet" href="vendor/@fortawesome/fontawesome-free/css/solid.css">
+    <link rel="stylesheet" href="vendor/@fortawesome/fontawesome-free/css/fontawesome.css"><!-- SIMPLE LINE ICONS-->
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css"><!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="css/bootstrap.css" id="bscss"><!-- =============== APP STYLES ===============-->
+    <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+<body>
+
 <section class="section-container">
     <!-- Page content-->
     <div class="content-wrapper">
@@ -12,21 +32,20 @@
             $p1=(float)cal_price($deposit_type,$car_type_id,$days);
             $p2=(float)cal_mulct($deposit_id);
             $p3=(float)cal_wash($deposit_id,$car_type_id);
+            $total=$p1+$p2+$p3;
             if($deposit_active==0){
-                $sql1="SELECT bill_total FROM tbl_bill WHERE deposit_id='$_GET[id]'";
-                $result1=mysqli_query($con,$sql1);
-                list($total)=mysqli_fetch_row($result1);
+                $sql="SELECT bill_total FROM tbl_bill WHERE deposit_id='$_GET[id]'";
+                $result1=mysqli_query($con,$sql);
+                $row = mysqli_fetch_assoc($result1);
+                extract($row);
+                $days=0;
+                $total=$bill_total;
+                $label="( ชำระเงินแล้ว )";
             }else{
-                $total=$p1+$p2+$p3;
+                $label="";
             }
-            if($deposit_active==1){
-
             ?>
-        <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] </p>
-        <?php }else{ ?>
-                <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] (ชำระเงินแล้ว)</p>
-        <?php }
-            $days=0;?>
+        <br><p class="lead"><em class="fa fa-money-check"> </em> [ แสดงข้อมูลฝากรถ รหัส <?php echo $_GET['id']; ?> ] <?php echo $label; ?></p>
         <div class="card card-default">
             <div class="card-body">
                 <form>
@@ -67,7 +86,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
-                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>&deposit_active=<?php echo $deposit_active;?>">
+                            <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>&deposit_active=<?php echo $deposit_active; ?>">
                                     <font size="3"><b><?php echo $total; ?> </b>฿</font></button></div>
                         </div>
                     </fieldset>
@@ -208,12 +227,14 @@
                             }else{
                                 echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=bill&action=list_bill\">";
                             } ?>
-                                <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                            <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
                         </div>
+                        <?php if($deposit_active==1){ ?>
                         <div class="float-right">
                             <button class="btn btn-success" type="button" onclick=window.location.href="index.php?module=deposit&action=success_deposit&id=<?php echo $_GET['id']; ?>">
                                 <em class="fa fa-check fa-fw" ></em> ชำระเงิน</button>
                         </div>
+                      <?php } ?>
 
                     </div>
                 </form>
@@ -232,3 +253,15 @@
         }
     }
 </script>
+
+<script src="vendor/modernizr/modernizr.custom.js"></script><!-- STORAGE API-->
+<script src="vendor/js-storage/js.storage.js"></script><!-- i18next-->
+<script src="vendor/i18next/i18next.js"></script>
+<script src="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></script><!-- JQUERY-->
+<script src="vendor/jquery/dist/jquery.js"></script><!-- BOOTSTRAP-->
+<script src="vendor/popper.js/dist/umd/popper.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script><!-- PARSLEY-->
+<script src="vendor/parsleyjs/dist/parsley.js"></script><!-- =============== APP SCRIPTS ===============-->
+<script src="js/app.js"></script>
+</body>
+</html>

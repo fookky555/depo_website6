@@ -74,6 +74,18 @@
             </div>
             </form>
         </div>
+        <?php
+        $sql2="SELECT * FROM tbl_car_type WHERE car_type_id='$_GET[car_type_id]'";//ต้องเปลี่ยน WHERE
+        $result2=mysqli_query($con,$sql2);
+        $row = mysqli_fetch_assoc($result2);
+        extract($row);
+        echo " <p><em class='fa fa-motorcycle'></em> ประเภทของรถ: $car_type_name</p>";
+        echo "<p><em class='fa fa-calendar'></em> ค่าฝากรายวัน: $car_type_deposit_price ฿</p>";
+        echo "<p><em class='fa fa-calendar-alt'></em> ค่าฝาก 1 เดือน: $car_type_1month_deposit_price ฿</p>";
+        echo  "<p><em class='fa fa-calendar-alt'></em> ค่าฝาก 3 เดือน: $car_type_3month_deposit_price ฿</p>";
+        echo  "<p><em class='fa fa-calendar-alt'></em> ค่าฝาก 6 เดือน: $car_type_6month_deposit_price ฿</p>";
+        echo  "<p><em class='fa fa-calendar-alt'></em> ค่าฝาก 1 ปี: $car_type_1year_deposit_price ฿</p>";
+        ?>
     </div><!-- END card-->
     </div>
 </section><!-- Page footer-->
