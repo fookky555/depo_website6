@@ -18,10 +18,18 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=profile&action=list_profile';
         });
-    }else{
+    }else if(result==2){
         swal({
             title: 'ผิดพลาด!',
             text: 'รหัสผ่านเก่าไม่ถูกต้อง!',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=profile&action=list_profile';
+        });
+    }else if(result == 66){
+        swal({
+            title: 'Username หรือ Password สั้นเกินไป',
+            text: 'ชื่อผู้ใช้ และ รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป',
             icon: 'error'
         }).then(function() {
             window.location.href='index.php?module=profile&action=list_profile';

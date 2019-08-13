@@ -1,18 +1,18 @@
 <?php
-include("function/Bcrypt.php");
-echo "<br><p align='center'><img src='img\loading.png'></p>";
-$con = connect_db();
+    include("function/Bcrypt.php");
+    echo "<br><p align='center'><img src='img\loading.png'></p>";
+    $con = connect_db();
+if(strlen($_POST['user_username'])>=6 && strlen($_POST['user_password'])>=6) {
+    $result1 = mysqli_query($con, "SELECT user_username FROM tbl_user WHERE user_username='$_POST[user_username]'");
+    list($username_check) = mysqli_fetch_row($result1);
+    if (empty($username_check)) {
 
-$result1=mysqli_query($con, "SELECT user_username FROM tbl_user WHERE user_username='$_POST[user_username]'");
-list($username_check) = mysqli_fetch_row($result1);
-if(empty($username_check)) {
+        if (!empty($_POST['user_username'] && $_POST['user_password'] && $_POST['user_name'] && $_POST['user_phone'] && $_POST['work_name'])) {
 
-    if (!empty($_POST['user_username'] && $_POST['user_password'] && $_POST['user_name'] && $_POST['user_phone'] && $_POST['work_name'])) {
-
-        //เช็คว่าข้อมูลซ้ำไหม
-        $sql0 = "SELECT user_username FROM tbl_user WHERE user_username='$_POST[user_username]'";
-        $result0 = mysqli_query($con, $sql0);
-        list($check_username) = mysqli_fetch_row($result0);
+            //เช็คว่าข้อมูลซ้ำไหม
+            $sql0 = "SELECT user_username FROM tbl_user WHERE user_username='$_POST[user_username]'";
+            $result0 = mysqli_query($con, $sql0);
+            list($check_username) = mysqli_fetch_row($result0);
 
             $user_username = $_POST['user_username'];
             $user_password = $_POST['user_password'];
@@ -42,12 +42,12 @@ tbl_user (user_username,user_password,user_name,user_phone,work_id)
 VALUES ('$user_username','$hash','$user_name','$user_phone','$work_id') ";
 
             mysqli_query($con, $sql2);
-$date_now=date("Y-m-d");
-        $sql2 = "INSERT INTO
+            $date_now = date("Y-m-d");
+            $sql2 = "INSERT INTO
 tbl_work_payment (work_id,work_payment_date,work_payment_confirm)
 VALUES ('$work_id','$date_now','1') ";
 
-        mysqli_query($con, $sql2);
+            mysqli_query($con, $sql2);
             session_start();
 
             $_SESSION['user_username'] = $user_username;
@@ -56,9 +56,12 @@ VALUES ('$work_id','$date_now','1') ";
             $_SESSION['user_name'] = $user_name;
             $_SESSION['user_role'] = "ผู้ดูแล";
             echo "<label  id='result' data-id='1'></label>";
+        } else {
+            echo "<label  id='result' data-id='0'></label>";
+        }
     } else {
-        echo "<label  id='result' data-id='0'></label>";
+        echo "<label  id='result' data-id='2'></label>";
     }
 }else{
-    echo "<label  id='result' data-id='2'></label>";
+    echo "<label  id='result' data-id='66'></label>";
 }

@@ -10,13 +10,21 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';
         });
-    }else {
+    }else if(result==0){
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
             icon: 'error'
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';
+        });
+    }else if(result == 66){
+        swal({
+            title: 'Username หรือ Password สั้นเกินไป',
+            text: 'ชื่อผู้ใช้ และ รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=user&action=form_add_user';
         });
     }
 });
