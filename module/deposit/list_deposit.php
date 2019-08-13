@@ -22,7 +22,7 @@
                 $color="";
                 while(list($car_type_id,$car_type_name)=mysqli_fetch_row($result)){
 
-                    $sql="SELECT COUNT(car_type_id) FROM tbl_deposit WHERE car_type_id='$car_type_id'";//SELECT จำนวนรถแต่ละประเภทของร้านเราที่ฝาก
+                    $sql="SELECT COUNT(car_type_id) FROM tbl_deposit WHERE car_type_id='$car_type_id' AND deposit_active=1";//SELECT จำนวนรถแต่ละประเภทของร้านเราที่ฝาก
                     $res=mysqli_query($con,$sql);
                     list($deposit_volume)=mysqli_fetch_row($res);
                     if($i==0){
@@ -38,7 +38,7 @@
                     }
                     $i++;
                     ?>
-                        <td>
+
                             <div class="card bg-<?php echo $color; ?>">
                                 <div class="card-body text-center">
                                     <div class="text-lg m-0"><?php echo $deposit_volume; ?></div>
@@ -46,7 +46,7 @@
                                     <div class="mb-3"></div>
                                 </div>
                             </div>
-                        </td>
+
 <!--เว้นระยะห่างรหว่างประเภทรถ--> <td> &nbsp </td>
                         <?php } ?>
                     </tr>

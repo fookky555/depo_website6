@@ -8,7 +8,7 @@ $(document).ready(function () {
             text: 'แก้ไขข้อมูลเรียบร้อยแล้ว',
             icon: 'success'
         }).then(function() {
-            window.location.href='index.php?module=work&action=form_edit_work';
+            window.location.href='index.php?module=work&action=list_work';
         });
     }else {
         swal({
