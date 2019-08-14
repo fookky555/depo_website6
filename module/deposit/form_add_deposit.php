@@ -98,6 +98,11 @@
     </fieldset>
 
 </div>
+                    <fieldset>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-check"></em>&nbsp<b> ตรวจสอบข้อมูล</b></label>
+                            <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_check" required><span class="fa fa-check"></span></label> </div></div>
+                        </div>
+                    </fieldset>
 
                     <div>
 

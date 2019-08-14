@@ -53,11 +53,13 @@
                 </table> <hr>
 
                 <br><div align="center"><!--ปุ่มด้านล่างสามปุ่ม-->
-                    <button class="btn btn-labeled btn-outline-warning mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','form_add_deposit')?>"><span class="btn-label"><i class="fa fa-plus"></i></span><b> ฝากรถ </b></button>&nbsp
-                    &nbsp<button class="btn btn-labeled btn-outline-success mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_deposit')?>"><span class="btn-label"><i class="fa fa-search"></i></span><b>ข้อมูลฝากรถ</b></button>&nbsp
-                    <br><br><button class="btn btn-labeled btn-outline-info mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_wash')?>"><span class="btn-label"><i class="fas fa-tint"></i></span><b>ข้อมูลล้างรถ</b></button>&nbsp
-                    &nbsp<button class="btn btn-labeled btn-outline-danger mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><span class="btn-label"><i class="fas fa-money-bill"></i></span><b>ข้อมูลค่าปรับ</b></button>&nbsp
-                    &nbsp<button class="btn btn-labeled btn-outline-purple mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_news')?>"><span class="btn-label"><i class="fas fa-comment"></i></span><b>ข้อมูลประชาสัมพันธ์</b></button>
+                    <button class="btn btn-labeled btn-outline-warning mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','form_add_deposit')?>"><span class="btn-label"><i class="fa fa-plus"></i></span><b> ฝากรถ </b></button>
+                    <button class="btn btn-labeled btn-outline-success mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_deposit')?>"><span class="btn-label"><i class="fa fa-search"></i></span><b>ข้อมูลฝากรถ</b></button>
+                    <br><br><button class="btn btn-labeled btn-outline-info mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_wash')?>"><span class="btn-label"><i class="fas fa-tint"></i></span><b>ข้อมูลล้างรถ</b></button>
+                     <button class="btn btn-labeled btn-outline-purple mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_news')?>"><span class="btn-label"><i class="fas fa-comment"></i></span><b>ข้อมูลประชาสัมพันธ์</b></button>
+                    <button class="btn btn-labeled btn-outline-danger mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><span class="btn-label"><i class="fas fa-money-bill"></i></span><b>ข้อมูลค่าปรับ</b></button>
+
+                     <button class="btn btn-labeled btn-outline-dark mb-2" type="button" onclick=window.location.href="<?php MALink('deposit','search_cancel')?>"><span class="btn-label"><i class="fas fa-exclamation-circle"></i></span><b>การฝากที่ยกเลิก</b></button>
                 </div><br>
 
                 </div><!-- END card-->

@@ -1,4 +1,10 @@
 <section class="section-container">
+
+    <?php
+    date_default_timezone_set("Asia/Bangkok");
+    $date_now=date("Y-m-d");
+    $time_now=date("H:i");
+    ?>
     <!-- Page content-->
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-money-check-alt"></em> [ ยืนยันการชำระเงิน ] </p>
@@ -32,13 +38,13 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-calendar"></em>&nbsp<b> วันที่โอน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="work_payment_date" type="date" required></div>
+                            <div class="col-md-10"><input class="form-control" name="work_payment_date" type="date" value="<?php echo $date_now; ?>" required></div>
                         </div>
 
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-clock"></em>&nbsp<b> เวลาโอน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="work_payment_time" type="time" required></div>
+                            <div class="col-md-10"><input class="form-control" name="work_payment_time" type="time" value="<?php echo $time_now; ?>" required></div>
                         </div>
 
                     </fieldset>

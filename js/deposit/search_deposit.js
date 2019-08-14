@@ -23,6 +23,7 @@ $(document).ready(function(){
         });
 
     });
+
     $('#data-table-search_deposit').DataTable({
     });
     function EditWorkStatus() {

@@ -17,13 +17,13 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">_________</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
                                 <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font> </em></strong></th>
+                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -65,8 +65,10 @@
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
+                                            <button class="btn btn-sm btn-danger"  type="button" onclick=window.location.href="index.php?module=deposit&action=form_cancel_deposit&id=<?php echo $deposit_id; ?>"><em
+                                                    class="fas fa-times"></em></button>
                                             <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=delete_deposit&id=<?php echo $deposit_id; ?>"><em
-                                                    class="fas fa-trash-alt"></em></button>
+                                                        class="fas fa-trash-alt"></em></button>
                                         </td>
                                     <?php }
                                 echo "<label class='link' ></label>";

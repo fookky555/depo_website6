@@ -134,7 +134,7 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                     </div>
                     <div class="clearfix">
                         <div class="float-left">
-                            <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','list_deposit')?>">
+                            <button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_deposit')?>">
                                 <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
                         </div>
                         <div class="float-right">
