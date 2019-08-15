@@ -8,6 +8,12 @@
                 <form enctype="multipart/form-data" class="form-horizontal" method="post" action="<?php MALink('deposit','add_deposit') ?>">
 
                     <fieldset>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-edit"></em>&nbsp<b> ผู้บันทึกข้อมูล</b></label>
+                            <div class="col-md-10"><input class="form-control" name="user" type="text" value="<?php echo $_SESSION['user_username']; ?>" disabled></div>
+                        </div>
+
+                    </fieldset>
+                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
                             <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" placeholder="ระบุป้ายทะเบียนรถ.." required></div>
                         </div>
