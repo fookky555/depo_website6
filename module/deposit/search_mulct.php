@@ -17,11 +17,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th><strong><em class="fa fa-book"><font color="white">_________________</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-book"><font color="white">_________________</font></em></strong></th>
                                 <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
@@ -42,11 +42,11 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $deposit_id;?></td>
-                                    <td><?php echo $mulct_list;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $mulct_list;?></td>
                                     <td><?php echo $mulct_price;?></td>
-                                    <td><?php echo $mulct_date;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $mulct_date;?></td>
                                     <td><?php echo $username;?></td>
-                                    <td><?php echo $mulct_note;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $mulct_note;?></td>
 
 
                                     <td class="text-center">

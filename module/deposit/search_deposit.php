@@ -16,14 +16,14 @@
                         <table class="table table-hover" id="data-table-search_deposit">
                             <thead>
                             <tr>
-                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"> </em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">_________</font> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
+                                    <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -53,16 +53,16 @@
                                 echo"<tr>";
 
 
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_id</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_plate_id</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_date</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_date</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$days</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$car_type_name</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$car_type_name</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
 
 
                                     if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                        <td class="text-center">
+                                        <td class="text-center" bgcolor="#f8f8ff">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
                                             <button class="btn btn-sm btn-danger"  type="button" onclick=window.location.href="index.php?module=deposit&action=form_cancel_deposit&id=<?php echo $deposit_id; ?>"><em

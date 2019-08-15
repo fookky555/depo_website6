@@ -13,11 +13,11 @@
                         <table class="table table-hover" id="data-table-search_wash">
                             <thead>
                             <tr>
-                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">________</font></em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
                                     <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
@@ -44,14 +44,14 @@
                                 list($username)=mysqli_fetch_row($result2);
                                 ?>
                                 <tr>
-                                    <td><?php echo $deposit_id;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $deposit_id;?></td>
                                     <td><?php echo $pickup_date;?></td>
-                                    <td><?php echo $car_name;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $car_name;?></td>
                                     <td><?php echo $username;?></td>
 
                                     <?php
                                         if($wash_status==0){
-                                            echo "<td>ไม่ได้ล้าง</td>";
+                                            echo "<td bgcolor=\"#f8f8ff\">ไม่ได้ล้าง</td>";
                                             ?>
                                     <td class="text-center">
 
@@ -59,7 +59,7 @@
                                                 class="fas fa-tint"></em></button>
                                     <?php
                                         }else{
-                                            echo "<td>ล้างแล้ว</td>";
+                                            echo "<td bgcolor=\"#f8f8ff\">ล้างแล้ว</td>";
                                             ?>
                                     <td class="text-center">
 

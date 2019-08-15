@@ -17,9 +17,9 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,11 +39,11 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $deposit_id;?></td>
-                                    <td><?php echo $news_head;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $news_head;?></td>
                                     <td><?php echo $username;?></td>
 
 
-                                    <td class="text-center">
+                                    <td class="text-center" bgcolor="#f8f8ff">
 
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_news&id=<?php echo $news_id; ?>"><em
                                                 class="fas fa-pen"></em></button>

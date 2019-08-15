@@ -30,12 +30,12 @@
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
                             <thead>
                             <tr>
-                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">__________</font></em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
 
-                                <th><strong><em class="fa fa-calendar-check"><font color="white">_</font> </em> </strong> </th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar-check"><font color="white">___</font> </em> </strong> </th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">_____________</font></em></strong></th>
                             </tr>
                             </thead>
@@ -60,16 +60,16 @@
 
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
-                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"\">";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                    <td><?php echo $deposit_id;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $deposit_id;?></td>
                                     <td><?php echo $deposit_plate_id;?></td>
-                                    <td><?php echo $work_name;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_name;?></td>
 
 
                                     <td><?php  echo $date->diff($now)->format("%a วัน"); ?></td>
-                                    <td><?php echo $car_type_name;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $car_type_name;?></td>
                                     <td><?php echo $deposit_date;?></td>
 
                                 </tr>

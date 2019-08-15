@@ -15,11 +15,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-store-alt"> </em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="white">__________</font> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-sign"><font color="white">__________</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user"><font color="white">________________</font></em></strong></th>
-                                <th><strong><em class="fa fa-phone"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-phone"> </em></strong></th>
                                 <th><strong><em class="fa fa-check-square"><font color="white">________</font> </em></strong></th>
-                                <th class="text-right" style="width:140px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:140px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,15 +39,15 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $work_id;?></td>
-                                    <td><?php echo $work_name;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_name;?></td>
                                     <td><?php echo $work_contact_name;?></td>
-                                    <td><?php echo $work_contact_phone;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_contact_phone;?></td>
 
                                     <td><?php
                                             if($work_status==0){
                                                 echo "ไม่ได้ชำระเงิน</td>";
                                                 ?>
-                                    <td class="text-right">
+                                    <td class="text-right" bgcolor="#f8f8ff">
                                         <button class="btn btn-sm btn-outline-green edit_work_status" id="edit_work_status" onclick="EditWorkStatus(this)"  data-id="<?php echo $work_id;?>" type="button" data-link="index.php?module=work&action=edit_work_status&work_id=<?php echo $work_id; ?>&work_status=<?php echo $work_status; ?>"><em
                                                     class="fas fa-check"></em></button>
 

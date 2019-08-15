@@ -16,13 +16,13 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"> </em></strong></th>
                                 <th><strong><em class="fa fa-tint"> </em></strong></th>
-                                <th><strong><em class="fa fa-exclamation-circle"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-exclamation-circle"> </em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
-                                <th><strong><em class="fa fa-user"></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-user"></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
-                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font> </em></strong></th>
+                                <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font> </em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -43,14 +43,14 @@
 
 
                                 echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_id</td>";
-                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_deposit</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$bill_deposit</td>";
                                 echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_wash</td>";
-                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_mulct</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$bill_mulct</td>";
                                 echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_total</td>";
-                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$username</td>";
+                                echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$username</td>";
                                 echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id'>$bill_date</td>";
                                 ?>
-                                    <td class="text-center">
+                                    <td class="text-center" bgcolor="#f8f8ff">
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=bill&action=form_edit_bill&id=<?php echo $bill_id; ?>"><em
                                                 class="fas fa-pencil-alt"></em></button>
                                         <button class="btn btn-sm btn-danger delete_bill"  type="button" data-link="index.php?module=bill&action=delete_bill&id=<?php echo $bill_id; ?>"><em

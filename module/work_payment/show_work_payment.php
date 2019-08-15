@@ -17,11 +17,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-clock"></em></strong></th>
-                                <th><strong><em class="fa fa-university"></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-university"></em></strong></th>
                                 <th><strong><em class="fa fa-image"></em></strong></th>
-                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><font color="white">___________</font></em></strong></th>
+                                <th class="text-right" style="width:140px" bgcolor="#f8f8ff"><strong><em class="fa fa-check-square"><font color="white">___________</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,9 +40,9 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $work_payment_id;?></td>
-                                    <td><?php echo $work_payment_date;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
-                                    <td><?php echo $payment_detail_id;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $payment_detail_id;?></td>
                                     <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">
                                     <td><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
                                     <div id="myModal" class="modal">
@@ -51,7 +51,7 @@
                                         <div id="img/work_payment/<?php echo $work_payment_pic; ?>"></div>
                                     </div>
 
-                                    <td class="text-right">
+                                    <td class="text-right" bgcolor="#f8f8ff">
                                     <?php if($work_payment_confirm==0){
                                         echo "<font color='black'>รอดำเนินการ</font>";
                                     }else if($work_payment_confirm==1){

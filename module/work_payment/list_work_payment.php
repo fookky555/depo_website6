@@ -15,11 +15,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-store-alt"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-store-alt"> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><FONT COLOR="WHITE">_______</FONT> </em></strong></th>
-                                <th><strong><em class="fa fa-clock"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-clock"> </em></strong></th>
                                 <th><strong><em class="fa fa-university"> </em></strong></th>
-                                <th><strong><em class="fa fa-image"> </em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-image"> </em></strong></th>
                                 <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><FONT COLOR="WHITE">______</FONT> </em></strong></th>
                             </tr>
                             </thead>
@@ -36,13 +36,13 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $work_payment_id;?></td>
-                                    <td><?php echo $work_id;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_id;?></td>
                                     <td><?php echo $work_payment_date;?></td>
-                                    <td><?php echo $work_payment_time;?></td>
+                                    <td bgcolor="#f8f8ff"><?php echo $work_payment_time;?></td>
                                     <td><?php echo $payment_detail_id;?></td>
 
                                     <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">
-                                    <td><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
+                                    <td bgcolor="#f8f8ff"><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
                                     <div id="myModal" class="modal">
                                         <span class="close">&time;</span>
                                         <img class="modal-content" id="">
