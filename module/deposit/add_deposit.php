@@ -21,7 +21,7 @@ echo "<p align='center'><img src='img\loading.png'></p>";
                 if($image_filename!="deposit_default.jpg"){
                     $image_name="deposit_".$shuffle_name.".$ext";
                     copy($image_tmp,"img/deposit/$image_name");
-                    resize_img($image_name,$ext,36,75,0);
+                    //resize_img($image_name,$ext,36,75,0);
                 }else{
                     $image_name="";
                 }

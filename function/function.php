@@ -14,7 +14,10 @@ function GetModule($getmodule,$getaction){
     return $dataMA;
 }
 function connect_db(){
-    $con=mysqli_connect("localhost","root","","main_db")or die(mysqli_connect("localhost:3306","depo_admin_db","Aekapop123","main_db"));
+    $con=mysqli_connect("localhost","root","","main_db");
+    if(!$con){
+        $con=mysqli_connect("localhost:3306","depo_admin_db","Aekapop123","main_db");
+    }
     mysqli_set_charset($con,"utf8");
     /*if (mysqli_connect_errno())
     {
@@ -179,7 +182,6 @@ function resize_img($pic_name,$ext,$width,$height,$check){
         $images="img/work_payment/$pic_name";
     }
     $new_images="img/thumb_$pic_name";
-    echo $images;
 
     if($ext=="jpg"){$images_orig=ImageCreateFromJPEG($images);}
     elseif ($ext=="JPG"){$images_orig=ImageCreateFromJPEG($images);}
