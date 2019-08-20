@@ -14,7 +14,7 @@ function GetModule($getmodule,$getaction){
     return $dataMA;
 }
 function connect_db(){
-    $con=mysqli_connect("localhost","root","","main_db")or die("เชื่อมต่อไม่ได้");
+    $con=mysqli_connect("localhost","root","","main_db")or die(mysqli_connect("localhost:3306","depo_admin_db","Aekapop123","main_db"));
     mysqli_set_charset($con,"utf8");
     /*if (mysqli_connect_errno())
     {
