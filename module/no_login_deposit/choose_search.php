@@ -19,17 +19,6 @@
 <body>
 
 <section class="section-container">
-    <!-- Page content-->
-    <?php
-    $con=connect_db();
-
-    $sql1="SELECT * FROM tbl_user WHERE user_role='ผู้ดูแลสูงสุด' ORDER BY user_id DESC LIMIT 1";//ต้องเปลี่ยน WHERE
-
-    $result=mysqli_query($con,$sql1);
-
-    list($user_id,$user_username,$user_password,$user_role,$user_name,$user_phone,$work_id)=mysqli_fetch_row($result);
-
-    ?>
     <div class="col-xl-11"><br>
         <p class="lead"><em class="fa fa-search"> </em> [ ค้นหาข้อมูลฝากรถ ] </p>
         <div class="card card-default">
@@ -56,7 +45,6 @@
 
                         </div>
                     </fieldset>
-
                     <fieldset>
                         <div class="col-md-0">
 

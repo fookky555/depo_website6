@@ -211,7 +211,11 @@
                     <div class="clearfix">
                         <div class="float-left">
                             <button class="btn btn-danger" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=choose_search">
-                                <em class="fa fa-caret-left fa-fw" ></em>กลับ</button>
+                                <em class="fa fa-caret-left fa-fw" ></em> กลับ</button>
+                        </div>
+                        <div class="float-right">
+                            <button class="btn btn-info" type="button" onclick=window.location.href="#">
+                                <em class="fa fa-qrcode fa-fw" ></em> แสดง QR Code</button>
                         </div>
 
                     </div>

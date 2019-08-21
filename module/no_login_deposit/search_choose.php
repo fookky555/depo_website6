@@ -19,12 +19,17 @@
 <body>
 <section class="section-container">
     <!-- Page content-->
-
+<?php
+$con=connect_db();
+$sql1="SELECT work_name FROM tbl_work WHERE work_id='$_POST[work_id]'";
+$result1=mysqli_query($con,$sql1);
+list($name)=mysqli_fetch_row($result1);
+?>
     <div class="content-wrapper">
         <div class="row">
             <!-- Article Content-->
             <div class="col-xl-11">
-                <p class="lead"> <em class="fa fa-motorcycle"> </em> [ ค้นหาข้อมูลฝากรถ ] </p>
+                <p class="lead"> <em class="fa fa-motorcycle"> </em> [ ค้นหาข้อมูลฝากรถ <?php echo $name; ?>] </p>
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
@@ -41,7 +46,6 @@
                             </thead>
                             <tbody>
                             <?php
-                            $con=connect_db();
                             if(empty($_POST['work_id'])){
                                 $id=$_GET['id'];
                             }else{

@@ -17,15 +17,11 @@ echo "<p align='center'><img src='img\loading.png'></p>";
         $image_exp=explode(".",$image_filename);
         $ext=end($image_exp);
         if($ext=='jpg' or $ext=='gif' or $ext=='png' or $ext=='jpeg' or $ext=='JPEG' or $ext=='PNG' or $ext=='JPG' or $ext=='GIF'){
-            if($image_filesize<=3000000){
                 if($image_filename!="deposit_default.jpg"){
                     $image_name="deposit_".$shuffle_name.".$ext";
                     copy($image_tmp,"img/deposit/$image_name");
                     //resize_img($image_name,$ext,36,75,0);
-                }else{
-                    $image_name="";
                 }
-            }
         }
 
         if($_POST['deposit_fuel']==0){
