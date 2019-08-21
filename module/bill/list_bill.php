@@ -8,7 +8,7 @@
                 <div class="clearfix">
                 </div>
                 <BR>
-                <p class="lead"><em class="fa fa-check"> </em> [ ข้อมูลชำระเงินการฝากรถของร้าน ] </p>
+                <p class="lead"><em class="fa fa-check"> </em> [ ข้อมูลชำระเงินการฝากรถ <?php echo $_SESSION['work_name']; ?> ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

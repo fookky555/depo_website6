@@ -11,7 +11,7 @@
                     <?php } ?>
                 </div>
                 <BR>
-                <p class="lead"><em class="fa fa-calculator"></em> [ อัตราค่าบริการตามประเภทของรถ ] </p>
+                <p class="lead"><em class="fa fa-calculator"></em> [ อัตราค่าบริการตามประเภทของรถ <?php echo $_SESSION['work_name']; ?> ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

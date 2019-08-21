@@ -219,7 +219,7 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><b><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
@@ -233,7 +233,7 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em><b> &nbsp ติดต่อร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
+                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
@@ -246,7 +246,7 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em><b> &nbsp ข่าวประชาสัมพันธ์ <em class=\"icon-arrow-left\"></em></b></a></li>
-                          <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
+                          <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
@@ -259,7 +259,7 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em><b> &nbsp เข้าสู่ระบบ <em class=\"icon-arrow-left\"></em></b></a></li>
+                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em><b> &nbsp ระบบร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
@@ -273,7 +273,7 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp เข้าสู่ระบบ</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
 
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->

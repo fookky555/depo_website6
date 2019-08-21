@@ -9,7 +9,7 @@
                     <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('work_payment','form_add_work_payment')?>"><em class="fas fa-plus fa-fw"></em> ยืนยันการชำระเงิน</button></div>
                 </div>
                 <BR>
-                <p class="lead"><em class="fa fa-money-check-alt"></em> [ ประวัติการชำระเงินของร้านฝากรถ ] </p>
+                <p class="lead"><em class="fa fa-money-check-alt"></em> [ ประวัติการชำระเงินของร้านฝากรถ <?php echo $_SESSION['work_name']; ?> ] </p>
                 <div class="card">
 
                     <div class="table-responsive">

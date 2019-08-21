@@ -11,7 +11,7 @@
                 <?php }?>
                 </div>
                 <BR>
-                <p class="lead"><em class="fa fa-user-cog"></em> [ จัดการข้อมูลผู้ใช้งานของร้าน ] </p>
+                <p class="lead"><em class="fa fa-user-cog"></em> [ จัดการข้อมูลผู้ใช้งาน <?php echo $_SESSION['work_name']; ?> ] </p>
                 <div class="card">
 
                     <div class="table-responsive">
