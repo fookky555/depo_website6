@@ -44,8 +44,18 @@
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $user_phone ?>" disabled></div>
                         </div>
-
                     </fieldset>
+                    <?php
+                    if($_SESSION['user_role']=="ผู้ดูแลสูงสุด"){
+                        ?>
+                        <fieldset>
+                            <div class="form-group row"><label class="col-md-2 col-form-label"><b><font color="#32cd32">line</font>&nbsp ไลน์ไอดี</b></label>
+                                <div class="col-md-10"><input class="form-control" name="work_id" type="text" value="<?php echo $work_id; ?>" disabled></div>
+                            </div>
+                        </fieldset>
+                    <?php
+                    }
+                    ?>
                     <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
                     <div class="clearfix">
                         <div class="float-right">

@@ -49,8 +49,8 @@
 
                     </fieldset>
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><b><FONT COLOR="#90ee90">LINE</FONT> ไลน์ไอดี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="@<?php echo $user_phone ?>" disabled></div>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><b><font color="#32cd32">line</font>&nbsp ไลน์ไอดี</b></label>
+                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $work_id; ?>" disabled></div>
                         </div>
 
                     </fieldset>
