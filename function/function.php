@@ -241,20 +241,23 @@ function top_menu_active(){
 
 echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
 <li class=\"nav-item dropdown\">
-    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">ข้อมูลรับฝากรถ</a>
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><b><em class=\"icon-magnifier\"></em> &nbsp; ข้อมูลฝากรถ <em class=\"icon-arrow-left\"></em></b></a>
     <div class=\"dropdown-menu\">
-      <a class=\"dropdown-item\" href=\"#\">Action</a>
-      <a class=\"dropdown-item\" href=\"#\">Another action</a>
-      <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=choose_search\"><em class=\"fa fa-store\"></em> &nbsp ค้นหาข้อมูลระบุร้าน</a>
       <div class=\"dropdown-divider\"></div>
-      <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=search_deposit\"><em class=\"fa fa-search-plus\"></em> &nbsp ค้นหาข้อมูลทั้งหมด</a>
     </div>
   </li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><b><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
-
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-login\"></em> &nbsp; ระบบร้านฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=login&action=login\"><em class=\"fa fa-sign-in-alt\"></em> &nbsp เข้าสู่ระบบ</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=register&action=registerForm\"><em class=\"fa fa-store\"></em> &nbsp ลงทะเบียนร้านฝาก</a>
+    </div>
+  </li>  
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
@@ -264,11 +267,24 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else if($_GET['module']=="no_login_work"){
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em><b> &nbsp ติดต่อร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-magnifier\"></em> &nbsp; ข้อมูลฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=choose_search\"><em class=\"fa fa-store\"></em> &nbsp ค้นหาข้อมูลระบุร้าน</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=search_deposit\"><em class=\"fa fa-search-plus\"></em> &nbsp ค้นหาข้อมูลทั้งหมด</a>
+    </div>
+  </li>
+                  <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em><b> &nbsp ติดต่อร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
-
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-login\"></em> &nbsp; ระบบร้านฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=login&action=login\"><em class=\"fa fa-sign-in-alt\"></em> &nbsp เข้าสู่ระบบ</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=register&action=registerForm\"><em class=\"fa fa-store\"></em> &nbsp ลงทะเบียนร้านฝาก</a>
+    </div>
+  </li>  
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
@@ -277,11 +293,23 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else if($_GET['module']=="no_login_news"){
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-magnifier\"></em> &nbsp; ข้อมูลฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=choose_search\"><em class=\"fa fa-store\"></em> &nbsp ค้นหาข้อมูลระบุร้าน</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=search_deposit\"><em class=\"fa fa-search-plus\"></em> &nbsp ค้นหาข้อมูลทั้งหมด</a>
+    </div>
+  </li>                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em><b> &nbsp ข่าวประชาสัมพันธ์ <em class=\"icon-arrow-left\"></em></b></a></li>
-                          <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
-
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-login\"></em> &nbsp; ระบบร้านฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=login&action=login\"><em class=\"fa fa-sign-in-alt\"></em> &nbsp เข้าสู่ระบบ</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=register&action=registerForm\"><em class=\"fa fa-store\"></em> &nbsp ลงทะเบียนร้านฝาก</a>
+    </div>
+  </li>  
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
@@ -290,11 +318,23 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
             </ul><!-- END Right Navbar-->";
     }else{
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-magnifier\"></em> &nbsp; ข้อมูลฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=choose_search\"><em class=\"fa fa-store\"></em> &nbsp ค้นหาข้อมูลระบุร้าน</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=search_deposit\"><em class=\"fa fa-search-plus\"></em> &nbsp ค้นหาข้อมูลทั้งหมด</a>
+    </div>
+  </li>                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                            <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em><b> &nbsp ระบบร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
-
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><b><em class=\"icon-login\"></em> &nbsp; ระบบร้านฝากรถ <em class=\"icon-arrow-left\"></em></b></a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=login&action=login\"><em class=\"fa fa-sign-in-alt\"></em> &nbsp เข้าสู่ระบบ</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=register&action=registerForm\"><em class=\"fa fa-store\"></em> &nbsp ลงทะเบียนร้านฝาก</a>
+    </div>
+  </li>  
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
@@ -304,11 +344,25 @@ echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
     }
     }else{
         echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-magnifier\"></em> &nbsp; ข้อมูลฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=choose_search\"><em class=\"fa fa-store\"></em> &nbsp ค้นหาข้อมูลระบุร้าน</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=no_login_deposit&action=search_deposit\"><em class=\"fa fa-search-plus\"></em> &nbsp ค้นหาข้อมูลทั้งหมด</a>
+    </div>
+  </li>                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=login&action=login\" title=\"Login\"><em class=\"icon-login\"></em> &nbsp ระบบร้านฝากรถ</a></li>
-
+                
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><em class=\"icon-login\"></em> &nbsp; ระบบร้านฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"index.php?module=login&action=login\"><em class=\"fa fa-sign-in-alt\"></em> &nbsp เข้าสู่ระบบ</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"index.php?module=register&action=registerForm\"><em class=\"fa fa-store\"></em> &nbsp ลงทะเบียนร้านฝาก</a>
+    </div>
+  </li>  
+  
             </ul><!-- END Left navbar-->
             <!-- START Right Navbar-->
             <ul class=\"navbar-nav flex-row\">
