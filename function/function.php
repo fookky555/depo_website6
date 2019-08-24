@@ -201,7 +201,29 @@ function resize_img($pic_name,$ext,$width,$height,$check){
     ImageDestroy($images_orig);
     ImageDestroy($images_fin);
 }
+function resize_img2($pic_name,$ext,$size){
+    $images="img/deposit/$pic_name";
+    $new_images="img/deposit/$pic_name";
+    $fix_width=600;
+    $height=round($fix_width*$size[1]/$size[0]);
+    if($ext=="jpg"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="JPG"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="JPEG"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="jpeg"){$images_orig=ImageCreateFromJPEG($images);}
+    elseif ($ext=="gif"){$images_orig=ImageCreateFromGIF($images);}
+    elseif ($ext=="GIF"){$images_orig=ImageCreateFromGIF($images);}
+    else{
+        $images_orig=imageCreateFromPng($images);
+    }
 
+    $photoX=ImagesX($images_orig);
+    $photoY=ImagesY($images_orig);
+    $images_fin=ImageCreateTrueColor($fix_width,$height);
+    ImageCopyResampled($images_fin,$images_orig,0,0,0,0,$fix_width+1,$height+1,$photoX,$photoY);
+    ImageJPEG($images_fin,$new_images);
+    ImageDestroy($images_orig);
+    ImageDestroy($images_fin);
+}
 function check_login(){
     if(!isset($_SESSION['user_role'])){
         echo "<label  id='result' data-id='6'></label>";
@@ -215,7 +237,19 @@ function menu_active($module, $mActive){
 function top_menu_active(){
     if(isset($_GET['module'])){
     if($_GET['module']=="no_login_deposit"){
+
+
 echo"<ul class=\"nav navbar-nav mr-auto flex-column flex-lg-row\">
+<li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">ข้อมูลรับฝากรถ</a>
+    <div class=\"dropdown-menu\">
+      <a class=\"dropdown-item\" href=\"#\">Action</a>
+      <a class=\"dropdown-item\" href=\"#\">Another action</a>
+      <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+      <div class=\"dropdown-divider\"></div>
+      <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+    </div>
+  </li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_deposit&action=choose_search\" title=\"ข้อมูลรับฝากรถ\"><b><em class=\"icon-magnifier\"></em> &nbsp ข้อมูลฝากรถ <em class=\"icon-arrow-left\"></em></b></a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_work&action=search_work\" title=\"ข้อมูลร้านฝากรถ\"><em class=\"icon-phone\"></em> &nbsp ติดต่อร้านฝากรถ</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link\" href=\"index.php?module=no_login_news&action=search_news\" title=\"ข่าวประชาสัมพันธ์\"><em class=\"icon-speech\"></em> &nbsp ข่าวประชาสัมพันธ์</a></li>

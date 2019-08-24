@@ -13,14 +13,14 @@ echo "<p align='center'><img src='img\loading.png'></p>";
         $image_filename=$_FILES['deposit_pic']['name'];
         $image_tmp=$_FILES['deposit_pic']['tmp_name'];
         $image_filesize=$_FILES['deposit_pic']['size'];
-
+        $size=getimagesize($_FILES['deposit_pic']['tmp_name']);
         $image_exp=explode(".",$image_filename);
         $ext=end($image_exp);
         if($ext=='jpg' or $ext=='gif' or $ext=='png' or $ext=='jpeg' or $ext=='JPEG' or $ext=='PNG' or $ext=='JPG' or $ext=='GIF'){
                 if($image_filename!="deposit_default.jpg"){
                     $image_name="deposit_".$shuffle_name.".$ext";
                     copy($image_tmp,"img/deposit/$image_name");
-                    //resize_img($image_name,$ext,36,75,0);
+                    resize_img2($image_name,$ext,$size);
                 }
         }
 
@@ -47,10 +47,10 @@ VALUES ('$deposit_id',0,'$_SESSION[work_id]')";
 
             mysqli_query($con, $sql);
         }
-       echo "<label  id='result' data-id='1'></label>";
-         echo "<label id='deposit_id' data-id='$deposit_id'></label>";
+      echo "<label  id='result' data-id='1'></label>";
+        echo "<label id='deposit_id' data-id='$deposit_id'></label>";
        echo "<label id='deposit_plate_id' data-id='$_POST[deposit_plate_id]'></label>";
     }else{
-        echo "<label  id='result' data-id='0'></label>";
+       echo "<label  id='result' data-id='0'></label>";
     }
 ?>

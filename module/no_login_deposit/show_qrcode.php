@@ -28,7 +28,8 @@
 
                     <fieldset>
                         <div align="center">
-                            รูป QR Code ตรงนี้
+                           <?php $link = "http://depo.in.th/index.php?module%3Ddeposit%26action%3Dshow_deposit%26id%3D$_GET[id]";?>
+                            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $link; ?>&choe=UTF-8" title="Link to Deposit" />
                         </div>
                     </fieldset>
                     <div class="float-left">
