@@ -42,16 +42,16 @@
                                 $sql2="SELECT user_username FROM tbl_user WHERE user_id='$wash_user_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
-                                ?>
-                                <tr>
-                                    <td bgcolor="#f8f8ff"><?php echo $deposit_id;?></td>
-                                    <td><?php echo $pickup_date;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_name;?></td>
-                                    <td><?php echo $username;?></td>
+                                echo "<tr>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_id</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$pickup_date</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$car_name</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
 
+                                ?>
                                     <?php
                                         if($wash_status==0){
-                                            echo "<td bgcolor=\"#f8f8ff\">ไม่ได้ล้าง</td>";
+                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">ไม่ได้ล้าง</td>";
                                             ?>
                                     <td class="text-center">
 
@@ -59,7 +59,7 @@
                                                 class="fas fa-tint"></em></button>
                                     <?php
                                         }else{
-                                            echo "<td bgcolor=\"#f8f8ff\">ล้างแล้ว</td>";
+                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">ล้างแล้ว</td>";
                                             ?>
                                     <td class="text-center">
 
@@ -100,3 +100,16 @@
 
     </div>
 </section><!-- Page footer-->
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=deposit&action=show_deposit&from=wash&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=deposit&action=show_deposit&from=wash&id='+id;
+    }
+
+</script>

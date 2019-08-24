@@ -36,7 +36,7 @@ list($name)=mysqli_fetch_row($result1);
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-car"><font color="white">__________</font></em></strong></th>
+                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-car"><font color="white">____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
 
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar-check"><font color="white">_</font> </em> </strong> </th>

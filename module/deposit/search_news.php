@@ -36,13 +36,12 @@
                                 $sql2="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
+                                echo "<tr>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$news_head</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
+
                                 ?>
-                                <tr>
-                                    <td><?php echo $deposit_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $news_head;?></td>
-                                    <td><?php echo $username;?></td>
-
-
                                     <td class="text-center" bgcolor="#f8f8ff">
 
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_news&id=<?php echo $news_id; ?>"><em
@@ -77,3 +76,16 @@
 
     </div>
 </section><!-- Page footer-->
+<script>
+    //var id =$("#link").data("id");
+
+    $(".tclick").click(function (e) {
+        window.location.href='index.php?module=deposit&action=show_deposit&from=news&id='+e.data("id");
+    });
+
+    // console.log(id);
+    function href1(id) {
+        window.location.href='index.php?module=deposit&action=show_deposit&from=news&id='+id;
+    }
+
+</script>

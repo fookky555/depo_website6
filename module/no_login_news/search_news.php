@@ -31,7 +31,7 @@
                             <thead>
                             <tr>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">________</font></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">__________</font></strong></th>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">________</font></strong></strong></th>
                                 <th><strong><em class="fa fa-sign"><font color="white">________</font></strong></strong></th>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">______________</font></strong></strong></th>

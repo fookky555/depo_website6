@@ -6,7 +6,7 @@
             <!-- Article Content-->
             <div class="col-xl-12">
                 <div class="clearfix">
-                        <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="<?php MALink('deposit','search_qrcode')?>"><em class="fas fa-qrcode"></em> ค้นหา QR code</button></div>
+                        <div class="float-right"><button class="btn btn-success" type="button" onclick=window.location.href="https://www.the-qrcode-generator.com/scan"><em class="fas fa-qrcode"></em> ค้นหา QR code</button></div>
                 </div>
                 <BR>
                 <p class="lead"><em class="fa fa-search"> </em> [ ค้นหาข้อมูลฝากรถ <?php echo $_SESSION['work_name']; ?> ] </p>
@@ -17,7 +17,7 @@
                             <thead>
                             <tr>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">_________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="white">___________</font> </em></strong></th>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
                                 <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>

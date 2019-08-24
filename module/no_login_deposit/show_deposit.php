@@ -214,7 +214,7 @@
                                 <em class="fa fa-caret-left fa-fw" ></em> กลับ</button>
                         </div>
                         <div class="float-right">
-                            <button class="btn btn-info" type="button" onclick=window.location.href="#">
+                            <button class="btn btn-info" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_qrcode&id=<?php echo $_GET['id']; ?>">
                                 <em class="fa fa-qrcode fa-fw" ></em> แสดง QR Code</button>
                         </div>
 

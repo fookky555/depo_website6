@@ -223,7 +223,15 @@
                     <div class="clearfix">
                         <div class="float-left">
                             <?php if($deposit_active==1){
-                                echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_deposit\">";
+                                if(isset($_GET['from']) AND $_GET['from']=="wash"){
+                                    echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_wash\">";
+                                }else if(isset($_GET['from']) AND $_GET['from']=="mulct"){
+                                    echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_mulct\">";
+                                }else if(isset($_GET['from']) AND $_GET['from']=="news"){
+                                    echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_news\">";
+                                }else{
+                                    echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=deposit&action=search_deposit\">";
+                                }
                             }else{
                                 echo "<button class=\"btn btn-danger\" type=\"button\" onclick=window.location.href=\"index.php?module=bill&action=list_bill\">";
                             } ?>
