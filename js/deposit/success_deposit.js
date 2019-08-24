@@ -6,7 +6,7 @@ $(document).ready(function () {
     if(result == 0){
 
         swal({
-            title: 'ดำเนินการต่อหรือไม่?',
+            title: 'ดำเนินการต่อ?',
             text: 'ไม่สามารถกลับมาแก้ไขข้อมูลได้',
             icon: 'info',
             buttons: {

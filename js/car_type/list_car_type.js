@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('.delete_car_type').on('click', function(e) {
         e.preventDefault();
         swal({
-            title: 'ต้องการลบข้อมูลใช่หรือไม่?',
+            title: 'ต้องการลบข้อมูล?',
             text: 'ข้อมูลไม่สามารถนำกลับมาได้',
             icon: 'warning',
             buttons: {
