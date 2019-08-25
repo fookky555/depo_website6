@@ -13,5 +13,16 @@ $(document).ready(function () {
             text.style.display = "none";
         }
     }
+    var result= $("#result").data("id");
+    console.log(result);
+    if(result == 0){
 
+        swal({
+            title: 'ไม่พบข้อมูล!',
+            text: 'กรุณาตรวจสอบข้อมูลที่ค้นหาใหม่',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=deposit&action=search_deposit';
+        });
+    }
 });
