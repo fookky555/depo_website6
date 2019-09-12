@@ -15,7 +15,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" placeholder="ระบุป้ายทะเบียนรถ.." required></div>
+                            <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" placeholder="ตัวอย่าง: 'กอ 69 เชียงใหม่'" required></div>
                         </div>
 
                     </fieldset>

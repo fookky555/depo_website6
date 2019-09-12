@@ -2,7 +2,7 @@
 <?php
 //var_dump($_POST);
 echo "<p align='center'><img src='img\loading.png'></p>";
-if(!empty($_POST['car_type_name']&&$_POST['car_type_deposit_price']&&$_POST['car_type_1month_deposit_price']&&$_POST['car_type_3month_deposit_price']&&$_POST['car_type_6month_deposit_price']&&$_POST['car_type_1year_deposit_price']&&$_POST['car_type_wash_price'])){
+if(!empty($_POST['car_type_name']&&$_POST['car_type_deposit_price'])){
     $car_type_name=$_POST['car_type_name'];
     $car_type_deposit_price=$_POST['car_type_deposit_price'];
     $car_type_1month_deposit_price=$_POST['car_type_1month_deposit_price'];

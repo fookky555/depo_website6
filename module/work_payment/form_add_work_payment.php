@@ -50,7 +50,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> หลักฐานการโอน</b></label>
-                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="url_of_your_file" name="work_payment_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG" required /></div>
+                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="url_of_your_file" name="work_payment_pic"  data-max-file-size="10M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG" required /></div>
                         </div>
 
                     </fieldset>

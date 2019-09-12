@@ -61,7 +61,7 @@ list($deposit_id,$car_type_id,$deposit_plate_id,$deposit_helmet,$deposit_number,
                     <input type="hidden" name="old_pic" value="<?php echo $deposit_pic; ?>">
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
-                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="img/deposit/<?php echo $deposit_pic; ?>" name="deposit_pic"  data-max-file-size="3M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG"></div>
+                            <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="img/deposit/<?php echo $deposit_pic; ?>" name="deposit_pic"  data-max-file-size="100M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG"></div>
                         </div>
                     </fieldset>
                     <?php

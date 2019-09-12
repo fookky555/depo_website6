@@ -1,5 +1,6 @@
 <?php
 echo "<p align='center'><img src='img\loading.png'></p>";
+if (preg_match('/[^a-z0-9_ก-๙เโแใไา]+/', $_POST['deposit_plate_id']) && strlen($_POST['deposit_plate_id']) >= 9 ) {
 if(!empty($_POST['deposit_type'] or $_POST['car_type_id'])){
 
     if(empty($_POST['deposit_wash'])){//เช็คว่า checkbox การล้างรถเป็นค่าว่างหรือไม่
@@ -7,33 +8,31 @@ if(!empty($_POST['deposit_type'] or $_POST['car_type_id'])){
     }
     if(!empty($_FILES['deposit_pic']['name'])){
 
-        $image_url="img/deposit_pic/$_POST[old_pic]";
-        $image_thumb_url="img/thumb_$_POST[old_pic]";
-        if(file_exists($image_url) && file_exists($image_thumb_url)){
+        $image_url="img/deposit/$_POST[old_pic]";
+
+        if(file_exists($image_url)){
             unlink($image_url);
-            unlink($image_thumb_url);
         }
         $shuffle_name=str_shuffle(date("dmYhis"));//สุ่มโดยใช้วันและเวลาปัจจุบัน
-
         $image_filename=$_FILES['deposit_pic']['name'];
         $image_tmp=$_FILES['deposit_pic']['tmp_name'];
         $image_filesize=$_FILES['deposit_pic']['size'];
-
+        $size=getimagesize($_FILES['deposit_pic']['tmp_name']);
         $image_exp=explode(".",$image_filename);
         $ext=end($image_exp);
         if($ext=='jpg' or $ext=='gif' or $ext=='png' or $ext=='jpeg' or $ext=='JPEG' or $ext=='PNG' or $ext=='JPG' or $ext=='GIF'){
-            if($image_filesize<=3000000){
-                echo "a";
+                //echo "aaaaaaaaaaaaaaaaaaaaaaaaaaa";
                 if($image_filename!="deposit_default.jpg"){
-                    echo "b";
+                    //echo "bbbbbbbbbbbbbbbbbbbbbbbbbbbb";
                     $image_name="deposit_".$shuffle_name.".$ext";
                     copy($image_tmp,"img/deposit/$image_name");
-                    resize_img($image_name,$ext,36,75,0);
-                }else{
-                    echo "c";
-                    $image_name="";
+                   // resize_img($image_name,$ext,36,75,0);
+                    resize_img2($image_name,$ext,$size);
+            }else{
+                    //echo "cccccccccccccccccccccccccccc";
                 }
-            }
+        }else{
+            //echo "ddddddddddddddddddddddddddddddd";
         }
         $sql="UPDATE tbl_deposit SET 
     car_type_id='$_POST[car_type_id]',
@@ -84,5 +83,8 @@ VALUES ('$_POST[id]',0,$_SESSION[work_id])";
 
 }else{
     echo "<label  id='result' data-id='0'></label>";
+}
+}else{
+    echo "<label  id='result' data-id='2'></label>";
 }
 ?>

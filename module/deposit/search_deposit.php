@@ -50,7 +50,7 @@
                                 $now = new DateTime();
                                 $days = $date->diff($now)->format('%a วัน');
 
-                                echo"<tr>";
+                                echo"<tr bordercolor='black'>";
 
 
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_id</td>";

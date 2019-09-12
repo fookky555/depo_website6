@@ -20,6 +20,14 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=deposit&action=form_add_deposit';
         });
+    }else if(result==2) {
+        swal({
+            title: 'ข้อมูลทะเบียนรถไม่ถูกต้อง!',
+            text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=deposit&action=form_add_deposit';
+        });
     }
 });
 

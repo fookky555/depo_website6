@@ -41,7 +41,7 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
                 <form class="mb-3" id="loginForm" method="post" novalidate>
                     <div class="form-group">
                         <div class="input-group with-focus"><input class="form-control border-right-0" name="username" type="text" placeholder="ชื่อผู้ใช้" autocomplete="off" required>
-                            <div class="input-group-append"><span class="input-group-text text-muted bg-transparent border-left-0"><em class="fa fa-envelope"></em></span></div>
+                            <div class="input-group-append"><span class="input-group-text text-muted bg-transparent border-left-0"><em class="fa fa-user"></em></span></div>
                         </div>
                     </div>
                     <div class="form-group">
