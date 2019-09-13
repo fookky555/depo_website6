@@ -3,16 +3,21 @@
     <?php
     $con=connect_db();
 
+    if(isset($_POST['deposit_wash']) && $_POST['deposit_wash']==1){
+        $select_sql="bill_wash,bill_date";
+    }else{
+        $select_sql="bill_total,bill_date";
+    }
     if(!empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
+        $sql1 = "SELECT $select_sql FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
         //SELECT * FROM tablename WHERE columname BETWEEN '2012-12-25 00:00:00' AND '2012-12-25 23:59:59'
     }elseif(!empty($_POST['car_type_id']) && empty($_POST['deposit_type'])){
-        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND year(`bill_date`) = YEAR(CURDATE())";
+        $sql1 = "SELECT $select_sql FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND car_type_id='$_POST[car_type_id]' AND year(`bill_date`) = YEAR(CURDATE())";
     }elseif(empty($_POST['car_type_id']) && !empty($_POST['deposit_type'])){
-        $sql1 = "SELECT bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
+        $sql1 = "SELECT $select_sql FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND deposit_type='$_POST[deposit_type]' AND year(`bill_date`) = YEAR(CURDATE())";
 
     }else{
-        $sql1 = "SELECT  bill_total,bill_date FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND year(`bill_date`) = YEAR(CURDATE())";
+        $sql1 = "SELECT  $select_sql FROM tbl_bill WHERE work_id='$_SESSION[work_id]' AND year(`bill_date`) = YEAR(CURDATE())";
 
     }
     //echo $sql1;
@@ -123,6 +128,13 @@
                                     } ?>
                                 </select>
                             </div>
+                        </div>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
+                            <?php if(isset($_POST['deposit_wash']) && $_POST['deposit_wash']==1){
+                                echo "<div class=\"col-md-10\"><div class=\"checkbox c-checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"deposit_wash\" id=\"wash\" checked><span class=\"fa fa-check\"></span></label> </div></div>";
+                            }else{
+                                echo "<div class=\"col-md-10\"><div class=\"checkbox c-checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"deposit_wash\" id=\"wash\"><span class=\"fa fa-check\"></span></label> </div></div>";
+                            } ?>
                         </div>
                         <br>
                         <div class="col-md-0">

@@ -49,7 +49,6 @@
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
                                 $days = $date->diff($now)->format('%a วัน');
-
                                 echo"<tr bordercolor='black'>";
 
 
