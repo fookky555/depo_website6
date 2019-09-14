@@ -457,6 +457,27 @@ function cal_mulct($deposit_id){
     }
     return $total_price;
 }
+function sendlinemsg(){
+    define('LINE_API',"https://notify-api.line.me/api/notify");
+    define('LINE_TOKEN',"58Z5jApBfk0CByeKWyR9nkr2jSRtdEFQzPIZjTlVHW4");
+    function notify_message($message){
+        $queryData = array('message' => $message);
+        $queryData = http_build_query($queryData,'','&');
+        $headerOptions = array(
+            'http' => array(
+                'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n"
+                            ."Authorization: Bearer ".LINE_TOKEN."\r\n"
+                            ."Content-Length: ".strlen($queryData)."\r\n",
+                'content' => $queryData
+            )
+        );
+        $context = stream_context_create($headerOptions);
+        $result = file_get_contents(LINE_API, FALSE,$context);
+        $res=json_decode($result);
+        return $res;
+    }
+}
 function do_Logout(){
     if(isset($_SESSION['user_id'])&&isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
         unset($_SESSION['user_role']);

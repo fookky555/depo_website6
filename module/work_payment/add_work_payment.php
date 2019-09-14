@@ -39,6 +39,10 @@ tbl_work_payment (work_id,work_payment_date,work_payment_time,payment_detail_id,
 VALUES ('$work_id','$work_payment_date','$work_payment_time','$payment_detail_id','$image_name')";
 
     mysqli_query($con, $sql2)or die("ไปดูให้ดีๆดิผิดตรงไหน : 1 ".mysqli_error($con));
+
+    $message="\nชื่อร้าน: $_SESSION[work_name],\nรหัสร้าน: $_SESSION[work_id],\nผู้โอนเงิน: $_SESSION[user_name]\n\nได้ทำการชำระเงินค่าใช้บริการเว็บไซต์ กรุณาตรวจสอบ";
+    sendlinemsg();
+    $res = notify_message($message);
     echo "<label  id='result' data-id='1'></label>";
 
 }else{
