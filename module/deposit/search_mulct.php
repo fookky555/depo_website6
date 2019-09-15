@@ -17,35 +17,41 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-book"><font color="white">_________________</font></em></strong></th>
+                                <th><strong><em class="fa fa-book"><font color="white">_________________</font></em></strong></th>
                                 <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $con=connect_db();
-
+                            <?php
+                            $con=connect_db();
                             $sql1="SELECT * FROM tbl_mulct WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result1)) {
-
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
 
                                 $sql2="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
-                                echo "<tr>";
+                                echo "<tr bgcolor=\"$tbl_cl\">";
+
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$mulct_list</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_list</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_price</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$mulct_date</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_date</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$mulct_note</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_note</td>";
 
                                 ?>
                                     <td class="text-center">

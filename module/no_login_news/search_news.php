@@ -30,11 +30,11 @@
                         <table class="table table-hover" id="data-table-no_login_search_news">
                             <thead>
                             <tr>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">__________</font></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">________</font></strong></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">________</font></strong></strong></th>
                                 <th><strong><em class="fa fa-sign"><font color="white">________</font></strong></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">______________</font></strong></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font></strong></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,8 +44,13 @@
                             $sql1="SELECT * FROM tbl_news";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
 
@@ -63,14 +68,15 @@
                                 echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                    <td bgcolor="#f8f8ff"><?php echo $news_head;?></td>
-                                    <td><?php echo $deposit_plate_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_type_name;?></td>
-                                    <td><?php echo $work_name;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $deposit_date;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $news_head;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_plate_id;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $car_type_name;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_date;?></td>
                                 </tr>
 
                                 <?php
+                                $numchk++;
                             }
                             ?>
                             </tbody>

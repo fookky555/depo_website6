@@ -19,14 +19,14 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-car"><font color="white">________</font></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong>Day</strong></th>
+                                <th><strong>Day</strong></th>
                                 <th><strong>1Month</strong></th>
-                                <th bgcolor="#f8f8ff"><strong>3Months</strong></th>
+                                <th><strong>3Months</strong></th>
                                 <th><strong>6Months</strong></th>
-                                <th bgcolor="#f8f8ff"><strong>1Year</strong></th>
+                                <th><strong>1Year</strong></th>
                                 <th><strong><em class="fa fa-tint"></em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -36,21 +36,26 @@
                             $sql1="SELECT * FROM tbl_car_type WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+                                echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                <tr>
                                     <td><?php echo $car_type_name;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_type_deposit_price;?></td>
+                                    <td><?php echo $car_type_deposit_price;?></td>
                                     <td><?php echo $car_type_1month_deposit_price;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_type_3month_deposit_price;?></td>
+                                    <td><?php echo $car_type_3month_deposit_price;?></td>
                                     <td><?php echo $car_type_6month_deposit_price?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_type_1year_deposit_price?></td>
+                                    <td><?php echo $car_type_1year_deposit_price?></td>
                                     <td><?php echo $car_type_wash_price?></td>
                                     <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <td class="text-center" bgcolor="#f8f8ff">
+                                    <td class="text-center">
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=car_type&action=form_edit_car_type&id=<?php echo $car_type_id; ?>"><em
                                                 class="fas fa-pencil-alt"></em></button>
                                         <button class="btn btn-sm btn-danger delete_car_type"  type="button" data-link="index.php?module=car_type&action=delete_car_type&id=<?php echo $car_type_id; ?>"><em

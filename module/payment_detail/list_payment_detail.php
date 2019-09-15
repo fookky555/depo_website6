@@ -16,9 +16,9 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-address-card"><font color="white">_________________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-address-card"><font color="white">_________________</font> </em></strong></th>
                                 <th><strong><em class="fa fa-money-check"><font color="white">__________</font> </em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-university"><font color="white">_____________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-university"><font color="white">_____________</font> </em></strong></th>
                                 <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
@@ -28,16 +28,21 @@
                                 $sql1 = "SELECT * FROM tbl_payment_detail";
 
                             $result=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+                                echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                <tr>
                                     <td><?php echo $payment_detail_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $payment_detail_name;?></td>
+                                    <td><?php echo $payment_detail_name;?></td>
                                     <td><?php echo $payment_detail_num;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $payment_detail_bank;?></td>
+                                    <td><?php echo $payment_detail_bank;?></td>
                                     <td class="text-right">
                                         <button class="btn btn-sm btn-secondary" type="button" onclick=window.location.href="index.php?module=payment_detail&action=form_edit_payment_detail&id=<?php echo $payment_detail_id; ?>"><em
                                                 class="fas fa-pencil-alt"></em></button>

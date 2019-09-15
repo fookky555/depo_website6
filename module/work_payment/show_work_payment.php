@@ -17,11 +17,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-clock"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-university"></em></strong></th>
+                                <th><strong><em class="fa fa-university"></em></strong></th>
                                 <th><strong><em class="fa fa-image"></em></strong></th>
-                                <th class="text-right" style="width:140px" bgcolor="#f8f8ff"><strong><em class="fa fa-check-square"><font color="white">___________</font></em></strong></th>
+                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><font color="white">___________</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -30,19 +30,24 @@
                             $sql1="SELECT * FROM tbl_work_payment WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 if($payment_detail_id==0 && empty($work_payment_pic)){
                                     continue;
                                 }
+                                echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                <tr>
                                     <td><?php echo $work_payment_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $work_payment_date;?></td>
+                                    <td><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $payment_detail_id;?></td>
+                                    <td><?php echo $payment_detail_id;?></td>
                                     <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">
                                     <td><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
                                     <div id="myModal" class="modal">
@@ -51,7 +56,7 @@
                                         <div id="img/work_payment/<?php echo $work_payment_pic; ?>"></div>
                                     </div>
 
-                                    <td class="text-right" bgcolor="#f8f8ff">
+                                    <td class="text-right">
                                     <?php if($work_payment_confirm==0){
                                         echo "<font color='black'>รอดำเนินการ</font>";
                                     }else if($work_payment_confirm==1){

@@ -17,9 +17,9 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,8 +28,15 @@
                             $sql1="SELECT * FROM tbl_news WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result1)) {
+
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
 
@@ -37,12 +44,12 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$news_head</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$news_head</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$username</td>";
 
                                 ?>
-                                    <td class="text-center" bgcolor="#f8f8ff">
+                                    <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
 
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_news&id=<?php echo $news_id; ?>"><em
                                                 class="fas fa-pen"></em></button>

@@ -30,9 +30,9 @@
                         <table class="table table-hover" id="data-table-no_login_search_work">
                             <thead>
                             <tr>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
                                 <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-phone"> </em></strong></th>
+                                <th><strong><em class="fa fa-phone"> </em></strong></th>
                                 <th><strong><em class="fa fa-user"><font color="white">___________________</font> </em></strong></th>
                             </tr>
                             </thead>
@@ -42,21 +42,27 @@
                             $sql1="SELECT * FROM tbl_work";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
 
                                 ?>
                                 <tr>
-                                    <td bgcolor="#f8f8ff"><?php echo $work_id;?></td>
-                                    <td><?php echo $work_name;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_id;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
 
-                                    <td bgcolor="#f8f8ff"><?php echo $work_contact_phone;?></td>
-                                    <td><?php echo $work_contact_name;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_contact_phone;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_contact_name;?></td>
                                 </tr>
 
                                 <?php
+                                $numchk++;
                             }
                             ?>
                             </tbody>

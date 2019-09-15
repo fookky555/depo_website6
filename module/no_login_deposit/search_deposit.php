@@ -30,12 +30,12 @@
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
                             <thead>
                             <tr>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">____________</font></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
 
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">___</font> </em> </strong> </th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">_____________</font></em></strong></th>
                             </tr>
                             </thead>
@@ -46,8 +46,13 @@
                             $sql1="SELECT * FROM tbl_deposit WHERE deposit_active=1";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
@@ -63,18 +68,19 @@
                                 echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"\">";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                    <td bgcolor="#f8f8ff"><?php echo $deposit_id;?></td>
-                                    <td><?php echo $deposit_plate_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $work_name;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_id;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_plate_id;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
 
 
-                                    <td><?php  echo $date->diff($now)->format("%a วัน"); ?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $car_type_name;?></td>
-                                    <td><?php echo $deposit_date;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php  echo $date->diff($now)->format("%a วัน"); ?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $car_type_name;?></td>
+                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_date;?></td>
 
                                 </tr>
 
                                 <?php
+                                $numchk++;
                             }
                             ?>
                             </tbody>

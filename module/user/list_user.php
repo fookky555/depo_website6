@@ -19,11 +19,11 @@
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-user"></em></strong></th>
+                                <th><strong><em class="fa fa-user"></em></strong></th>
                                 <th><strong><em class="fa fa-id-card-alt"><font color="white">________</font></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-address-card"><font color="white">_________________</font></em></strong></th>
+                                <th><strong><em class="fa fa-address-card"><font color="white">_________________</font></em></strong></th>
                                 <th><strong><em class="fa fa-phone"></em></strong></th>
-                           <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                           <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,18 +35,23 @@
                                 $sql1 = "SELECT * FROM tbl_user WHERE user_id='$_SESSION[user_id]'";
                             }
                             $result=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
+                                echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                <tr>
                                     <td><?php echo $user_id;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $user_username;?></td>
+                                    <td><?php echo $user_username;?></td>
                                     <td><?php echo $user_role;?></td>
-                                    <td bgcolor="#f8f8ff"><?php echo $user_name;?></td>
+                                    <td><?php echo $user_name;?></td>
                                     <td><?php echo $user_phone?></td>
-                                    <td class="text-center" bgcolor="#f8f8ff">
+                                    <td class="text-center">
                                         <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=user&action=edit_user_form&id=<?php echo $user_id; ?>"><em
                                                         class="fas fa-pencil-alt"></em></button>
                                         <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>

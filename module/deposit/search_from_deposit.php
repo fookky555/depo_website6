@@ -27,9 +27,14 @@
                             $sql1="SELECT * FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND deposit_active=1";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=0;
                             while ($row = mysqli_fetch_assoc($result1)) {
-
+                                $numchk++;
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE
                                 $result=mysqli_query($con,$sql);
@@ -39,10 +44,10 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
                                 if($_GET['from']=="mulct"){
-                                    echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                    echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">";
                                     echo "<label class='link' ></label>";
                                 }else{
-                                    echo"<tr onclick=\"href2(this.id)\" class='tclick' id='$deposit_id'>";
+                                    echo"<tr onclick=\"href2(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">";
                                     echo "<label class='link' ></label>";
                                 }
 
@@ -76,7 +81,19 @@
             <p align="right">ประเภทของรถ = <em class="fa fa-motorcycle"> </em></p>
             <p align="right">ผู้บันทึกข้อมูล = <em class="fa fa-user-edit"> </em></p></th>
         </div>
-        <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
+        <?php
+        if($_GET['from']=="mulct"){
+
+            ?>
+            <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_mulct')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
+
+            <?php
+        }else{
+            ?>
+            <div class="float-left"><button class="btn btn-danger" type="button" onclick=window.location.href="<?php MALink('deposit','search_news')?>"><em class="fas fa-arrow-left"></em> กลับ</button></div>
+            <?php
+        }
+        ?>
 
     </div>
 </section><!-- Page footer-->

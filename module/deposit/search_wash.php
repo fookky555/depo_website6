@@ -13,12 +13,12 @@
                         <table class="table table-hover" id="data-table-search_wash">
                             <thead>
                             <tr>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"></em></strong></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">________</font></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
-                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -27,9 +27,13 @@
                             $sql1="SELECT * FROM tbl_wash WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
-
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT deposit_pickup_date,car_type_id FROM tbl_deposit WHERE deposit_id='$deposit_id'";//ต้องเปลี่ยน WHERE
                                 $result=mysqli_query($con,$sql);
@@ -43,25 +47,25 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_id</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$pickup_date</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$car_name</td>";
-                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$pickup_date</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$car_name</td>";
+                                echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$username</td>";
 
                                 ?>
                                     <?php
                                         if($wash_status==0){
-                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">ไม่ได้ล้าง</td>";
+                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">ไม่ได้ล้าง</td>";
                                             ?>
-                                    <td class="text-center">
+                                    <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
 
                                         <button class="btn btn-sm btn-outline-info wash_deposit" type="button" data-link="index.php?module=deposit&action=update_wash_deposit&id=<?php echo $deposit_id; ?>&wash_status=<?php echo $wash_status; ?>"><em
                                                 class="fas fa-tint"></em></button>
                                     <?php
                                         }else{
-                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">ล้างแล้ว</td>";
+                                            echo "<td onclick=\"href1(this . id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">ล้างแล้ว</td>";
                                             ?>
-                                    <td class="text-center">
+                                    <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
 
                                         <button class="btn btn-sm btn-info no_wash_deposit" type="button" data-link="index.php?module=deposit&action=update_wash_deposit&id=<?php echo $deposit_id; ?>&wash_status=<?php echo $wash_status; ?>"><em
                                                 class="fas fa-tint"></em></button>
@@ -79,6 +83,7 @@
                                 </tr>
 
                                 <?php
+                                $numchk++;
                             }
                             ?>
                             </tbody>

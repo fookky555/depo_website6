@@ -16,14 +16,14 @@
                         <table class="table table-hover" id="data-table-search_deposit">
                             <thead>
                             <tr>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-hashtag"> </em></strong></th>
+                                <th><strong><em class="fa fa-hashtag"> </em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">___________</font> </em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
-                                <th bgcolor="#f8f8ff"><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px" bgcolor="#f8f8ff"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
+                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -33,9 +33,13 @@
                             $sql1="SELECT * FROM tbl_deposit WHERE work_id='$_SESSION[work_id]' AND deposit_active=1";//ต้องเปลี่ยน WHERE
 
                             $result1=mysqli_query($con,$sql1);
-
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
-
+                                if($numchk%2){
+                                    $tbl_cl="ghostwhite";
+                                }else{
+                                    $tbl_cl="";
+                                }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE
                                 $result=mysqli_query($con,$sql);
@@ -52,16 +56,16 @@
                                 echo"<tr bordercolor='black'>";
 
 
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_id</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_plate_id</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$deposit_date</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$days</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"#f8f8ff\">$car_type_name</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$username</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_plate_id</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_date</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$days</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$car_type_name</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$username</td>";
 
 
                                     if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                        <td class="text-center" bgcolor="#f8f8ff">
+                                        <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
                                             <button class="btn btn-sm btn-danger"  type="button" onclick=window.location.href="index.php?module=deposit&action=form_cancel_deposit&id=<?php echo $deposit_id; ?>"><em
@@ -75,6 +79,7 @@
                                 </tr>
 
                                 <?php
+                                $numchk++;
                             }
                             ?>
                             </tbody>
