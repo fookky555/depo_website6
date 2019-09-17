@@ -47,7 +47,7 @@
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr bgcolor=\"$tbl_cl\">";
 
-                                ?><td style="display:none;"><?php$numchk?></td><?php
+                                ?><td style="display:none;"><?php echo $numchk; ?></td><?php
 
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_list</td>";

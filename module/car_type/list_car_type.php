@@ -48,7 +48,7 @@
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                <td style="display:none;"><?php$numchk?></td>
+                                <td style="display:none;"><?php echo $numchk; ?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $car_type_deposit_price;?></td>
                                     <td><?php echo $car_type_1month_deposit_price;?></td>

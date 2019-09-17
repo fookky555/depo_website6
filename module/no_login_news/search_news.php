@@ -70,7 +70,7 @@
                                 echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor='$tbl_cl'>";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                <td style="display:none;"><?php$numchk?></td>
+                                <td style="display:none;"><?php echo $numchk; ?></td>
                                 <td><?php echo $deposit_id;?></td>
                                 <td><?php echo $news_head;?></td>
                                 <td><?php echo $deposit_plate_id;?></td>
