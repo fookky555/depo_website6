@@ -16,6 +16,7 @@
                         <table class="table table-hover" id="data-table-search_mulct">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-exclamation-circle"><font color="white">_____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-money-bill"></em></strong></th>
@@ -45,6 +46,8 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr bgcolor=\"$tbl_cl\">";
+
+                                ?><td style="display:none;"><?php$numchk?></td><?php
 
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_id</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$mulct_list</td>";

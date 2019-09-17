@@ -18,6 +18,7 @@
                         <table class="table table-hover" id="data-table-list-car-type">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-car"><font color="white">________</font></em></strong></th>
                                 <th><strong>Day</strong></th>
                                 <th><strong>1Month</strong></th>
@@ -47,6 +48,7 @@
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
+                                <td style="display:none;"><?php$numchk?></td>
                                     <td><?php echo $car_type_name;?></td>
                                     <td><?php echo $car_type_deposit_price;?></td>
                                     <td><?php echo $car_type_1month_deposit_price;?></td>

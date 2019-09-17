@@ -16,6 +16,7 @@
                         <table class="table table-hover" id="data-table-search_news">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
@@ -44,23 +45,24 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr>";
+                                ?><td style="display:none;"><?php$numchk?></td><?php
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$news_head</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$username</td>";
 
                                 ?>
-                                    <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
+                                <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
 
-                                        <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_news&id=<?php echo $news_id; ?>"><em
+                                    <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_news&id=<?php echo $news_id; ?>"><em
                                                 class="fas fa-pen"></em></button>
 
 
-                                        <?php if($_SESSION['user_role']=="ผู้ดูแล"){
+                                    <?php if($_SESSION['user_role']=="ผู้ดูแล"){
                                         ?>
                                         <button class="btn btn-sm btn-danger delete_news"  type="button" data-link="index.php?module=deposit&action=delete_news&id=<?php echo $news_id; ?>"><em
-                                                class="fas fa-trash-alt"></em></button>
-                                        <?php } ?>
-                                    </td>
+                                                    class="fas fa-trash-alt"></em></button>
+                                    <?php } ?>
+                                </td>
                                 </tr>
 
                                 <?php

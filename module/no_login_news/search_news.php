@@ -30,6 +30,8 @@
                         <table class="table table-hover" id="data-table-no_login_search_news">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
+                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">__________</font></strong></th>
                                 <th><strong><em class="fa fa-motorcycle"><font color="white">________</font></strong></strong></th>
@@ -65,14 +67,16 @@
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE
                                 $result2=mysqli_query($con,$sql2);
                                 list($car_type_name)=mysqli_fetch_row($result2);
-                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>";
+                                echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor='$tbl_cl'>";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $news_head;?></td>
-                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_plate_id;?></td>
-                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $car_type_name;?></td>
-                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
-                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_date;?></td>
+                                <td style="display:none;"><?php$numchk?></td>
+                                <td><?php echo $deposit_id;?></td>
+                                <td><?php echo $news_head;?></td>
+                                <td><?php echo $deposit_plate_id;?></td>
+                                <td><?php echo $car_type_name;?></td>
+                                <td><?php echo $work_name;?></td>
+                                <td><?php echo $deposit_date;?></td>
                                 </tr>
 
                                 <?php
@@ -83,6 +87,7 @@
                         </table>
                     </div>
                 </div>
+                <p><em class="fa fa-hashtag"> </em> =  รหัสฝากรถ</p>
                 <p><em class="fa fa-comment-alt"> </em> =  หัวข้อประชาสัมพันธ์</p>
                 <p><em class="fa fa-car"> </em> =  ป้ายทะเบียน</p>
                 <p><em class="fa fa-motorcycle"> </em> =  ประเภทของรถ</p>

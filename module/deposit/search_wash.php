@@ -13,6 +13,7 @@
                         <table class="table table-hover" id="data-table-search_wash">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
@@ -47,6 +48,7 @@
                                 $result2=mysqli_query($con,$sql2);
                                 list($username)=mysqli_fetch_row($result2);
                                 echo "<tr>";
+                                ?><td style="display:none;"><?php$numchk?></td><?php
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$pickup_date</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$car_name</td>";
