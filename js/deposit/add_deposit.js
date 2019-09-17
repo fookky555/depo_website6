@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var result= $("#result").data("id");
     var deposit_id= $("#deposit_id").data("id");
-    var deposit_plate_id= $("#deposit_plate_id").data("id");
     console.log(result);
     if(result == 1){
 
@@ -26,7 +25,15 @@ $(document).ready(function () {
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
             icon: 'error'
         }).then(function() {
-            window.location.href='index.php?module=deposit&action=form_add_deposit';
+            window.location.href='index.php?module=deposit&action=form_add_deposit&id='+result;
+        });
+    }else if(result==99) {
+        swal({
+            title: 'ไม่มีประเภทของการฝากนี้!',
+            text: 'ร้านของคุณไม่มีประเภทการฝากชนิดนี้',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=deposit&action=form_add_deposit&id='+result;
         });
     }
 });

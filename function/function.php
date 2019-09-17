@@ -478,6 +478,29 @@ function sendlinemsg(){
         return $res;
     }
 }
+function check_deposit_type(){
+    if($_POST['deposit_type']==2){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_1month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+    }elseif($_POST['deposit_type']==3){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_3month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+    }elseif($_POST['deposit_type']==4){
+        $con = connect_db();
+        $sql1 = "SELECT car_type_6month_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+    }else{
+        $con = connect_db();
+        $sql1 = "SELECT car_type_1year_deposit_price FROM tbl_car_type WHERE car_type_id='$car_type_id'";
+        $result1 = mysqli_query($con, $sql1);
+        list($deposit_price_buffet) = mysqli_fetch_row($result1);
+    }
+}
 function do_Logout(){
     if(isset($_SESSION['user_id'])&&isset($_SESSION['user_username'])&&isset($_SESSION['work_id'])&&isset($_SESSION['user_name'])&&isset($_SESSION['user_role'])){
         unset($_SESSION['user_role']);

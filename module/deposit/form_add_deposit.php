@@ -14,10 +14,17 @@
 
                     </fieldset>
                     <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
                             <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" placeholder="ตัวอย่าง: 'กอ 69 เชียงใหม่'" required></div>
                         </div>
-
+                        <div class="float-right">
+                        <?php
+                        if(isset($_GET['id']) && $_GET['id']==2){
+                            echo "<font color='red'>&nbsp X &nbsp ข้อมูลป้ายทะเบียนรถไม่ถูกต้อง &nbsp</font>";
+                        }
+                        ?>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
@@ -47,6 +54,13 @@
                                     <option value="5">ฝาก 1 ปี</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="float-right">
+                            <?php
+                            if(isset($_GET['id']) && $_GET['id']==99){
+                                echo "<font color='red'>&nbsp X &nbsp ประเภทการฝากไม่ถูกต้อง &nbsp</font>";
+                            }
+                            ?>
                         </div>
                     </fieldset>
                     <fieldset>
