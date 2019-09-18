@@ -10,7 +10,7 @@
                 <div class="card">
 
                     <div class="table-responsive">
-                        <table class="table table-hover" id="data-table-search_deposit">
+                        <table class="table table-hover" id="data-table-search_cancel">
                             <thead>
                             <tr>
                                 <th><strong><em class="fa fa-exclamation-circle"> <font color="white">____________</font></em></strong></th>
@@ -63,7 +63,7 @@
 
                                 if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
                                     <td class="text-center">
-                                        <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=delete_deposit&id=<?php echo $deposit_id; ?>"><em
+                                        <button class="btn btn-sm btn-danger delete_cancel"  type="button" data-link="index.php?module=deposit&action=delete_cancel&id=<?php echo $deposit_id; ?>"><em
                                                 class="fas fa-trash-alt"></em></button>
                                     </td>
                                 <?php }
