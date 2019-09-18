@@ -13,6 +13,7 @@
                         <table class="table table-hover" id="data-table-search_cancel">
                             <thead>
                             <tr>
+                                <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-exclamation-circle"> <font color="white">____________</font></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="white">_________</font> </em></strong></th>
                                 <th><strong><em class="fa fa-calendar"><font color="white">_________</font> </em></strong></th>
@@ -53,7 +54,7 @@
 
                                 echo"<tr bgcolor=\"$tbl_cl\">";
 
-
+                                ?><td style="display:none;"><?php echo $numchk; ?></td><?php
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_detail</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_plate_id</td>";
                                 echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id'>$deposit_date</td>";
