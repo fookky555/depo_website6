@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    $('#data-table-list_bill').DataTable({
-    });
     $('.delete_bill').on('click', function(e) {
         e.preventDefault();
         swal({
@@ -23,5 +21,7 @@ $(document).ready(function(){
             }
         });
 
+    });
+    $('#data-table-list_bill').DataTable({
     });
 });

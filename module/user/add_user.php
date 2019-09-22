@@ -11,8 +11,8 @@ if(strlen($_POST['user_username'])>=6 && strlen($_POST['user_password'])>=6) {
         $user_role = $_POST['user_role'];
         $hash = Bcrypt::hashPassword($user_password);
         $con = connect_db();
-        echo $_POST['user_username'];
-        echo $_POST['user_role'];
+//        echo $_POST['user_username'];
+//        echo $_POST['user_role'];
         $work_id = $_SESSION['work_id'];//ต้องเปลี่ยน WHERE
 
         $sql2 = "INSERT INTO

@@ -1,6 +1,26 @@
 <?php
 
 echo "<p align='center'><img src='img\loading.png'></p>";
+if(!empty($_FILES['deposit_pic']['name'])) {
+
+    $shuffle_name = str_shuffle(date("dmYhis"));//สุ่มโดยใช้วันและเวลาปัจจุบัน
+    $image_filename = $_FILES['deposit_pic']['name'];
+    $image_tmp = $_FILES['deposit_pic']['tmp_name'];
+    $image_filesize = $_FILES['deposit_pic']['size'];
+    $size = getimagesize($_FILES['deposit_pic']['tmp_name']);
+    $image_exp = explode(".", $image_filename);
+    $ext = end($image_exp);
+    if ($ext == 'jpg' or $ext == 'gif' or $ext == 'png' or $ext == 'jpeg' or $ext == 'JPEG' or $ext == 'PNG' or $ext == 'JPG' or $ext == 'GIF') {
+        if ($image_filename != "deposit_default.jpg") {
+            $image_name = "deposit_" . $shuffle_name . ".$ext";
+            copy($image_tmp, "img/deposit/$image_name");
+            resize_img2($image_name, $ext, $size);
+        }
+    }
+}else{
+    $image_name=$_POST['old_pic'];
+}
+
 //check ประเภทการฝากว่ามีไหม
 if($_POST['deposit_type']==2){
     $con = connect_db();
@@ -25,30 +45,17 @@ if($_POST['deposit_type']==2){
 }
 if($deposit_price_buffet==0){
     echo "<label  id='result' data-id='99'></label>";
+    echo "<label id='deposit_plate_id' data-id='$_POST[deposit_plate_id]'></label>";
+    echo "<label id='deposit_type' data-id='$_POST[deposit_type]'></label>";
+    echo "<label id='deposit_pickup_date' data-id='$_POST[deposit_pickup_date]'></label>";
+    echo "<label id='car_type_id' data-id='$_POST[car_type_id]'></label>";
+    echo "<label id='img_name' data-id='$image_name'></label>";
 }else {
 
     if (preg_match('/[^a-z0-9_ก-๙เโแใไา]+/', $_POST['deposit_plate_id']) && strlen($_POST['deposit_plate_id']) >= 9) {
-        if (!empty($_POST['deposit_type'] && $_POST['car_type_id'])) {
-
 
             if (empty($_POST['deposit_wash'])) {//เช็คว่า checkbox การล้างรถเป็นค่าว่างหรือไม่
                 $_POST['deposit_wash'] = 0;
-            }
-
-            //รูปภาพ
-            $shuffle_name = str_shuffle(date("dmYhis"));//สุ่มโดยใช้วันและเวลาปัจจุบัน
-            $image_filename = $_FILES['deposit_pic']['name'];
-            $image_tmp = $_FILES['deposit_pic']['tmp_name'];
-            $image_filesize = $_FILES['deposit_pic']['size'];
-            $size = getimagesize($_FILES['deposit_pic']['tmp_name']);
-            $image_exp = explode(".", $image_filename);
-            $ext = end($image_exp);
-            if ($ext == 'jpg' or $ext == 'gif' or $ext == 'png' or $ext == 'jpeg' or $ext == 'JPEG' or $ext == 'PNG' or $ext == 'JPG' or $ext == 'GIF') {
-                if ($image_filename != "deposit_default.jpg") {
-                    $image_name = "deposit_" . $shuffle_name . ".$ext";
-                    copy($image_tmp, "img/deposit/$image_name");
-                    resize_img2($image_name, $ext, $size);
-                }
             }
 
             if ($_POST['deposit_fuel'] == 0) {
@@ -74,13 +81,16 @@ VALUES ('$deposit_id',0,'$_SESSION[work_id]')";
 
                 mysqli_query($con, $sql);
             }
-            echo "<label  id='result' data-id='1'></label>";
-            echo "<label id='deposit_id' data-id='$deposit_id'></label>";
-        } else {
-            echo "<label  id='result' data-id='0'></label>";
-        }
+                echo "<label  id='result' data-id='1'></label>";
+                echo "<label id='deposit_id' data-id='$deposit_id'></label>";
+                echo "<label id='deposit_plate_id' data-id='$_POST[deposit_plate_id]'></label>";
     } else {
         echo "<label  id='result' data-id='2'></label>";
+        echo "<label id='deposit_plate_id' data-id='$_POST[deposit_plate_id]'></label>";
+        echo "<label id='deposit_type' data-id='$_POST[deposit_type]'></label>";
+        echo "<label id='deposit_pickup_date' data-id='$_POST[deposit_pickup_date]'></label>";
+        echo "<label id='car_type_id' data-id='$_POST[car_type_id]'></label>";
+        echo "<label id='img_name' data-id='$image_name'></label>";
     }
 }
 ?>

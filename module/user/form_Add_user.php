@@ -26,7 +26,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรศัพท์</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" placeholder="เบอร์โทรศัพท์" required></div>
+                            <div class="col-md-10"><input class="form-control" name="user_phone" type="number" placeholder="เบอร์โทรศัพท์" required></div>
                         </div>
 
                     </fieldset>
