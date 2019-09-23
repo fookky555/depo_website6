@@ -22,7 +22,12 @@ if(!empty($_FILES['deposit_pic']['name'])) {
 }
 
 //check ประเภทการฝากว่ามีไหม
-if($_POST['deposit_type']==2){
+if($_POST['deposit_type']==1){
+    $con = connect_db();
+    $sql1 = "SELECT car_type_deposit_price FROM tbl_car_type WHERE car_type_id='$_POST[car_type_id]'";
+    $result1 = mysqli_query($con, $sql1);
+    list($deposit_price_buffet) = mysqli_fetch_row($result1);
+}elseif($_POST['deposit_type']==2){
     $con = connect_db();
     $sql1 = "SELECT car_type_1month_deposit_price FROM tbl_car_type WHERE car_type_id='$_POST[car_type_id]'";
     $result1 = mysqli_query($con, $sql1);

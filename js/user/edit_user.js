@@ -20,8 +20,8 @@ $(document).ready(function () {
         });
     }else if(result==2){
         swal({
-            title: 'ผิดพลาด!',
-            text: 'รหัสไม่ตรงกัน!',
+            title: 'ชื่อผู้ใช้งานถูกใช้แล้ว',
+            text: 'กรุณาใช้ชื่อผู้ใช้งานอื่น',
             icon: 'error'
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';
@@ -30,6 +30,14 @@ $(document).ready(function () {
         swal({
             title: 'Username หรือ Password สั้นเกินไป',
             text: 'ชื่อผู้ใช้ และ รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=user&action=list_user';
+        });
+    }else if(result == 33){
+        swal({
+            title: 'Username หรือ Password ไม่ถูกต้อง',
+            text: 'Username และ Password ต้องเป็นภาษาอังกฤษเท่านั้น',
             icon: 'error'
         }).then(function() {
             window.location.href='index.php?module=user&action=list_user';

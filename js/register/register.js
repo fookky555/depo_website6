@@ -34,6 +34,14 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=register&action=registerForm';
         });
+    }else if(result == 33){
+        swal({
+            title: 'Username หรือ Password ไม่ถูกต้อง',
+            text: 'Username และ Password ต้องเป็นภาษาอังกฤษเท่านั้น',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=register&action=registerForm';
+        });
     }
 });
 

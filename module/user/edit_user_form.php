@@ -35,7 +35,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $user_phone ?>" required></div>
+                            <div class="col-md-10"><input class="form-control" name="user_phone" type="number" value="<?php echo $user_phone ?>" required></div>
                         </div>
 
                     </fieldset>

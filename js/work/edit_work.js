@@ -10,6 +10,14 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=work&action=list_work';
         });
+    }else if(result == 2){
+        swal({
+            title: 'ชื่อร้านถูกใช้แล้ว',
+            text: 'กรุณาใช้ชื่อร้านอื่น',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=work&action=list_work';
+        });
     }else {
         swal({
             title: 'ผิดพลาด!',

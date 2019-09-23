@@ -30,7 +30,7 @@
                     </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone">&nbsp เบอร์ติดต่อร้าน</em></label>
-                            <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="text" value="<?php echo $work_contact_phone ?>" required></div>
+                            <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="number" value="<?php echo $work_contact_phone ?>" required></div>
                         </div>
 
                     </fieldset>

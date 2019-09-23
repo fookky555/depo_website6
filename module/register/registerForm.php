@@ -70,7 +70,7 @@
                     </div>
                     <div class="form-group"><label class="text-muted" for="user_phone">กำหนดเบอร์โทรศัพท์</label>
                         <div class="input-group with-focus"><input class="form-control border-right-0"
-                                                                   id="user_phone" type="text" name="user_phone"
+                                                                   id="user_phone" type="number" name="user_phone"
                                                                    placeholder="เบอร์โทรศัพท์" autocomplete="off"
                                                                    required>
                             <div class="input-group-append"><span

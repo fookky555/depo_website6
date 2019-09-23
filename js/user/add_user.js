@@ -26,6 +26,22 @@ $(document).ready(function () {
         }).then(function() {
             window.location.href='index.php?module=user&action=form_add_user';
         });
+    }else if(result == 2){
+        swal({
+            title: 'ชื่อผู้ใช้งานถูกใช้แล้ว',
+            text: 'กรุณาใช้ชื่อผู้ใช้งานอื่น',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=user&action=form_Add_user';
+        });
+    }else if(result == 33){
+        swal({
+            title: 'Username หรือ Password ไม่ถูกต้อง',
+            text: 'Username และ Password ต้องเป็นภาษาอังกฤษเท่านั้น',
+            icon: 'error'
+        }).then(function() {
+            window.location.href='index.php?module=user&action=form_Add_user';
+        });
     }
 });
 
