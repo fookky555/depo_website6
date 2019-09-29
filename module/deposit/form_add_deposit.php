@@ -4,7 +4,7 @@
         $car_type_id_error=$_GET['car_type_id'];
         $deposit_type=$_GET['deposit_type'];
         $pic=$_GET['img_name'];
-        if(isset($_GET['deposit_pickup_date'])){
+        if(!empty($_GET['deposit_pickup_date'])){
             $checked="checked";
             $deposit_pickup_date=$_GET['deposit_pickup_date'];
         }else{
