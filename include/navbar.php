@@ -34,6 +34,7 @@
         <li <?php echo menu_active($_GET['module'],"work"); ?>><a href="<?php MALink('work','list_work') ?>" title="Single View"><em class="fa fa-bookmark"></em><span data-localize="sidebar.nav.SINGLEVIEW">ข้อมูลร้าน</span></a></li>
         <li <?php echo menu_active($_GET['module'],"payment_detail"); ?>><a href="<?php MALink('payment_detail','show_payment_detail') ?>" title="Single View"><em class="fa fa-address-card"></em><span data-localize="sidebar.nav.SINGLEVIEW">ช่องทางการชำระเงิน</span></a></li>
         <li <?php echo menu_active($_GET['module'],"work_payment"); ?>><a href="<?php MALink('work_payment','show_work_payment') ?>" title="Single View"><em class="fa fa-money-bill-alt"></em><span data-localize="sidebar.nav.SINGLEVIEW">ยืนยันการชำระเงิน</span></a></li>
+        <li <?php echo menu_active($_GET['module'],"contact_us"); ?>><a href="<?php MALink('contact_us','list_contact_us') ?>" title="Single View"><em class="fa fa-phone"></em><span data-localize="sidebar.nav.SINGLEVIEW">ติดต่อผู้ดูแลเว็บไซต์</span></a></li>
         <hr>
 
         <?php

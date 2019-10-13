@@ -13,7 +13,6 @@
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-pen"></em> [ แก้ไขข้อมูลของร้าน ] </p>
         <div class="card card-default">
-            <div class="card-header"></div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" action=<?php MALink('work','edit_work') ?>>
                     <fieldset>

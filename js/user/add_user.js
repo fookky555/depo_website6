@@ -24,7 +24,7 @@ $(document).ready(function () {
             text: 'ชื่อผู้ใช้ และ รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป',
             icon: 'error'
         }).then(function() {
-            window.location.href='index.php?module=user&action=form_add_user';
+            window.location.href='index.php?module=user&action=form_Add_user';
         });
     }else if(result == 2){
         swal({

@@ -11,26 +11,22 @@
                             <div class="col-md-10"><input class="form-control" name="user_username" type="text" placeholder="ชื่อผู้ใช้" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-lock"></em>&nbsp<b> รหัสผ่าน</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_password" type="text" placeholder="รหัสผ่าน" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-address-card"></em>&nbsp<b> ชื่อและนามสกุล</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_name" type="text" placeholder="ชื่อและนามสกุล" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรศัพท์</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_phone" type="number" placeholder="เบอร์โทรศัพท์" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset class="last-child">
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-id-card-alt"></em>&nbsp<b> ประเภทผู้ใช้</b></label>
                             <div class="col-md-10"><select class="custom-select custom-select-sm" name="user_role" required>
                                     <option value="">เลือกประเภทผู้ใช้งาน..</option>

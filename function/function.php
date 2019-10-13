@@ -89,7 +89,7 @@ function do_Login($username,$password){
                     $sql="SELECT `work_name` FROM `tbl_work` WHERE `work_id`='$row[work_id]'";
                     $result=mysqli_query($con,$sql)or die("ผิด=====");
                     list($work_name)=mysqli_fetch_row($result);
-                    $_SESSION['work_name']=$work_name;
+                    $_SESSION['work_name']="ร้าน".$work_name;
                     $_SESSION['alert_day']=0;
 
                     if($_SESSION['user_role']=="ผู้ประกอบการ"){
@@ -459,7 +459,7 @@ function cal_mulct($deposit_id){
 }
 function sendlinemsg(){
     define('LINE_API',"https://notify-api.line.me/api/notify");
-    define('LINE_TOKEN',"58Z5jApBfk0CByeKWyR9nkr2jSRtdEFQzPIZjTlVHW4");
+    define('LINE_TOKEN',"0ErxKdQn0VpNWGjaSVYLDDhIJHfKh2aIO1dbCEHp5FL");
     function notify_message($message){
         $queryData = array('message' => $message);
         $queryData = http_build_query($queryData,'','&');

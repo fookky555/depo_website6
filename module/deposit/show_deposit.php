@@ -42,7 +42,6 @@
                                 <div class="float-right"><?php echo $days; ?> วัน</div>
                             </label>
                         </div>
-                    </fieldset>
                     <?php
 
                     if ($deposit_type == 1) {
@@ -58,15 +57,13 @@
                     }
 
                     ?>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em
                                         class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก: </b>
                                 <div class="float-right"><?php echo $type_name; ?></div>
                             </label>
                         </div>
-                    </fieldset>
-
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em
                                         class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
                             <div class="col-md-10">
@@ -78,8 +75,6 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
-                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em
                                         class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
                             <div class="col-md-10">

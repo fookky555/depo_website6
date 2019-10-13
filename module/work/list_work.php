@@ -13,7 +13,6 @@
     <div class="content-wrapper">
         <p class="lead"><em class="fa fa-store-alt"></em> [ ข้อมูลของร้าน <?php echo $_SESSION['work_name']; ?> ] </p>
         <div class="card card-default">
-            <div class="card-header"></div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" action="">
                     <fieldset>
@@ -21,25 +20,22 @@
                             <div class="col-md-10"><input class="form-control" name="work_name" type="text" value="<?php echo $work_id ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-sign">&nbsp ชื่อร้าน</em></label>
                             <div class="col-md-10"><input class="form-control" name="work_name" type="text" value="<?php echo $work_name ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-address-card">&nbsp ชื่อผู้ติดต่อร้าน</em></label>
                             <div class="col-md-10"><input class="form-control" name="work_contact_name" type="text" value="<?php echo $work_contact_name ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone">&nbsp เบอร์ติดต่อร้าน</em></label>
                             <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="text" value="<?php echo $work_contact_phone ?>" disabled></div>
                         </div>
 
-                    </fieldset>
+<br>
                     <?php
                     $status="";
                         if($work_status==0){
@@ -48,7 +44,6 @@
                             $status="ชำระเงินแล้ว";
                         }
                         ?>
-                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-check"> สถานะการชำระเงิน</em></label>
                             <div class="col-md-10"><input class="form-control" name="work_contact_phone" type="text" value="<?php echo $status; ?>" disabled></div>
                         </div>

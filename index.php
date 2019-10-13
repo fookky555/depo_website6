@@ -105,7 +105,7 @@
         $sql="SELECT `work_status` FROM `tbl_work` WHERE `work_id`='$_SESSION[work_id]'";
         $result=mysqli_query($con,$sql)or die("ผิด=====");
         list($work_status)=mysqli_fetch_row($result);
-        if ($work_status==0&&$_SESSION['user_role']=="ผู้ดูแล"&&$_GET['module']!="work_payment"&&$_GET['module']!="payment_detail"){
+        if ($work_status==0&&$_SESSION['user_role']=="ผู้ดูแล"&&$_GET['module']!="work_payment"&&$_GET['module']!="payment_detail"&&$_GET['module']!="contact_us"){
             echo "<label  id='result' data-id='3'></label>";
 
 

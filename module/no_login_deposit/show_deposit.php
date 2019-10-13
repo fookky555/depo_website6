@@ -44,7 +44,7 @@
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar-check"></em>&nbsp<b> จำนวนวันที่ฝาก: </b> <div class="float-right"><?php echo $days; ?> วัน</div></label>
                         </div>
-                    </fieldset>
+                    <br>
                     <?php
 
                     if($deposit_type==1){
@@ -60,12 +60,9 @@
                     }
 
                     ?>
-                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก: </b> <div class="float-right"><?php echo $type_name; ?></div></label>
                         </div>
-                    </fieldset>
-
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
                             <div class="col-md-10">
                                 <div class="col-xl-4">
@@ -74,8 +71,6 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
-                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ค่าใช้บริการ</b></label>
                             <div class="col-md-10"><button class="btn btn-block btn-primary mt-0" type="button" onclick=window.location.href="index.php?module=no_login_deposit&action=show_deposit_price&id=<?php echo $_GET['id']?>&days=<?php echo $days;?>&car_type_id=<?php echo $car_type_id;?>&deposit_type=<?php echo $deposit_type;?>">
                                     <font size="3"><b><?php echo $p1+$p2+$p3; ?> </b>฿</font></button></div>

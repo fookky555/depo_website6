@@ -31,6 +31,8 @@ if (!preg_match ('/[ก-๙เโแใไา]/', $_POST['user_username'])) {
                         echo "<label id='result' data-id='2'></label>";
                     }
                     echo "<label id='result' data-id='1'></label>";
+                    $_SESSION['user_name']=$_POST['user_name'];
+                    $_SESSION['user_username']=$_POST['user_username'];
                 } else {
                     echo "<label id='result' data-id='0'></label>";
                 }
@@ -44,6 +46,8 @@ if (!preg_match ('/[ก-๙เโแใไา]/', $_POST['user_username'])) {
     user_phone='$_POST[user_phone]',
      work_id='$work_id' WHERE user_id='$_POST[user_id]'");
                 echo "<label id='result' data-id='1'></label>";
+                $_SESSION['user_name']=$_POST['user_name'];
+                $_SESSION['user_username']=$_POST['user_username'];
             } else {
                 echo "<label id='result' data-id='0'></label>";
             }

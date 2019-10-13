@@ -16,46 +16,41 @@
 
             <div class="card-body">
                 <form class="form-horizontal" method="post" action=<?php MALink('profile','edit_profile') ?>>
-                    <fieldset><br>
+                    <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-hashtag"></em>&nbsp<b> รหัสผู้ใช้</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_username" type="text" value="<?php echo $_SESSION['user_id'] ?> " disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ชื่อผู้ใช้</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_username" type="text" value="<?php echo $user_username ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-id-card-alt"></em>&nbsp<b> ตำแหน่ง</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_username" type="text" value="<?php echo $user_role ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-address-card"></em>&nbsp<b> ชื่อ-นามสกุล</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_name" type="text" value="<?php echo $user_name ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
                             <div class="col-md-10"><input class="form-control" name="user_phone" type="text" value="<?php echo $user_phone ?>" disabled></div>
                         </div>
-                    </fieldset>
                     <?php
                     if($_SESSION['user_role']=="ผู้ดูแลสูงสุด"){
                         ?>
-                        <fieldset>
+                        <br>
                             <div class="form-group row"><label class="col-md-2 col-form-label"><b><font color="#32cd32">line</font>&nbsp ไลน์ไอดี</b></label>
                                 <div class="col-md-10"><input class="form-control" name="work_id" type="text" value="<?php echo $work_id; ?>" disabled></div>
                             </div>
-                        </fieldset>
                     <?php
                     }
                     ?>
+                    </fieldset>
                     <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
                     <div class="clearfix">
                         <div class="float-right">

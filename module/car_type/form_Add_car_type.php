@@ -11,40 +11,34 @@
                             <div class="col-md-10"><input class="form-control" name="car_type_name" type="text" placeholder="ประเภทรถ" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                    <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-moon"></em>&nbsp<b> ค่าฝากรายวัน</b></label>
                             <div class="col-md-10"><input class="form-control" name="car_type_deposit_price" type="number" min="0" placeholder="ค่าฝากรายวัน" required></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก1เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_1month_deposit_price" type="number" min="0" placeholder="ค่าฝาก1เดือน"></div>
+                        <br>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก 1 เดือน</b></label>
+                            <div class="col-md-10"><input class="form-control" name="car_type_1month_deposit_price" type="number" min="0" placeholder="ค่าฝาก 1 เดือน (ถ้ามี)"></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก3เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_3month_deposit_price" type="number" min="0" placeholder="ค่าฝาก3เดือน"></div>
+                        <br>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก 3 เดือน</b></label>
+                            <div class="col-md-10"><input class="form-control" name="car_type_3month_deposit_price" type="number" min="0" placeholder="ค่าฝาก 3 เดือน (ถ้ามี)"></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก6เดือน</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_6month_deposit_price" type="number" min="0" placeholder="ค่าฝาก6เดือน"></div>
+                        <br>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก 6 เดือน</b></label>
+                            <div class="col-md-10"><input class="form-control" name="car_type_6month_deposit_price" type="number" min="0" placeholder="ค่าฝาก 6 เดือน (ถ้ามี)"></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก1ปี</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_1year_deposit_price" type="number" min="0" placeholder="ค่าฝาก1ปี"></div>
+                        <br>
+                        <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-calendar"></em>&nbsp<b> ค่าฝาก 1 ปี</b></label>
+                            <div class="col-md-10"><input class="form-control" name="car_type_1year_deposit_price" type="number" min="0" placeholder="ค่าฝาก 1 ปี (ถ้ามี)"></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-tint"></em>&nbsp<b> ค่าบริการล้างรถ</b></label>
-                            <div class="col-md-10"><input class="form-control" name="car_type_wash_price" type="number" min="0" placeholder="ค่าบริการล้างรถ"></div>
+                            <div class="col-md-10"><input class="form-control" name="car_type_wash_price" type="number" min="0" placeholder="ค่าบริการล้างรถ (ถ้ามี)"></div>
                         </div>
 
                     </fieldset>

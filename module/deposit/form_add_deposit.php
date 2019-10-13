@@ -35,8 +35,7 @@
                             <div class="col-md-10"><input class="form-control" name="user" type="text" value="<?php echo $_SESSION['user_username']; ?>" disabled></div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
+             <br>
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label"><em class="fa fa-car"></em>&nbsp<b> ป้ายทะเบียนรถ</b></label>
                             <div class="col-md-10"><input class="form-control" name="deposit_plate_id" type="text" value="<?php echo $deposit_plate_id; ?>" placeholder="ตัวอย่าง: 'กอ 69 เชียงใหม่'" required></div>
@@ -48,8 +47,7 @@
                         }
                         ?>
                         </div>
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-motorcycle"></em>&nbsp<b> ประเภทของรถ</b></label>
                             <div class="col-md-10"><select class="custom-select custom-select-sm" name="car_type_id" required>
                                     <option value="">เลือกประเภทของรถ..</option>
@@ -70,9 +68,7 @@
                                 </select>
                             </div>
                         </div>
-                    </fieldset>
-
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-money-bill"></em>&nbsp<b> ประเภทของการฝาก</b></label>
                             <div class="col-md-10"><select class="custom-select custom-select-sm" name="deposit_type" required>
                                     <?php
@@ -98,13 +94,11 @@
                             }
                             ?>
                         </div>
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-image"></em>&nbsp<b> รูปภาพผู้ฝาก</b></label>
                             <div class="col-md-10"><input type="file" class="dropify form-control" data-default-file="img/deposit/<?php echo $pic; ?>" name="deposit_pic"  data-max-file-size="100M" data-allowed-file-extensions="jpg JPG jpeg JPEG  GIF gif png PNG" <?php echo $req; ?>></div>
                         </div>
-                    </fieldset>
-                    <fieldset>
+                        <br>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em
                                             class="fa fa-tint"></em>&nbsp<b> บริการล้างรถ</b></label>
                                 <div class="col-md-10">
@@ -128,39 +122,34 @@
                                     <em class="fa fa-caret-left fa-pen" ></em> บันทึกรายละเอียด</button>
                             </div>
                         </div>
-                    </fieldset>
 <div id="detail_form" style="display: none">
-    <fieldset>
+    <br>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user-astronaut"></em>&nbsp<b> จำนวนหมวกกันน็อค</b></label>
             <div class="col-md-10"><input class="form-control" name="deposit_helmet" type="number" placeholder="(กรณีจักรยานยนต์)"></div>
         </div>
 
-    </fieldset>
-    <fieldset>
+        <br>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-gas-pump"></em>&nbsp<b> น้ำมันคงเหลือ (%)</b></label>
             <div class="col-md-10">
                 <input class="slider slider-horizontal" data-ui-slider="" type="text" value="" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="0" data-slider-orientation="horizontal" name="deposit_fuel">
             </div>
         </div>
 
-    </fieldset>
-    <fieldset>
+        <br>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-phone"></em>&nbsp<b> เบอร์โทรติดต่อ</b></label>
             <div class="col-md-10"><input class="form-control" name="deposit_number" type="number" placeholder="ระบุเบอร์โทร.."></div>
         </div>
-    </fieldset>
-    <fieldset>
+        <br>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-user"></em>&nbsp<b> ผู้มารับแทน</b></label>
             <div class="col-md-10"><input class="form-control" name="deposit_pickup_name" type="text" placeholder="ระบุชื่อผู้มารับแทน.."></div>
         </div>
-    </fieldset>
-    <fieldset>
+        <br>
         <div class="form-group row"><label class="col-md-2 col-form-label"><em class="fa fa-file-alt"></em>&nbsp<b> รายละเอียดเพิ่มเติม</b></label>
             <div class="col-md-10"><textarea class="form-control" aria-label="With textarea" rows="4" name="deposit_detail" placeholder="ระบุรายละเอียดเพิ่มเติม.."></textarea></div>
         </div>
-    </fieldset>
 
 </div>
+                    </fieldset>
                     <fieldset>
                         <div class="form-group row"><label class="col-md-2 col-form-label"> <em class="fa fa-check"></em>&nbsp<b> ตรวจสอบข้อมูล</b></label>
                             <div class="col-md-10"><div class="checkbox c-checkbox"><label><input type="checkbox" value="1" name="deposit_check" required><span class="fa fa-check"></span></label> </div></div>
