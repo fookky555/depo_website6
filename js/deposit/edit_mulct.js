@@ -6,7 +6,16 @@ $(document).ready(function () {
         swal({
             title: 'สำเร็จ!',
             text: 'บันทึกข้อมูลเรียบร้อยแล้ว',
-            icon: 'success'
+            icon: 'success',
+            buttons: {
+                confirm: {
+                    text: 'ยืนยัน',
+                    value: true,
+                    visible: true,
+                    className: "bg-success",
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=search_mulct';
         });
@@ -14,7 +23,15 @@ $(document).ready(function () {
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
-            icon: 'error'
+            icon: 'error',
+            buttons: {
+                confirm: {
+                    text: 'รับทราบ',
+                    value: true,
+                    visible: true,
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=search_mulct';
         });

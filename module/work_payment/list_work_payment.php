@@ -13,14 +13,14 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-work-payment">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
                                 <th><strong><em class="fa fa-store-alt"> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><FONT COLOR="WHITE">_______</FONT> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><FONT COLOR="cce6ff">_______</FONT> </em></strong></th>
                                 <th><strong><em class="fa fa-clock"> </em></strong></th>
                                 <th><strong><em class="fa fa-university"> </em></strong></th>
                                 <th><strong><em class="fa fa-image"> </em></strong></th>
-                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><FONT COLOR="WHITE">______</FONT> </em></strong></th>
+                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><FONT COLOR="cce6ff">______</FONT> </em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -33,9 +33,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 echo"<tr bgcolor=\"$tbl_cl\">";

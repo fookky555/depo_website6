@@ -20,7 +20,15 @@ $(document).ready(function () {
         swal({
             title: 'ไม่พบข้อมูล!',
             text: 'กรุณาตรวจสอบข้อมูลที่ค้นหาใหม่',
-            icon: 'error'
+            icon: 'error',
+            buttons: {
+                confirm: {
+                    text: 'รับทราบ',
+                    value: true,
+                    visible: true,
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=search_deposit';
         });

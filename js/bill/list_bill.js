@@ -6,7 +6,11 @@ $(document).ready(function(){
             text: 'คุณต้องการจะลบข้อมูลหรือไม่',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,

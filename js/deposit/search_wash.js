@@ -8,7 +8,11 @@ $(document).ready(function(){
             text: 'คุณต้องการจะล้างรถใช่หรือไม่',
             icon: 'info',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,
@@ -31,7 +35,11 @@ $(document).ready(function(){
             text: 'คุณต้องการยกเลิกการล้างรถใช่หรือไม่',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,
@@ -54,7 +62,11 @@ $(document).ready(function(){
             text: 'คุณต้องการจะลบข้อมูลการล้างรถหรือไม่',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,

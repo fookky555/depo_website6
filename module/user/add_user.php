@@ -28,13 +28,37 @@ VALUES ('$user_username','$hash','$user_role','$user_name','$user_phone','$work_
 
             } else {
                 echo "<label id='result' data-id='0'></label>";
+
+                echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+                echo "<label id='user_password' data-id='$_POST[user_password]'></label>";
+                echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+                echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+                echo "<label id='user_role' data-id='$_POST[user_role]'></label>";
             }
         } else {
             echo "<label  id='result' data-id='66'></label>";
+
+            echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+            echo "<label id='user_password' data-id='$_POST[user_password]'></label>";
+            echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+            echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+            echo "<label id='user_role' data-id='$_POST[user_role]'></label>";
         }
     } else {
         echo "<label  id='result' data-id='2'></label>";
+
+        echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+        echo "<label id='user_password' data-id='$_POST[user_password]'></label>";
+        echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+        echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+        echo "<label id='user_role' data-id='$_POST[user_role]'></label>";
     }
 }else{
     echo "<label  id='result' data-id='33'></label>";
+
+    echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+    echo "<label id='user_password' data-id='$_POST[user_password]'></label>";
+    echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+    echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+    echo "<label id='user_role' data-id='$_POST[user_role]'></label>";
 }

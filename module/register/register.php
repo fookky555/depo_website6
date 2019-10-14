@@ -60,13 +60,33 @@ VALUES ('$work_id','$date_now','1') ";
                 echo "<label  id='result' data-id='1'></label>";
             } else {
                 echo "<label  id='result' data-id='0'></label>";
+
+                echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+                echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+                echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+                echo "<label id='work_name' data-id='$_POST[work_name]'></label>";
             }
         } else {
             echo "<label  id='result' data-id='2'></label>";
+
+            echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+            echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+            echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+            echo "<label id='work_name' data-id='$_POST[work_name]'></label>";
         }
     } else {
         echo "<label  id='result' data-id='66'></label>";
+
+        echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+        echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+        echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+        echo "<label id='work_name' data-id='$_POST[work_name]'></label>";
     }
 }else{
     echo "<label  id='result' data-id='33'></label>";
+
+    echo "<label id='user_username' data-id='$_POST[user_username]'></label>";
+    echo "<label id='user_name' data-id='$_POST[user_name]'></label>";
+    echo "<label id='user_phone' data-id='$_POST[user_phone]'></label>";
+    echo "<label id='work_name' data-id='$_POST[work_name]'></label>";
 }

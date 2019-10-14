@@ -29,11 +29,11 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-no_login_search_work">
                             <thead>
-                            <tr>
+                            <tr bgcolor="#cce6ff">
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="cce6ff">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-phone"> </em></strong></th>
-                                <th><strong><em class="fa fa-user"><font color="white">___________________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-user"><font color="cce6ff">___________________</font> </em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -45,9 +45,9 @@
                             $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว

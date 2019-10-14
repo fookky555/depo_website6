@@ -10,7 +10,12 @@ $(document).ready(function () {
             text: 'ไม่สามารถกลับมาแก้ไขข้อมูลได้',
             icon: 'info',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    className: "bg-danger",
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,
@@ -32,7 +37,16 @@ $(document).ready(function () {
         swal({
             title: 'สำเร็จ!',
             text: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
-            icon: 'success'
+            icon: 'success',
+            buttons: {
+                confirm: {
+                    text: 'ยืนยัน',
+                    value: true,
+                    visible: true,
+                    className: "bg-success",
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=list_deposit';
         });

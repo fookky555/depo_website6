@@ -286,7 +286,11 @@
                     text: 'คุณต้องการจะออกจากระบบใช่หรือไม่?',
                     icon: 'warning',
                     buttons: {
-                        cancel: true,
+                        cancel: {
+                            text: 'ยกเลิก',
+                            visible: true,
+                            closeModal: true
+                        },
                         confirm: {
                             text: 'ยืนยัน',
                             value: true,
@@ -311,7 +315,11 @@
                     text: 'คุณต้องการจะไปหน้าชำระเงินหรือไม่?',
                     icon: 'warning',
                     buttons: {
-                        cancel: true,
+                        cancel: {
+                            text: 'ยกเลิก',
+                            visible: true,
+                            closeModal: true
+                        },
                         confirm: {
                             text: 'ยืนยัน',
                             value: true,

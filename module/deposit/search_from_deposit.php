@@ -12,12 +12,12 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_from_deposit">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-hashtag"> </em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">______</font> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">______________</font> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar-check"><font color="white">____</font> </em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="cce6ff">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">______________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar-check"><font color="cce6ff">____</font> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                             </tr>
                             </thead>
@@ -31,9 +31,9 @@
                             while ($row = mysqli_fetch_assoc($result1)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE

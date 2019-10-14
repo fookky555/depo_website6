@@ -13,13 +13,13 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-work-status">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-store-alt"> </em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="white">__________</font> </em></strong></th>
-                                <th><strong><em class="fa fa-user"><font color="white">________________</font></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="cce6ff">__________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-user"><font color="cce6ff">________________</font></em></strong></th>
                                 <th><strong><em class="fa fa-phone"> </em></strong></th>
-                                <th><strong><em class="fa fa-check-square"><font color="white">________</font> </em></strong></th>
-                                <th class="text-right" style="width:140px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-check-square"><font color="cce6ff">________</font> </em></strong></th>
+                                <th class="text-right" style="width:140px"><strong><em class="fa fa-wrench"><font color="cce6ff">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,9 +32,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว

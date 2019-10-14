@@ -12,7 +12,16 @@ $(document).ready(function () {
         swal({
             title: 'รหัสฝากรถ #'+deposit_id,
             text: 'บันทึกข้อมูลรถ ['+deposit_plate_id+'] เรียบร้อย!',
-            icon: 'success'
+            icon: 'success',
+            buttons: {
+                confirm: {
+                    text: 'ยืนยัน',
+                    value: true,
+                    visible: true,
+                    className: "bg-success",
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=show_deposit&id='+deposit_id;
         });
@@ -20,7 +29,15 @@ $(document).ready(function () {
         swal({
             title: 'ผิดพลาด!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
-            icon: 'error'
+            icon: 'error',
+            buttons: {
+                confirm: {
+                    text: 'รับทราบ',
+                    value: true,
+                    visible: true,
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=form_add_deposit';
         });
@@ -28,7 +45,15 @@ $(document).ready(function () {
         swal({
             title: 'ข้อมูลทะเบียนรถไม่ถูกต้อง!',
             text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้องและครบถ้วน',
-            icon: 'error'
+            icon: 'error',
+            buttons: {
+                confirm: {
+                    text: 'รับทราบ',
+                    value: true,
+                    visible: true,
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=form_add_deposit&id='+result+'&deposit_plate_id='+deposit_plate_id+'&deposit_type='+deposit_type+'&deposit_pickup_date='+deposit_pickup_date+'&car_type_id='+car_type_id+'&img_name='+img_name;
         });
@@ -36,7 +61,15 @@ $(document).ready(function () {
         swal({
             title: 'ไม่มีประเภทของการฝากนี้!',
             text: 'ร้านของคุณไม่มีประเภทการฝากชนิดนี้',
-            icon: 'error'
+            icon: 'error',
+            buttons: {
+                confirm: {
+                    text: 'รับทราบ',
+                    value: true,
+                    visible: true,
+                    closeModal: true
+                }
+            }
         }).then(function() {
             window.location.href='index.php?module=deposit&action=form_add_deposit&id='+result+'&deposit_plate_id='+deposit_plate_id+'&deposit_type='+deposit_type+'&deposit_pickup_date='+deposit_pickup_date+'&car_type_id='+car_type_id+'&img_name='+img_name;
         });

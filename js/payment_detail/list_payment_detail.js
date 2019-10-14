@@ -8,7 +8,11 @@ $(document).ready(function(){
             text: 'ข้อมูลไม่สามารถนำกลับมาได้',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,

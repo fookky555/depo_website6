@@ -27,10 +27,10 @@
             <div class="card-body">
                 <p class="text-center py-2">ลงทะเบียนร้านฝากรถ</p>
                 <form class="mb-3" id="registerForm" action="<?php MALink("register","register") ?>" method="post" >
-
+                    <?php if(isset($_GET['text'])) echo "<p class=\"text-left\"><font color='red'><h5>$_GET[text]</h5></p>"; ?>
                     <div class="form-group"><label class="text-muted" for="">กำหนดชื่อผู้ใช้</label>
                         <div class="input-group with-focus">
-                            <input class="form-control border-right-0" type="text" name="user_username"
+                            <input class="form-control border-right-0" type="text" name="user_username" value="<?php if(isset($_GET['user_username'])) echo $_GET['user_username']; ?>"
                                                                    placeholder="ชื่อผู้ใช้" autocomplete="off"
                                                                    required>
                             <div class="input-group-append"><span
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group"><label class="text-muted" for="user_name">กำหนดชื่อและนามสกุล</label>
                         <div class="input-group with-focus"><input class="form-control border-right-0"
-                                                                   id="user_name" type="text" name="user_name"
+                                                                   id="user_name" type="text" name="user_name" value="<?php if(isset($_GET['user_name'])) echo $_GET['user_name']; ?>"
                                                                    placeholder="ชื่อและนามสกุล" autocomplete="off"
                                                                    required>
                             <div class="input-group-append"><span
@@ -70,7 +70,7 @@
                     </div>
                     <div class="form-group"><label class="text-muted" for="user_phone">กำหนดเบอร์โทรศัพท์</label>
                         <div class="input-group with-focus"><input class="form-control border-right-0"
-                                                                   id="user_phone" type="number" name="user_phone"
+                                                                   id="user_phone" type="number" name="user_phone" value="<?php if(isset($_GET['user_phone'])) echo $_GET['user_phone']; ?>"
                                                                    placeholder="เบอร์โทรศัพท์" autocomplete="off"
                                                                    required>
                             <div class="input-group-append"><span
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group"><label class="text-muted" for="work_name">กำหนดชื่อร้านฝากรถ</label>
                         <div class="input-group with-focus"><input class="form-control border-right-0"
-                                                                   id="work_name" type="text" name="work_name"
+                                                                   id="work_name" type="text" name="work_name" value="<?php if(isset($_GET['work_name'])) echo $_GET['work_name']; ?>"
                                                                    placeholder="ชื่อร้านฝากรถ" autocomplete="off"
                                                                    required>
                             <div class="input-group-append"><span

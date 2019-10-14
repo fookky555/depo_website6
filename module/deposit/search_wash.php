@@ -12,14 +12,14 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_wash">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">________</font></em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">______</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th><strong><em class="fa fa-check-square"><font color="white">____</font></em></strong></th>
-                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-check-square"><font color="cce6ff">____</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="cce6ff">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,9 +31,9 @@
                             $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT deposit_pickup_date,car_type_id FROM tbl_deposit WHERE deposit_id='$deposit_id'";//ต้องเปลี่ยน WHERE

@@ -15,13 +15,13 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-show-work-payment">
                             <thead>
-                            <tr>
-                                <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_______</font></em></strong></th>
+                            <tr bgcolor="cce6ff">
+                                <th style="display:none;"></th>
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-clock"></em></strong></th>
-                                <th><strong><em class="fa fa-university"></em></strong></th>
                                 <th><strong><em class="fa fa-image"></em></strong></th>
-                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><font color="white">___________</font></em></strong></th>
+                                <th class="text-right" style="width:140px"><strong><em class="fa fa-check-square"><font color="cce6ff">___________</font></em></strong></th>
+                                <th><strong><em class="fa fa-university"></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,9 +34,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 if($payment_detail_id==0 && empty($work_payment_pic)){
@@ -44,10 +44,9 @@
                                 }
                                 echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                    <td><?php echo $work_payment_id;?></td>
+                                    <td style="display:none;"><?php echo $work_payment_id;?></td>
                                     <td><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
-                                    <td><?php echo $payment_detail_id;?></td>
                                     <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">
                                     <td><img src="img/work_payment/<?php echo $work_payment_pic; ?>" onclick="window.open(this.src)"  height="75" width="36"></td>
                                     <div id="myModal" class="modal">
@@ -66,6 +65,7 @@
                                     }
                                     ?>
                                     </td>
+                                <td><?php echo $payment_detail_id;?></td>
 
                                 </tr>
 

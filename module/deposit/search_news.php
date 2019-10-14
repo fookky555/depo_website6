@@ -15,12 +15,12 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_news">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th style="display:none;"></th>
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-comment-alt"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-comment-alt"><font color="cce6ff">________</font></em></strong></th>
                                 <th><strong><em class="fa fa-user-check"></em></strong></th>
-                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="cce6ff">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,9 +34,9 @@
 
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
 
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว

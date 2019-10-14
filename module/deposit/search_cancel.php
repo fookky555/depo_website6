@@ -12,15 +12,15 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-search_cancel">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th style="display:none;"></th>
-                                <th><strong><em class="fa fa-exclamation-circle"> <font color="white">____________</font></em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">_________</font> </em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_________</font> </em></strong></th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">______</font> </em></strong></th>
+                                <th><strong><em class="fa fa-exclamation-circle"><font color="cce6ff">____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="cce6ff">_________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">_________</font> </em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">______</font> </em></strong></th>
                                 <th><strong><em class="fa fa-user-edit"> </em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">___________</font> </em></strong></th>
+                                    <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="cce6ff">___________</font> </em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -34,9 +34,9 @@
                             while ($row = mysqli_fetch_assoc($result1)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql="SELECT user_username FROM tbl_user WHERE user_id='$user_id'";//ต้องเปลี่ยน WHERE

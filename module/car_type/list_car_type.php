@@ -17,9 +17,9 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-car-type">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th style="display:none;"></th>
-                                <th><strong><em class="fa fa-car"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="cce6ff">________</font></em></strong></th>
                                 <th><strong>Day</strong></th>
                                 <th><strong>1Month</strong></th>
                                 <th><strong>3Months</strong></th>
@@ -27,7 +27,7 @@
                                 <th><strong>1Year</strong></th>
                                 <th><strong><em class="fa fa-tint"></em></strong></th>
                                 <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
-                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                                <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="cce6ff">_______</font></em></strong></th>
                                 <?php } ?>
                             </tr>
                             </thead>
@@ -41,9 +41,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 echo"<tr bgcolor=\"$tbl_cl\">";
@@ -77,11 +77,11 @@
 
         </div>
        <p><em class="fa fa-car"></em>  = ชื่อประเภทรถ</p>
-       <p>Day = ราคาฝากรายวัน</p>
-      <p>1Month = ราคาฝาก 1 เดือน</p>
-        <p>3Months = ราคาฝาก 3 เดือน</p>
-        <p>6Months = ราคาฝาก 6 เดือน</p>
-       <p>1Year = ราคาฝาก 1 ปี</p>
+        <p><b>Day</b> = ราคาฝากรายวัน</p>
+      <p><b>1 Month</b> = ราคาฝาก 1 เดือน</p>
+        <p><b>3 Months</b> = ราคาฝาก 3 เดือน</p>
+        <p><b>6 Months</b> = ราคาฝาก 6 เดือน</p>
+       <p><b>1 Year</b> = ราคาฝาก 1 ปี</p>
         <p><em class="fa fa-tint"></em> = ราคาบริการล้างรถ</p>
         <?php if($_SESSION['user_role']=="ผู้ดูแล"){ ?>
         <p><em class="fa fa-wrench"></em> = จัดการข้อมูล</p>

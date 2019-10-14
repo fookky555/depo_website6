@@ -11,7 +11,11 @@ $(document).ready(function(){
             text: 'ข้อมูลไม่สามารถแก้ไขได้',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,
@@ -34,7 +38,11 @@ $(document).ready(function(){
             text: 'ข้อมูลไม่สามารถแก้ไขได้',
             icon: 'warning',
             buttons: {
-                cancel: true,
+                cancel: {
+                    text: 'ยกเลิก',
+                    visible: true,
+                    closeModal: true
+                },
                 confirm: {
                     text: 'ยืนยัน',
                     value: true,

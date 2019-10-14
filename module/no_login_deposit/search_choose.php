@@ -34,14 +34,14 @@ list($name)=mysqli_fetch_row($result1);
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
-                                <th><strong><em class="fa fa-car"><font color="white">____________</font></em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="white">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-car"><font color="cce6ff">____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="cce6ff">________</font></em></strong></th>
 
-                                <th><strong><em class="fa fa-calendar-check"><font color="white">_</font> </em> </strong> </th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="white">_______</font></em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="white">_____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar-check"><font color="cce6ff">_</font> </em> </strong> </th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">_____________</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -57,9 +57,9 @@ list($name)=mysqli_fetch_row($result1);
                             $numchk=1;
                             while ($row = mysqli_fetch_assoc($result1)) {
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 $sql2="SELECT car_type_name FROM tbl_car_type WHERE car_type_id='$car_type_id'";//ต้องเปลี่ยน WHERE

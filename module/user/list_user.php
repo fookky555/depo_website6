@@ -17,13 +17,13 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-list-user">
                             <thead>
-                            <tr>
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-user"></em></strong></th>
-                                <th><strong><em class="fa fa-id-card-alt"><font color="white">________</font></em></strong></th>
-                                <th><strong><em class="fa fa-address-card"><font color="white">_________________</font></em></strong></th>
+                                <th><strong><em class="fa fa-id-card-alt"><font color="cce6ff">________</font></em></strong></th>
+                                <th><strong><em class="fa fa-address-card"><font color="cce6ff">_________________</font></em></strong></th>
                                 <th><strong><em class="fa fa-phone"></em></strong></th>
-                           <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="white">_______</font></em></strong></th>
+                           <th class="text-right" style="width:130px"><strong><em class="fa fa-wrench"><font color="cce6ff">_______</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,9 +39,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
-                                    $tbl_cl="ghostwhite";
-                                }else{
                                     $tbl_cl="";
+                                }else{
+                                    $tbl_cl="f0f7ff";
                                 }
                                 extract($row);//ทำให้อยู่ในตัวแปรตามชื่อแอทริบิว
                                 echo"<tr bgcolor=\"$tbl_cl\">";
