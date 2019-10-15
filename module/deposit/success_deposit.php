@@ -11,6 +11,7 @@ if(empty($_GET['confirm'])){
     $date = new DateTime($deposit_date);
     $now = new DateTime();
     $days=$date->diff($now)->format("%d");
+    $days++;
     $p1=(float)cal_price($deposit_type,$car_type_id,$days);
     $p2=(float)cal_mulct($deposit_id);
     $p3=(float)cal_wash($deposit_id,$car_type_id);

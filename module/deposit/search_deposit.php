@@ -52,14 +52,15 @@
                                 //เช็ควันว่าฝากมากี่วันแล้ว
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
-                                $days = $date->diff($now)->format('%a วัน');
+                                $days = $date->diff($now)->format('%a');
+                                $days++;
                                 echo"<tr bordercolor='black'>";
 
 
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_id</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_plate_id</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$deposit_date</td>";
-                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$days</td>";
+                                    echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$days วัน</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$car_type_name</td>";
                                     echo "<td onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"$tbl_cl\">$username</td>";
 

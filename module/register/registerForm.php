@@ -27,7 +27,7 @@
             <div class="card-body">
                 <p class="text-center py-2">ลงทะเบียนร้านฝากรถ</p>
                 <form class="mb-3" id="registerForm" action="<?php MALink("register","register") ?>" method="post" >
-                    <?php if(isset($_GET['text'])) echo "<p class=\"text-left\"><font color='red'><h5>$_GET[text]</h5></p>"; ?>
+                    <?php if(isset($_GET['text'])) echo "<p class=\"text-left\"><font color='red'><h5>$_GET[text]</h5></font></p>"; ?>
                     <div class="form-group"><label class="text-muted" for="">กำหนดชื่อผู้ใช้</label>
                         <div class="input-group with-focus">
                             <input class="form-control border-right-0" type="text" name="user_username" value="<?php if(isset($_GET['user_username'])) echo $_GET['user_username']; ?>"

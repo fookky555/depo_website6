@@ -42,6 +42,7 @@
         ?>
         <hr>
         <li <?php echo menu_active($_GET['module'],"deposit"); ?>><a href="<?php MALink('deposit','list_deposit') ?>" title="Single View"><em class="fa fa-dot-circle"></em><span data-localize="sidebar.nav.SINGLEVIEW">ระบบรับฝาก</span></a></li>
+        <li <?php echo menu_active($_GET['module'],"bill"); ?>><a href="<?php MALink('bill','list_bill') ?>" title="Single View"><em class="fa fa-check"></em><span data-localize="sidebar.nav.SINGLEVIEW">ข้อมูลชำระเงินฝากรถ</span></a></li>
         <li <?php echo menu_active($_GET['module'],"car_type"); ?>><a href="<?php MALink('car_type','list_car_type') ?>" title="Single View"><em class="fa fa-clock"></em><span data-localize="sidebar.nav.SINGLEVIEW">อัตราค่าบริการ</span></a></li>
         <li <?php echo menu_active($_GET['module'],"profile"); ?>><a href="<?php MALink('profile','list_profile') ?>" title="Single View"><em class="fa fa-user"></em><span data-localize="sidebar.nav.SINGLEVIEW">ข้อมูลผู้ใช้</span></a></li>
         <li <?php echo menu_active($_GET['module'],"work"); ?>><a href="<?php MALink('work','list_work') ?>" title="Single View"><em class="fa fa-bookmark"></em><span data-localize="sidebar.nav.SINGLEVIEW">ข้อมูลร้าน</span></a></li>

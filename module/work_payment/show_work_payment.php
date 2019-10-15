@@ -30,7 +30,7 @@
                             $sql1="SELECT * FROM tbl_work_payment WHERE work_id='$_SESSION[work_id]'";//ต้องเปลี่ยน WHERE
 
                             $result=mysqli_query($con,$sql1);
-                            $numchk=0;
+                            $numchk=1;
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $numchk++;
                                 if($numchk%2){
@@ -44,7 +44,7 @@
                                 }
                                 echo"<tr bgcolor=\"$tbl_cl\">";
                                 ?>
-                                    <td style="display:none;"><?php echo $work_payment_id;?></td>
+                                    <td style="display:none;"><?php echo $numchk;?></td>
                                     <td><?php echo $work_payment_date;?></td>
                                     <td><?php echo $work_payment_time;?></td>
                                     <img  id="image_name" src="img/work_payment/<?php echo $work_payment_pic ;?>" style="display:none">

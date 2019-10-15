@@ -29,14 +29,13 @@
                     <div class="table-responsive">
                         <table class="table table-hover" id="data-table-no_login_search_deposit">
                             <thead>
-                            <tr bgcolor="#cce6ff">
+                            <tr bgcolor="cce6ff">
                                 <th><strong><em class="fa fa-hashtag"></em></strong></th>
                                 <th><strong><em class="fa fa-car"><font color="cce6ff">____________</font></em></strong></th>
-                                <th><strong><em class="fa fa-sign"><font color="cce6ff">________</font></em></strong></th>
-
+                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">_______</font></em></strong></th>
                                 <th><strong><em class="fa fa-calendar-check"><font color="cce6ff">___</font> </em> </strong> </th>
-                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">_______</em></strong></th>
-                                <th><strong><em class="fa fa-calendar"><font color="cce6ff">_____________</font></em></strong></th>
+                                <th><strong><em class="fa fa-motorcycle"><font color="cce6ff">_______</font></em></strong></th>
+                                <th><strong><em class="fa fa-sign"><font color="cce6ff">________</font></em></strong></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -65,17 +64,17 @@
 
                                 $date = new DateTime($deposit_date);
                                 $now = new DateTime();
+                                $days = $date->diff($now)->format("%a");
+                                $days++;
                                 echo"<tr onclick=\"href1(this.id)\" class='tclick' id='$deposit_id' bgcolor=\"\">";
                                 echo "<label class='link' ></label>";
                                 ?>
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_id;?></td>
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_plate_id;?></td>
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
-
-
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php  echo $date->diff($now)->format("%a วัน"); ?></td>
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $car_type_name;?></td>
-                                    <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_date;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_id;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_plate_id;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $deposit_date;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php  echo $days." วัน"; ?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $car_type_name;?></td>
+                                <td bgcolor="<?php echo $tbl_cl; ?>"><?php echo $work_name;?></td>
 
                                 </tr>
 
