@@ -22,6 +22,7 @@
                 extract($row);
                 $date_bill = new DateTime($bill_date);
                 $days = $date->diff($date_bill)->format("%a");
+                $days++;
                 $total = $bill_total;
                 $label = "( ชำระเงินแล้ว )";
             } else {
