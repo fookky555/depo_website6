@@ -69,7 +69,7 @@
                                         <td class="text-center" bgcolor="<?php echo $tbl_cl; ?>">
                                             <button class="btn btn-sm btn-warning" type="button" onclick=window.location.href="index.php?module=deposit&action=form_edit_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-pencil-alt"></em></button>
-                                            <button class="btn btn-sm btn-danger"  type="button" onclick=window.location.href="index.php?module=deposit&action=form_cancel_deposit&id=<?php echo $deposit_id; ?>"><em
+                                            <button class="btn btn-sm btn-dark"  type="button" onclick=window.location.href="index.php?module=deposit&action=form_cancel_deposit&id=<?php echo $deposit_id; ?>"><em
                                                     class="fas fa-times"></em></button>
                                             <button class="btn btn-sm btn-danger delete_deposit"  type="button" data-link="index.php?module=deposit&action=delete_deposit&id=<?php echo $deposit_id; ?>"><em
                                                         class="fas fa-trash-alt"></em></button>
