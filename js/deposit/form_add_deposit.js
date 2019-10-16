@@ -1,5 +1,14 @@
 $(document).ready(function () {
-    $('.dropify').dropify();
+    //$('.dropify').dropify();
+
+    $('.dropify').dropify({
+        messages: {
+            'default': 'ลากและวาง หรือกดเพื่อเพิ่มไฟล์',
+            'replace': 'ลากและวาง หรือกดเพื่อเพิ่มไฟล์',
+            'remove':  'นำไฟล์ออก',
+            'error':   'เกิดข้อผิดพลาด !'
+        }
+    });
     
     $("#btnS").click(function () {
         $("#detail_form").toggle();
